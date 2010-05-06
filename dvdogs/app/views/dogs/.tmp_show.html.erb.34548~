@@ -1,0 +1,34 @@
+<h1><%=h @dog.name %></h1>
+<table>
+  
+<tr>
+  <th>Birth Date:</th>
+  <td><%=h @dog.birth_date %></td>
+</tr>
+
+<tr>
+  <th>Ham:</th>
+  <td><%=h @dog.ham %></td>
+</tr>
+
+<tr>
+  <th>Family</th>
+  <td><%=h @dog.family %></td>
+</tr>
+
+<tr>
+  <th>Profile:</th>
+  <td><%=h @dog.profile %></td>
+</tr>
+
+  <%= render :partial => "/shared/show_table_list", 
+    				:locals => { :label => "Trips", :obj_array => @dog.trips } %>
+  <%= render :partial => "/shared/show_table_list", 
+    				:locals => { :label => "Hikes", :obj_array => @dog.hikes } %>
+  <%= render :partial => "/shared/show_table_list", 
+    				:locals => { :label => "Rigs", :obj_array => @dog.rigs } %>
+
+</table>
+
+<%= link_to edit_icon_large, edit_dog_path(@dog) %> |
+<%= link_to back_icon_large, dogs_path %>

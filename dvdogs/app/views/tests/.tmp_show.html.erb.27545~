@@ -1,0 +1,13 @@
+<p>
+  <b>Id:</b>
+  <%=h @test.id %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @test.birthday %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_path(@test) %> |
+<%= link_to 'Back', tests_path %>

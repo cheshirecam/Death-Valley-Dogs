@@ -1,0 +1,26 @@
+<table>
+  
+<tr>
+  <th>Name:</th>
+  <td><%=h @dog.name %></td>
+</tr>
+
+<tr>
+  <th>Birth Date:</th>
+  <td><%=h @dog.birth_date %></td>
+</tr>
+
+<tr>
+  <th>Ham:</th>
+  <td><%=h @dog.ham %></td>
+</tr>
+
+<tr>
+  <th>Profile:</th>
+  <td><%=h @dog.profile %></td>
+</tr>
+
+</table>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>

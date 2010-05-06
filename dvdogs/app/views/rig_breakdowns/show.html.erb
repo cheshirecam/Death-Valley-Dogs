@@ -1,0 +1,18 @@
+<p>
+  <b>Rig:</b>
+  <%=h @rig_breakdown.rig_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @rig_breakdown.location %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @rig_breakdown.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_rig_breakdown_path(@rig_breakdown) %> |
+<%= link_to 'Back', rig_breakdowns_path %>

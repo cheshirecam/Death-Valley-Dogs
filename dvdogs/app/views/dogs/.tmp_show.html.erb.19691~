@@ -1,0 +1,28 @@
+<p>
+  <b>Id:</b>
+  <%=h @dog.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @dog.name %>
+</p>
+
+<p>
+  <b>Ham:</b>
+  <%=h @dog.ham %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%=h @dog.profile %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%=h @dog.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>

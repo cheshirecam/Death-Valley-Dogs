@@ -1,0 +1,28 @@
+<h1>Editing gp</h1>
+
+<% form_for(@gp) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :make %><br />
+    <%= f.text_field :make %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :picture %><br />
+    <%= f.text_field :picture %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @gp %> |
+<%= link_to 'Back', gps_path %>

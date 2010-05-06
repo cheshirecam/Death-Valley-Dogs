@@ -1,0 +1,2 @@
+module HikeStoriesHelper
+end

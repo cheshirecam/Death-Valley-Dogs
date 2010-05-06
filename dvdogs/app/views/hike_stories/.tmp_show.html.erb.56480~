@@ -1,0 +1,13 @@
+<p>
+  <b>Hike:</b>
+  <%=h @hike_story.hike_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @hike_story.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_hike_story_path(@hike_story) %> |
+<%= link_to 'Back', hike_stories_path %>

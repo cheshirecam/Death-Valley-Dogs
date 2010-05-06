@@ -1,0 +1,23 @@
+<p>
+  <b>Make:</b>
+  <%=h @gp.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @gp.model %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @gp.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%=h @gp.picture %>
+</p>
+
+
+<%= link_to 'Edit', edit_gp_path(@gp) %> |
+<%= link_to 'Back', gps_path %>

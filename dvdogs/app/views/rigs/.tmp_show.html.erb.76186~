@@ -1,0 +1,42 @@
+<h1><%=h @rig.name %></h1>
+<table>
+  
+<tr>
+  <th>Owner:</th>
+  <td><%= link_to @rig.dog.name, @rig.dog %></td>
+</tr>
+<tr>
+  <th>Year:</th>
+  <td><%=h @rig.year %></td>
+</tr>
+<tr>
+  <th>Make:</th>
+  <td><%=h @rig.make %></td>
+</tr>
+<tr>
+  <th>Model:</th>
+  <td><%=h @rig.model %></td>
+</tr>
+<tr>
+  <th>Color:</th>
+  <td><%=h @rig.color %></td>
+</tr>
+<tr>
+  <th>Engine:</th>
+  <td><%=h @rig.engine %></td>
+</tr>
+<tr>
+  <th>Tires:</th>
+  <td><%=h @rig.tires %></td>
+</tr>
+<tr>
+  <th>Picture:</th>
+  <td><%=h @rig.picture %></td>
+</tr>
+
+</table>
+
+
+
+<%= link_to 'Edit', edit_rig_path(@rig) %> |
+<%= link_to 'Back', rigs_path %>

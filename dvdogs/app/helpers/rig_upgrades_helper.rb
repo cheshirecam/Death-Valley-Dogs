@@ -1,0 +1,2 @@
+module RigUpgradesHelper
+end

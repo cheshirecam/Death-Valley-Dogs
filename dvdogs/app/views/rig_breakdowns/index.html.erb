@@ -1,0 +1,24 @@
+<h1>Listing rig_breakdowns</h1>
+
+<table>
+  <tr>
+    <th>Rig</th>
+    <th>Location</th>
+    <th>Description</th>
+  </tr>
+
+<% @rig_breakdowns.each do |rig_breakdown| %>
+  <tr>
+    <td><%=h rig_breakdown.rig_id %></td>
+    <td><%=h rig_breakdown.location %></td>
+    <td><%=h rig_breakdown.description %></td>
+    <td><%= link_to 'Show', rig_breakdown %></td>
+    <td><%= link_to 'Edit', edit_rig_breakdown_path(rig_breakdown) %></td>
+    <td><%= link_to 'Destroy', rig_breakdown, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rig_breakdown', new_rig_breakdown_path %>

@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Album</th>
+  </tr>
+
+<% @hikes.each do |hike| %>
+  <tr>
+    <td><%= link_to hike.name, hike %></td>
+    <td><%=h hike.date %></td>
+    <td><%=h hike.album %></td>
+    <td><%= link_to edit_icon, edit_hike_path(hike) %></td>
+    <td><%= link_to delete_icon, hike, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to new_icon, new_hike_path %>

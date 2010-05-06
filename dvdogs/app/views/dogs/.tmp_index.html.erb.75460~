@@ -1,0 +1,8 @@
+<%= link_to new_icon_large, new_dog_path %>
+<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_current, :name_label => "Man Dog" } %>
+
+<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_canine, :name_label => "Canine Dog" } %>
+
+
+<h3>These Dogs haven't joined us on the last 3 trips:</h3>
+<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_old, :name_label => "Old Dog" } %>

@@ -1,0 +1,54 @@
+<h1>Editing rig</h1>
+
+<% form_for(@rig) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.label :make %><br />
+    <%= f.text_field :make %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </p>
+  <p>
+    <%= f.label :engine %><br />
+    <%= f.text_field :engine %>
+  </p>
+  <p>
+    <%= f.label :tires %><br />
+    <%= f.text_field :tires %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :dog_id, "Owner" %><br/>
+    <%= f.collection_select(:dog_id, Dog.by_name, :id, :name) %>
+  </p>
+  <%= render :partial => "/shared/checkbox_selector", 
+    				:locals => { :label => "Trips", 
+					:item_array => Trip.by_date, 
+					:check_field => @rig.trips,
+					:array_to_update => "rig[trip_ids][]" } %>
+
+  <p>
+    <%= f.label :picture %><br />
+    <%= f.text_field :picture %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @rig %> |
+<%= link_to 'Back', rigs_path %>

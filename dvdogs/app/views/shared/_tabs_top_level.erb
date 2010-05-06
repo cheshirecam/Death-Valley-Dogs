@@ -1,0 +1,26 @@
+<%= javascript_include_tag :defaults %>
+<%= image_tag "dvdogs_banner.png" %> <br><br>
+
+<div id="header">
+<ul>
+	<li id="trips" class="tab"><a href="<%= trips_path %>">Trips</a></li>
+	<li id="hikes" class="tab"><a href="<%= hikes_path %>">Hikes</a></li>
+	<li id="dogs" class="tab"><a href="<%= dogs_path %>">Dogs</a></li>
+	<li id="rigs" class="tab"><a href="<%= rigs_path %>">Rigs</a></li>
+</ul>
+</div>
+
+<script>
+	function makeSelected() {
+		var idName = "#<%= selected_top_tab %>";
+
+		if ($(idName).hasClass("tab")) {
+			$(idName).removeClass("tab");
+			$(idName).addClass("selected_tab");
+		}
+
+	}
+
+	$(document).ready(makeSelected());
+	
+</script>

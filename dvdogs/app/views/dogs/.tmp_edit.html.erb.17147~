@@ -1,0 +1,36 @@
+<h1>Editing dog</h1>
+
+<% form_for(@dog) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :birth_date %><br />
+    <%= f.date_select(:birth_date, :start_year => 1950) %>
+  </p>
+  <p>
+    <%= f.label :ham %><br />
+    <%= f.text_field :ham %>
+  </p>
+  <p>
+    <%= f.label :profile %><br />
+    <%= f.text_field :profile %>
+  </p>
+  <p>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @dog %> |
+<%= link_to 'Back', dogs_path %>

@@ -1,0 +1,20 @@
+<h1>Editing trip</h1>
+
+<% form_for(@trip) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @trip %> |
+<%= link_to 'Back', trips_path %>

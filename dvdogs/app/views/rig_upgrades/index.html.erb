@@ -1,0 +1,22 @@
+<h1>Listing rig_upgrades</h1>
+
+<table>
+  <tr>
+    <th>Rig</th>
+    <th>Description</th>
+  </tr>
+
+<% @rig_upgrades.each do |rig_upgrade| %>
+  <tr>
+    <td><%=h rig_upgrade.rig_id %></td>
+    <td><%=h rig_upgrade.description %></td>
+    <td><%= link_to 'Show', rig_upgrade %></td>
+    <td><%= link_to 'Edit', edit_rig_upgrade_path(rig_upgrade) %></td>
+    <td><%= link_to 'Destroy', rig_upgrade, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rig_upgrade', new_rig_upgrade_path %>

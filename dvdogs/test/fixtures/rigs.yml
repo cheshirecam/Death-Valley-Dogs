@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year: 1
+  make: MyString
+  model: MyString
+  color: 
+  engine: MyString
+  tires: MyString
+  name: MyString
+  picture: 
+
+two:
+  year: 1
+  make: MyString
+  model: MyString
+  color: 
+  engine: MyString
+  tires: MyString
+  name: MyString
+  picture: 

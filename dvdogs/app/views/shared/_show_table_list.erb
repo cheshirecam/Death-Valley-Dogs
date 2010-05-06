@@ -1,0 +1,10 @@
+<tr>
+  <th><%= label %>:</th>
+  <td>
+  	<ul>
+   	<% obj_array.each do |obj| %>
+        <li><%= link_to obj.name, obj %></li>
+	<% end %>
+	</ul>
+  </td>
+</tr>

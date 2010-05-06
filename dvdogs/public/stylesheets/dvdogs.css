@@ -1,0 +1,106 @@
+/* basic elements */ 
+
+	body { 
+		color: #f8f698; 
+		font-style: normal; 
+		font-variant: normal; 
+		font-weight: normal; 
+		font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+		background-color: #7e8b4e;  
+	}
+
+	p   { 
+		font-style: normal; 
+		font-variant: normal; 
+		font-weight: normal; 
+		font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+		text-align: left 
+	} 
+
+	a:link { 
+		color: blue; 
+		font-weight: bold; 
+		text-decoration: underline
+	} 
+ 
+	a:visited { 
+		color: #f8f698; 
+		text-decoration: underline 
+	}
+  
+	a:hover, a:active  { 
+		color: green; 
+		text-decoration: none 
+	} 
+
+	th  { 
+		background-color: maroon; 
+		border-top: 3px none; 
+		border-right: 3px none; 
+		border-bottom: 2px none black 
+	}
+	
+	td.nav { 
+		vertical-align: top 
+	}
+
+	h2 { 
+		color: maroon 
+	}
+
+	table { 
+		padding: 5px 
+	}
+
+	.nopad {
+		border-collapse: collapse;
+		padding: 0px
+	}
+
+/* Tabs */
+
+	#header ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	#header li {
+		display: inline;
+		margin: 0 2px 0 0;
+	}
+	
+	.tab a {
+		padding: 0 1em;
+		text-decoration: none;
+		color: #a80;
+		background: #f8f698;
+	}
+	
+	#header a:hover {
+		background: #fc0;
+		color: #540;
+	}0123456789a
+	
+	#header .selected_tab {
+	}
+
+	.selected_tab a {
+		padding: 0 1em;
+		text-decoration: none;
+		padding-bottom: 2px;
+		font-weight: bold;
+		color: #f8f698;
+		background: maroon;
+	}
+
+/* Page content beneath tabs */
+	#content {
+		clear: both;
+	}
+		
+	#content {
+		border-top: 5px solid maroon;
+		padding: 1em;
+	}
+

@@ -1,0 +1,19 @@
+<h1>New hike_story</h1>
+
+<% form_for(@hike_story) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :hike_id %><br />
+    <%= f.text_field :hike_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', hike_stories_path %>

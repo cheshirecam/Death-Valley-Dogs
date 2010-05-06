@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>Name</th>
+	<th>Trips</th>
+    <th>Active</th>
+  </tr>
+
+<% @dogs.each do |dog| %>
+  <tr>
+    <td><%= link_to dog.name, dog %></td>
+    <td><%=h dog.trips.size %></td>
+    <td><%=h dog.active %></td>
+    <td><%= link_to edit_icon, edit_dog_path(dog) %></td>
+    <td><%= link_to delete_icon, dog, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to new_icon_large, new_dog_path %>

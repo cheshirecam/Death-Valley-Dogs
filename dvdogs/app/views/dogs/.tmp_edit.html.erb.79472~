@@ -1,0 +1,55 @@
+<h1>Editing dog</h1>
+<% form_for(@dog) do |f| %>
+<%= f.error_messages %>
+<p>
+    <%= f.label :name %>
+    <br/>
+    <%= f.text_field :name %>
+</p>
+<p>
+    <%= f.label :birth_date %>
+    <br/>
+    <%= f.date_select :birth_date, :start_year => 1950 %>
+</p>
+<p>
+    <%= f.label :ham %>
+    <br/>
+    <%= f.text_field :ham %>
+</p>
+<p>
+    <%= f.label :profile %>
+    <br/>
+    <%= f.text_field :profile %>
+</p>
+<p>
+    <%= f.label :active %>
+    <br/>
+    <%= f.check_box :active %>
+</p>
+<p>
+    Trips
+    <br/>
+    <ul class="checkbox-list">
+        <% Trip.find(:all).each do |trip| -%>
+        <li>
+            <%= check_box_tag "dog[trip_ids][]", trip.id, dog_on_trip?(trip) %><%= trip.name %>
+        </li>
+        <% end %>
+    </ul>
+</p>
+<p>
+    Hikes
+    <br/>
+    <ul class="checkbox-list">
+        <% Hike.find(:all).each do |hike| -%>
+        <li>
+            <%= check_box_tag "dog[hike_ids][]", hike.id, dog_on_hike?(hike) %><%= hike.name %>
+        </li>
+        <% end %>
+    </ul>
+</p>
+<p>
+    <%= f.submit 'Update' %>
+</p>
+<% end %>
+<%= link_to 'Show', @dog %> |<%= link_to 'Back', dogs_path %>

@@ -1,0 +1,22 @@
+<h1>Listing hike_events</h1>
+
+<table>
+  <tr>
+    <th>Hike</th>
+    <th>Description</th>
+  </tr>
+
+<% @hike_events.each do |hike_event| %>
+  <tr>
+    <td><%=h hike_event.hike_id %></td>
+    <td><%=h hike_event.description %></td>
+    <td><%= link_to 'Show', hike_event %></td>
+    <td><%= link_to 'Edit', edit_hike_event_path(hike_event) %></td>
+    <td><%= link_to 'Destroy', hike_event, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New hike_event', new_hike_event_path %>

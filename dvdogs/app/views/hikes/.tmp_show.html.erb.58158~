@@ -1,0 +1,22 @@
+<h1><%=h @hike.name %></h1>
+<table>
+  
+<tr>
+  <th>Date:</th>
+  <td><%=h @hike.date %></td>
+</tr>
+<tr>
+  <th>Trip:</th>
+  <td><%= link_to @hike.trip.name, @hike.trip %></td>
+</tr>
+  <%= render :partial => "/shared/show_table_list", 
+    				:locals => { :label => "Dogs", :obj_array => @hike.dogs } %>
+
+<tr>
+  <th>Album:</th>
+  <td><%=h @hike.album %></td>
+</tr>
+</table>
+
+<%= link_to edit_icon_large, edit_hike_path(@hike) %> |
+<%= link_to back_icon_large, hikes_path %>

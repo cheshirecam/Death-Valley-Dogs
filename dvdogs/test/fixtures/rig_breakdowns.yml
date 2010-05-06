@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rig_id: 1
+  location: MyString
+  description: MyString
+
+two:
+  rig_id: 1
+  location: MyString
+  description: MyString

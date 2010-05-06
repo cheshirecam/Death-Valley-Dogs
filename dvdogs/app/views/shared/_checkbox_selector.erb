@@ -1,0 +1,11 @@
+<p>
+    <%= label %>
+    <br/>
+    <ul class="checkbox-list">
+        <% item_array.each do |obj| -%>
+        <li>
+            <%= check_box_tag array_to_update, obj.id, check_field.include?(obj) %><%= obj.name %>
+        </li>
+        <% end %>
+    </ul>
+</p>

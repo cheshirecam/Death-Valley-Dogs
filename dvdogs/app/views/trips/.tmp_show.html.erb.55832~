@@ -1,0 +1,28 @@
+<h1><%=h @trip.name %></h1>
+<table>
+  
+<tr>
+  <th>Date:</th>
+  <td><%=h @trip.date %></td>
+</tr>
+<tr>
+  <th>Dogs:</th>
+  <td>
+   	<% @trip.dogs.each do |dog| %>
+        <%= link_to dog.name, dog %><br>
+	<% end %>
+  </td>
+</tr>
+<tr>
+  <th>Hikes:</th>
+  <td>
+   	<% @trip.hikes.each do |hike| %>
+        <%= link_to hike.name, hike %><br>
+	<% end %>
+  </td>
+</tr>
+
+</table>
+
+<%= link_to 'Edit', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>

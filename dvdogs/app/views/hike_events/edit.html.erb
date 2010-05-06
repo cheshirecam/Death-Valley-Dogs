@@ -1,0 +1,20 @@
+<h1>Editing hike_event</h1>
+
+<% form_for(@hike_event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :hike_id %><br />
+    <%= f.text_field :hike_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @hike_event %> |
+<%= link_to 'Back', hike_events_path %>

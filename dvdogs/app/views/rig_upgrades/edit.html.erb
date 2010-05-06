@@ -1,0 +1,20 @@
+<h1>Editing rig_upgrade</h1>
+
+<% form_for(@rig_upgrade) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :rig_id %><br />
+    <%= f.text_field :rig_id %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @rig_upgrade %> |
+<%= link_to 'Back', rig_upgrades_path %>

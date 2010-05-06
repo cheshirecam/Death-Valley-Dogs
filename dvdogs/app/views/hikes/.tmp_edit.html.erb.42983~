@@ -1,0 +1,40 @@
+<h1>Editing hike</h1>
+
+<% form_for(@hike) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date, :start_year => 1995 %>
+  </p>
+  <p>
+    <%= f.label :trip_id, "Trip" %><br/>
+    <%= f.collection_select(:trip_id, Trip.all, :id, :name) %>
+  </p>
+  <p>
+    Dogs
+    <br/>
+    <ul class="checkbox-list">
+        <% Dog.find(:all).each do |dog| -%>
+        <li>
+            <%= check_box_tag "hike[dog_ids][]", dog.id, dog_on_hike?(hike) %><%= hike.name %>
+        </li>
+        <% end %>
+    </ul>
+  </p>
+
+  <p>
+    <%= f.label :album %><br />
+    <%= f.text_field :album %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @hike %> |
+<%= link_to 'Back', hikes_path %>

@@ -1,0 +1,26 @@
+<h1>Listing radios</h1>
+
+<table>
+  <tr>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Description</th>
+    <th>Picture</th>
+  </tr>
+
+<% @radios.each do |radio| %>
+  <tr>
+    <td><%=h radio.make %></td>
+    <td><%=h radio.model %></td>
+    <td><%=h radio.description %></td>
+    <td><%=h radio.picture %></td>
+    <td><%= link_to 'Show', radio %></td>
+    <td><%= link_to 'Edit', edit_radio_path(radio) %></td>
+    <td><%= link_to 'Destroy', radio, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New radio', new_radio_path %>

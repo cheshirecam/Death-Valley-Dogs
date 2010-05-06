@@ -1,0 +1,2 @@
+module HikeEventsHelper
+end

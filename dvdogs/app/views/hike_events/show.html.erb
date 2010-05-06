@@ -1,0 +1,13 @@
+<p>
+  <b>Hike:</b>
+  <%=h @hike_event.hike_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @hike_event.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_hike_event_path(@hike_event) %> |
+<%= link_to 'Back', hike_events_path %>

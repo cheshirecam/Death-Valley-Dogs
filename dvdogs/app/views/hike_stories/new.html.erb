@@ -1,0 +1,22 @@
+<h1>New hike_story</h1>
+<% @hike_story.hike_id = params[:hike_id] %>
+<% form_for(@hike_story) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :dog_id, "According to" %><br/>
+    <%= f.collection_select(:dog_id, Dog.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :hike_id, "Hike" %><br/>
+    <%= f.collection_select(:hike_id, Hike.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label "Write-up:" %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', hike_stories_path %>

@@ -1,0 +1,24 @@
+<h1>Editing rig_breakdown</h1>
+
+<% form_for(@rig_breakdown) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :rig_id %><br />
+    <%= f.text_field :rig_id %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @rig_breakdown %> |
+<%= link_to 'Back', rig_breakdowns_path %>

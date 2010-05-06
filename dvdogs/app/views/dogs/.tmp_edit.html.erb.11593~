@@ -1,0 +1,39 @@
+<h1>Editing dog</h1>
+<% form_for(@dog) do |f| %>
+<%= f.error_messages %>
+<p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+</p>
+<p>
+    <%= f.label :birth_date %><br/>
+    <%= f.date_select :birth_date, :start_year => 1950 %>
+</p>
+<p>
+    <%= f.label :ham %><br/>
+    <%= f.text_field :ham %>
+</p>
+<p>
+    <%= f.label :profile %><br/>
+    <%= f.text_field :profile %>
+</p>
+<p>
+    <%= f.label :active %><br/>
+    <%= f.check_box :active %>
+</p>
+<%= render :partial => "/shared/checkbox_selector", 
+    				:locals => { :label => "Trips", 
+					:main_object => Trip, 
+					:check_field => @dog.trips,
+					:array_to_update => "dog[trip_ids][]" } %>
+<%= render :partial => "/shared/checkbox_selector", 
+    				:locals => { :label => "Hikes", 
+					:main_object => Hike, 
+					:check_field => @dog.hikes,
+					:array_to_update => "dog[hike_ids][]" } %>
+
+<p>
+    <%= f.submit 'Update' %>
+</p>
+<% end %>
+<%= link_to 'Show', @dog %> |<%= link_to back_icon_large, dogs_path %>

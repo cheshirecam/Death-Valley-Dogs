@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @camp.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @camp.description %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%=h @camp.rating %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @camp.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_camp_path(@camp) %> |
+<%= link_to 'Back', camps_path %>
