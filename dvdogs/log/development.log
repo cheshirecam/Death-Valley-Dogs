@@ -21675,3 +21675,104 @@ Rendering trips/index
   [4;36;1mTrip Load (1.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
 Rendered shared/_tabs_top_level (1.6ms)
 Completed in 121ms (View: 113, DB: 1) | 200 OK [http://localhost/trips]
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to 1ChangeHikesFieldType (20100512)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to 1ChangeHikesFieldType (20100512)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to 1ChangeHikesFieldType (20100512)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddFieldsToDogs (201005043)
+Migrating to ChangeHikesFieldType (201005121)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddFieldsToDogs (201005043)
+Migrating to ChangeHikesFieldType (201005121)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddFieldsToDogs (201005043)
+Migrating to ChangeHikesFieldType (201005121)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_hikes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "created_at" datetime, "updated_at" datetime, "album" varchar(255), "trip_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("hikes")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "hikes"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "hikes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "created_at" datetime, "updated_at" datetime, "album" varchar(255), "trip_id" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_hikes")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "altered_hikes"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('201005121')[0m
+Migrating to CreateDogs (20100313015405)
+Migrating to AddBirthdateToDogs (20100313022421)
+Migrating to CreateTrips (20100314225043)
+Migrating to CreateCamps (20100314225135)
+Migrating to CreateHikes (20100314225225)
+Migrating to CreateRigs (20100314225918)
+Migrating to CreateRadios (20100314230014)
+Migrating to CreateGps (20100314230033)
+Migrating to CreateRigBreakdowns (20100314230204)
+Migrating to CreateRigUpgrades (20100314230235)
+Migrating to CreateHikeStories (20100314230326)
+Migrating to CreateHikeEvents (20100314230356)
+Migrating to AddHikeFields (20100430230356)
+Migrating to AddFieldsToRigs (20100430230357)
+Migrating to LinkDogsToTrips (20100502230357)
+Migrating to LinkDogsToRigs (20100503230357)
+Migrating to LinkHikesToTrips (20100503230358)
+Migrating to LinkDogsToHikes (20100503230359)
+Migrating to AddHikeStoriesFields (20100504230352)
+Migrating to LinkRigsToTrips (20100504230357)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("camps")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dogs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dogs_hikes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dogs_trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("gps")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("hike_events")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("hike_stories")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("hikes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("radios")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("rig_breakdowns")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("rig_upgrades")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("rigs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rigs_trips")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("trips")[0m

@@ -3,7 +3,7 @@ class CreateHikes < ActiveRecord::Migration
     create_table :hikes do |t|
       t.string :name
       t.date :date
-      t.url :album
+      t.string :album
 
       t.timestamps
     end

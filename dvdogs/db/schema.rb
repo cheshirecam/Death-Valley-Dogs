@@ -64,8 +64,14 @@ ActiveRecord::Schema.define(:version => 20100504230357) do
     t.integer  "dog_id"
   end
 
-# Could not dump table "hikes" because of following StandardError
-#   Unknown type 'url' for column 'album'
+  create_table "hikes", :force => true do |t|
+    t.string   "name"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "album"
+    t.integer  "trip_id"
+  end
 
   create_table "radios", :force => true do |t|
     t.string   "make"
