@@ -4,10 +4,8 @@ one:
   make: MyString
   model: MyString
   description: MyString
-  picture: 
 
 two:
   make: MyString
   model: MyString
   description: MyString
-  picture: 

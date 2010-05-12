@@ -22224,3 +22224,289 @@ Rendering rigs/index
   [4;35;1mDog Load (0.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 19) [0m
 Rendered shared/_tabs_top_level (2.4ms)
 Completed in 171ms (View: 137, DB: 5) | 200 OK [http://localhost/rigs]
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddFieldsToDogs (201005043)
+Migrating to ChangeHikesFieldType (201005121)
+Migrating to CreateDogs (20100313015405)
+Migrating to AddBirthdateToDogs (20100313022421)
+Migrating to CreateTrips (20100314225043)
+Migrating to CreateCamps (20100314225135)
+Migrating to CreateHikes (20100314225225)
+Migrating to CreateRigs (20100314225918)
+Migrating to CreateRadios (20100314230014)
+Migrating to CreateGps (20100314230033)
+Migrating to CreateRigBreakdowns (20100314230204)
+Migrating to CreateRigUpgrades (20100314230235)
+Migrating to CreateHikeStories (20100314230326)
+Migrating to CreateHikeEvents (20100314230356)
+Migrating to AddHikeFields (20100430230356)
+Migrating to AddFieldsToRigs (20100430230357)
+Migrating to LinkDogsToTrips (20100502230357)
+Migrating to LinkDogsToRigs (20100503230357)
+Migrating to LinkHikesToTrips (20100503230358)
+Migrating to LinkDogsToHikes (20100503230359)
+Migrating to AddHikeStoriesFields (20100504230352)
+Migrating to LinkRigsToTrips (20100504230357)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("camps")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dogs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dogs_hikes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dogs_trips")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("gps")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("hike_events")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("hike_stories")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("hikes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("radios")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rig_breakdowns")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rig_upgrades")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rigs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rigs_trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("trips")[0m
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE "camps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "rating" integer, "location" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "ham" varchar(255), "profile" varchar(255), "active" boolean, "created_at" datetime, "updated_at" datetime, "birth_date" date, "family" varchar(255)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "dogs_hikes" ("dog_id" integer, "hike_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "dogs_trips" ("dog_id" integer, "trip_id" integer) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "gps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "make" varchar(255), "model" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "hike_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "hike_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "hike_stories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "hike_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime, "dog_id" integer) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "hikes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "created_at" datetime, "updated_at" datetime, "album" varchar(255), "trip_id" integer) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "radios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "make" varchar(255), "model" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "rig_breakdowns" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rig_id" integer, "location" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "rig_upgrades" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rig_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "rigs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer, "make" varchar(255), "model" varchar(255), "engine" varchar(255), "tires" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "color" varchar(255), "picture" varchar(255), "dog_id" integer) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "rigs_trips" ("rig_id" integer, "trip_id" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "trips" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100504230357')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100313015405')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100313022421')[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100314225043')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100314225135')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100314225225')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100314225918')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100314230014')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100314230033')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100314230204')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100314230235')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100314230326')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100314230356')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100430230356')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100430230357')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100502230357')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100503230357')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100503230358')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100503230359')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100504230352')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('201005043')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('201005121')[0m
+** TabsOnRails: initialized properly
+
+
+Processing RigsController#index (for 127.0.0.1 at 2010-05-12 14:20:06) [GET]
+  [4;36;1mRig Load (1.1ms)[0m   [0;1mSELECT * FROM "rigs" [0m
+Rendering template within layouts/rigs
+Rendering rigs/index
+Rendered shared/_tabs_top_level (2.2ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://localhost/rigs]
+** TabsOnRails: initialized properly
+
+
+Processing RigsController#index (for 127.0.0.1 at 2010-05-12 14:28:34) [GET]
+  [4;36;1mRig Load (0.6ms)[0m   [0;1mSELECT * FROM "rigs" [0m
+Rendering template within layouts/rigs
+Rendering rigs/index
+Rendered shared/_tabs_top_level (2.1ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://localhost/rigs]
+
+
+Processing RigsController#index (for 127.0.0.1 at 2010-05-12 14:28:34) [GET]
+  [4;35;1mRig Load (0.5ms)[0m   [0mSELECT * FROM "rigs" [0m
+Rendering template within layouts/rigs
+Rendering rigs/index
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/rigs]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-12 14:28:36) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-12 14:28:37) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.6ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-12 14:28:39) [GET]
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.9ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (60.1ms)
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (1.2ms)
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 91ms (View: 78, DB: 2) | 200 OK [http://localhost/dogs]
+** TabsOnRails: initialized properly
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-12 14:39:40) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;36;1mHike Load (0.6ms)[0m   [0;1mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (2.1ms)
+Completed in 40ms (View: 28, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-12 14:39:43) [GET]
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.7ms)
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.9ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.7ms)
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.7ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 89ms (View: 76, DB: 1) | 200 OK [http://localhost/dogs]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-12 14:39:54) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-12 14:39:58) [GET]
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.1ms)
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.9ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 20ms (View: 7, DB: 1) | 200 OK [http://localhost/dogs]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-12 14:39:58) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;36;1mHike Load (0.5ms)[0m   [0;1mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-12 14:40:00) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/trips]
