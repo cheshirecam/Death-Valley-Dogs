@@ -5,4 +5,9 @@ class DogTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+  
+  test "just checking" do
+    assert (true, "just checking this works")  
+  end
+  
 end
