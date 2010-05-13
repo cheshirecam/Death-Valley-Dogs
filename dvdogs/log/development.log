@@ -22510,3 +22510,226 @@ Rendering trips/index
   [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date[0m
 Rendered shared/_tabs_top_level (1.2ms)
 Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/trips]
+** TabsOnRails: initialized properly
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-12 14:41:36) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (1.1ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (2.1ms)
+Completed in 39ms (View: 26, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-12 14:41:38) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.6ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-12 14:41:40) [GET]
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.8ms)
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.3ms)
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 30ms (View: 19, DB: 1) | 200 OK [http://localhost/dogs]
+** TabsOnRails: initialized properly
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddFieldsToDogs (201005043)
+Migrating to ChangeHikesFieldType (201005121)
+Migrating to CreateDogs (20100313015405)
+Migrating to AddBirthdateToDogs (20100313022421)
+Migrating to CreateTrips (20100314225043)
+Migrating to CreateCamps (20100314225135)
+Migrating to CreateHikes (20100314225225)
+Migrating to CreateRigs (20100314225918)
+Migrating to CreateRadios (20100314230014)
+Migrating to CreateGps (20100314230033)
+Migrating to CreateRigBreakdowns (20100314230204)
+Migrating to CreateRigUpgrades (20100314230235)
+Migrating to CreateHikeStories (20100314230326)
+Migrating to CreateHikeEvents (20100314230356)
+Migrating to AddHikeFields (20100430230356)
+Migrating to AddFieldsToRigs (20100430230357)
+Migrating to LinkDogsToTrips (20100502230357)
+Migrating to LinkDogsToRigs (20100503230357)
+Migrating to LinkHikesToTrips (20100503230358)
+Migrating to LinkDogsToHikes (20100503230359)
+Migrating to AddHikeStoriesFields (20100504230352)
+Migrating to LinkRigsToTrips (20100504230357)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("camps")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dogs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dogs_hikes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dogs_trips")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("gps")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("hike_events")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("hike_stories")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("hikes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("radios")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rig_breakdowns")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rig_upgrades")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rigs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rigs_trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("trips")[0m
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-12 14:49:41) [GET]
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.1ms)
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/dogs]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-12 14:49:43) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-12 14:49:44) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.6ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-12 14:49:46) [GET]
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.9ms)
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.7ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.7ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 18ms (View: 6, DB: 1) | 200 OK [http://localhost/dogs]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-12 14:49:47) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.5ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-12 14:49:50) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-13 10:11:02) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;35;1mTrip Load (1.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (2.6ms)
+Completed in 42ms (View: 34, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-13 10:30:05) [GET]
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (16.7ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.4ms)
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (59.2ms)
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (1.1ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 119ms (View: 89, DB: 18) | 200 OK [http://localhost/dogs]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-13 10:30:07) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.8ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-13 10:30:08) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-13 10:31:01) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.5ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-13 10:31:02) [GET]
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (1.1ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_list (0.8ms)
+  [4;35;1mDog Load (0.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Canine' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.7ms)
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."family" = 'Hominid' AND "dogs"."active" = 'f') ORDER BY name[0m
+Rendered shared/_dog_list (0.7ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 84ms (View: 7, DB: 1) | 200 OK [http://localhost/dogs]

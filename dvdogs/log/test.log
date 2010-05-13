@@ -40,3 +40,9 @@
 ** TabsOnRails: initialized properly
   [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
   [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+** TabsOnRails: initialized properly
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+** TabsOnRails: initialized properly
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
