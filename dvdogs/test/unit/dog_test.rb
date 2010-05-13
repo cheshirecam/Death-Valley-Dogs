@@ -6,7 +6,8 @@ class DogTest < ActiveSupport::TestCase
     assert true
   end
   
-  test "just checking" do
+  test "create a dog" do
+    cam = Dog.new(:name => "Camalamadingdong")
     assert (true, "just checking this works")  
   end
   
