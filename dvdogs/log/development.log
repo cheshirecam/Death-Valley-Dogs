@@ -23410,3 +23410,2807 @@ Rendered shared/_show_table_list (5.7ms)
   [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
 Rendered shared/_tabs_top_level (1.4ms)
 Completed in 160ms (View: 131, DB: 22) | 200 OK [http://localhost/hikes/1]
+
+
+Processing TripsController#show (for 127.0.0.1 at 2010-05-13 16:23:20) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 6) [0m
+Rendering template within layouts/trips
+Rendering trips/show
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_trips" ON "dogs".id = "dogs_trips".dog_id WHERE ("dogs_trips".trip_id = 6 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mRig Load (11.8ms)[0m   [0mSELECT * FROM "rigs" INNER JOIN "rigs_trips" ON "rigs".id = "rigs_trips".rig_id WHERE ("rigs_trips".trip_id = 6 ) [0m
+Rendered shared/_show_table_list (20.5ms)
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes".trip_id = 6) [0m
+Rendered shared/_show_table_list (1.3ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 54ms (View: 34, DB: 13) | 200 OK [http://localhost/trips/6]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-13 16:23:23) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.9ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 124ms (View: 16, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:23:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (2.8ms)
+Completed in 92ms (View: 82, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:28:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `stringify_keys' for "hikeStoryEditLink":String) on line #30 of app/views/hikes/show.html.erb:
+27:   <% dog = Dog.find(story.dog_id).name %>
+28:   <div class="hikeStoryHeader">According to <%= dog %>...</div>
+29:   <p class="hikeStoryContent"><%=h story.description %></p>
+30:   <div class"hikeStoryEditLink"><%= link_to 'Edit ' + dog + "\'s write-up", edit_hike_story_path(story), "hikeStoryEditLink" %></div>
+31: <% end %>
+
+    app/views/hikes/show.html.erb:30
+    app/views/hikes/show.html.erb:26
+    app/controllers/hikes_controller.rb:18:in `show'
+
+Rendered rescues/_trace (61.1ms)
+Rendered rescues/_request_and_response (155.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:28:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 128ms (View: 118, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:29:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 111ms (View: 102, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:30:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (8.0ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 41ms (View: 31, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:31:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 43ms (View: 34, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:32:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 103ms (View: 94, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:33:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 39ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:33:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.3ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 47ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:33:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;36;1mHikeStory Load (0.5ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 98ms (View: 89, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:34:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.7ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 40ms (View: 30, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:34:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.1ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.9ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (1.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 121ms (View: 107, DB: 5) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:34:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 38ms (View: 28, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:35:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 44ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:35:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.8ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 104ms (View: 92, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:35:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.4ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.7ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (7.0ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 43ms (View: 31, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:36:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.6ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 39ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:36:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (7.3ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 107ms (View: 97, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:37:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 39ms (View: 29, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:39:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.1ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (6.4ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 110ms (View: 100, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:39:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 37ms (View: 28, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:41:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.8ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 39ms (View: 29, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:41:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 104ms (View: 94, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:41:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (1.1ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.0ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (6.9ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 41ms (View: 30, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:42:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;36;1mHikeStory Load (0.5ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 38ms (View: 29, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:42:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 103ms (View: 93, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:42:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.7ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:44:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 111ms (View: 34, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:45:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.6ms)
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `edit_icon_small' for #<ActionView::Base:0x1042ebbc0>) on line #30 of app/views/hikes/show.html.erb:
+27:   <% dog = Dog.find(story.dog_id).name %>
+28:   <div class="hikeStoryHeader">According to <%= dog %>...
+29:   <p class="hikeStoryContent"><%=h story.description %></p>
+30:   <div class"hikeStoryEditLink"><%= link_to edit_icon_small, edit_hike_story_path(story) %></div>
+31:   </div>
+32: <% end %>
+
+    app/views/hikes/show.html.erb:30
+    app/views/hikes/show.html.erb:26
+    app/controllers/hikes_controller.rb:18:in `show'
+
+Rendered rescues/_trace (58.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:45:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 121ms (View: 36, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 16:46:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.4ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.5ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 106ms (View: 96, DB: 3) | 200 OK [http://localhost/hikes/1]
+** TabsOnRails: initialized properly
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-13 18:22:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.5ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.0ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (6.5ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (2.3ms)
+Completed in 158ms (View: 105, DB: 3) | 200 OK [http://localhost/hikes/1]
+** TabsOnRails: initialized properly
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 08:46:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (2.0ms)
+Completed in 85ms (View: 59, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:22:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (20.8ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.8ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 66ms (View: 36, DB: 23) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:23:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 106ms (View: 97, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:24:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (10.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.9ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 54ms (View: 34, DB: 13) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:26:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (25.9ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (17.2ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (22.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 87ms (View: 35, DB: 45) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:27:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 102ms (View: 93, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:30:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (12.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (2.9ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (7.6ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 118ms (View: 94, DB: 17) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:30:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 42ms (View: 34, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:31:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (1.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 107ms (View: 35, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:31:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 43ms (View: 33, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:31:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (16.7ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.8ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.3ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 60ms (View: 33, DB: 19) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:31:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 100ms (View: 90, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:32:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.6ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 49ms (View: 39, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:32:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (6.3ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 39ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:32:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (63.3ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 102ms (View: 92, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:32:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (17.7ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.0ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (7.6ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 68ms (View: 41, DB: 20) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:32:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 111ms (View: 29, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:32:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 39ms (View: 29, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:33:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (7.6ms)
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 50ms (View: 40, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:33:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (6.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 118ms (View: 108, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:37:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 40ms (View: 31, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:38:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:38:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 106ms (View: 98, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:38:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.9ms)
+Completed in 41ms (View: 31, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikeStoriesController#edit (for 127.0.0.1 at 2010-05-14 09:38:40) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mHikeStory Load (0.3ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 6) [0m
+Rendering template within layouts/hike_stories
+Rendering hike_stories/edit
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.6ms)[0m   [0mSELECT * FROM "dogs" [0m
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 114ms (View: 38, DB: 3) | 200 OK [http://localhost/hike_stories/6/edit]
+
+
+Processing HikeStoriesController#update (for 127.0.0.1 at 2010-05-14 09:39:13) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "id"=>"6", "hike_story"=>{"description"=>"We walked across and our feet got muddy.  I had salt on my legs.  Then we came to some water and things that were like, way too out there for me.  So I turned around and took a picture that I liked and other people liked it too.  We liked it.", "dog_id"=>"1", "hike_id"=>"1"}}
+  [4;35;1mHikeStory Load (0.2ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 6) [0m
+  [4;36;1mHikeStory Update (0.4ms)[0m   [0;1mUPDATE "hike_stories" SET "updated_at" = '2010-05-14 16:39:13', "description" = 'We walked across and our feet got muddy. I had salt on my legs. Then we came to some water and things that were like, way too out there for me. So I turned around and took a picture that I liked and other people liked it too. We liked it.' WHERE "id" = 6[0m
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Redirected to http://localhost:3000/hikes/1
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/hike_stories/6]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:39:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:39:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 97ms (View: 88, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:39:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:41:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 105ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:42:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 99ms (View: 90, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:42:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 40ms (View: 31, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:43:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 42ms (View: 33, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:43:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.6ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 93ms (View: 84, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:43:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.7ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 41ms (View: 32, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:44:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 109ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:44:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 31, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:44:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 31, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:44:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 99ms (View: 90, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:45:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 100ms (View: 91, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:45:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:46:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 108ms (View: 36, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:46:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 43ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:47:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.6ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 40ms (View: 31, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:47:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 97ms (View: 88, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:47:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.2ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:47:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 36ms (View: 27, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:48:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 99ms (View: 89, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:50:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:54:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.6ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:54:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 99ms (View: 90, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:55:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.4ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:55:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 36ms (View: 28, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:55:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 95ms (View: 86, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:55:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:56:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:58:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 105ms (View: 96, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 09:58:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 40ms (View: 30, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:01:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:01:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 98ms (View: 89, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:02:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.1ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:03:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (6.0ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 46ms (View: 37, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:03:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 96ms (View: 86, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:04:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 42ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:04:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 103ms (View: 27, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:05:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 99ms (View: 90, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:05:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 37ms (View: 28, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:05:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 102ms (View: 93, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:05:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 36ms (View: 28, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:06:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.7ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:06:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (5.3ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.7ms)
+Completed in 99ms (View: 90, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:06:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 98ms (View: 89, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:07:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.9ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:29:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+Rendered shared/_show_table_list (4.8ms)
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 104ms (View: 33, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:50:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (1.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 109ms (View: 42, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:50:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 39ms (View: 29, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:51:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 43ms (View: 33, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:51:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.8ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.8ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 101ms (View: 91, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:53:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 44ms (View: 34, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:53:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 39ms (View: 29, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:54:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.6ms)
+Completed in 106ms (View: 97, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:54:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (2.1ms)
+Completed in 41ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:54:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.2ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.6ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 50ms (View: 36, DB: 4) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 10:56:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 100ms (View: 91, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:00:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.7ms)
+Completed in 42ms (View: 33, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:00:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 109ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:02:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.0ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 43ms (View: 34, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 40ms (View: 29, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:03:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 129ms (View: 119, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:03:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 43ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:04:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 48ms (View: 37, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:04:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 112ms (View: 103, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:05:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.6ms)
+Completed in 46ms (View: 36, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:05:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 39ms (View: 28, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:05:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.7ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 111ms (View: 101, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:05:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 47ms (View: 36, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:09:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (3.7ms)
+Completed in 48ms (View: 38, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:10:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 110ms (View: 100, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing DogsController#show (for 127.0.0.1 at 2010-05-14 11:13:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+Rendering template within layouts/dogs
+Rendering dogs/show
+  [4;35;1mTrip Load (0.9ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+Rendered shared/_show_table_list (7.6ms)
+  [4;36;1mHike Load (0.5ms)[0m   [0;1mSELECT * FROM "hikes" INNER JOIN "dogs_hikes" ON "hikes".id = "dogs_hikes".hike_id WHERE ("dogs_hikes".dog_id = 1 ) [0m
+Rendered shared/_show_table_list (4.4ms)
+  [4;35;1mRig Load (0.4ms)[0m   [0mSELECT * FROM "rigs" WHERE ("rigs".dog_id = 1) [0m
+Rendered shared/_show_table_list (3.9ms)
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 117ms (View: 40, DB: 3) | 200 OK [http://localhost/dogs/1]
+
+
+Processing DogsController#show (for 127.0.0.1 at 2010-05-14 11:13:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+Rendering template within layouts/dogs
+Rendering dogs/show
+  [4;35;1mTrip Load (1.1ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+Rendered shared/_show_table_list (5.8ms)
+  [4;36;1mHike Load (0.5ms)[0m   [0;1mSELECT * FROM "hikes" INNER JOIN "dogs_hikes" ON "hikes".id = "dogs_hikes".hike_id WHERE ("dogs_hikes".dog_id = 1 ) [0m
+Rendered shared/_show_table_list (4.2ms)
+  [4;35;1mRig Load (0.4ms)[0m   [0mSELECT * FROM "rigs" WHERE ("rigs".dog_id = 1) [0m
+Rendered shared/_show_table_list (4.1ms)
+Rendered shared/_tabs_top_level (1.6ms)
+Completed in 46ms (View: 27, DB: 3) | 200 OK [http://localhost/dogs/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:15:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.9ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 116ms (View: 105, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:16:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 51ms (View: 40, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:16:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (2.1ms)
+Completed in 157ms (View: 60, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:16:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.7ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 106ms (View: 97, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:17:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 46ms (View: 36, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:17:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 113ms (View: 103, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:17:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 46ms (View: 34, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:18:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 42ms (View: 33, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:18:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 121ms (View: 112, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:18:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 40ms (View: 30, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:19:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.9ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 46ms (View: 35, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:19:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 100ms (View: 90, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:19:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (1.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 43ms (View: 33, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:19:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 105ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:20:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (81.5ms)
+Completed in 125ms (View: 115, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:20:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 64ms (View: 55, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:20:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 130ms (View: 122, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:20:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 64ms (View: 55, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:20:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 40ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:20:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 107ms (View: 97, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:21:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 48ms (View: 37, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:21:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 112ms (View: 102, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:22:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 42ms (View: 32, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:22:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.1ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (2.0ms)
+Completed in 46ms (View: 36, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:22:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.8ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 123ms (View: 113, DB: 3) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:22:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 39ms (View: 29, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-14 11:23:05) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;36;1mTrip Load (1.6ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 116ms (View: 48, DB: 2) | 200 OK [http://localhost/trips]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-14 11:23:07) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.8ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:23:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 116ms (View: 106, DB: 3) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:40:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 40ms (View: 30, DB: 3) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:40:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (9.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 62ms (View: 42, DB: 12) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:40:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.0ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 138ms (View: 128, DB: 3) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikeStoriesController#edit (for 127.0.0.1 at 2010-05-14 11:40:41) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mHikeStory Load (0.2ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 4) [0m
+Rendering template within layouts/hike_stories
+Rendering hike_stories/edit
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.7ms)[0m   [0mSELECT * FROM "dogs" [0m
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 38ms (View: 29, DB: 3) | 200 OK [http://localhost/hike_stories/4/edit]
+
+
+Processing HikeStoriesController#update (for 127.0.0.1 at 2010-05-14 11:40:50) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "id"=>"4", "hike_story"=>{"description"=>"We ate the whole thing.", "dog_id"=>"2", "hike_id"=>"2"}}
+  [4;35;1mHikeStory Load (0.2ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 4) [0m
+  [4;36;1mHikeStory Update (0.3ms)[0m   [0;1mUPDATE "hike_stories" SET "updated_at" = '2010-05-14 18:40:50', "description" = 'We ate the whole thing.' WHERE "id" = 4[0m
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Redirected to http://localhost:3000/hikes/2
+Completed in 90ms (DB: 1) | 302 Found [http://localhost/hike_stories/4]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-14 11:40:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 43ms (View: 32, DB: 3) | 200 OK [http://localhost/hikes/2]

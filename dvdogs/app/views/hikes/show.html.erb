@@ -1,31 +1,33 @@
-<h1><%=h @hike.name %></h1>
-<table>
+
+<h1><%=h @hike.name %> Hike</h1>
+
+<table class="maroonRoundedBorder">
   
 <tr>
-  <th>Date:</th>
-  <td><%=h @hike.date %></td>
-</tr>
-<tr>
+  <th class="firstHorizontalColumnHeader" >Date:</th>
   <th>Trip:</th>
-  <td><%= link_to @hike.trip.name, @hike.trip %></td>
+  <th class="lastHorizontalColumnHeader" >Dogs:</th>
 </tr>
-  <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Dogs", :obj_array => @hike.dogs } %>
-
 <tr>
-  <th>Album:</th>
-  <td><%=h @hike.album %></td>
+  <td class="horizontalData"><%=h @hike.date %></td>
+  <td class="horizontalData"><%= link_to @hike.trip.name, @hike.trip %></td>
+  <td class="horizontalData">
+      <% @hike.dogs.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
 </tr>
 
 </table>
-
+<p>
 <%= link_to edit_icon_large, edit_hike_path(@hike) %> |
-<%= link_to back_icon_large, hikes_path %>
+<%= link_to back_icon_large, hikes_path %> | 
 <%= link_to "Add a write-up for this hike", new_hike_story_path(:hike_id => @hike.id) %>
-
+</p>
 <% @hike.hike_stories.each do |story| %>
   <% dog = Dog.find(story.dog_id).name %>
-  <div class="hikeStoryHeader">According to <%= dog %>...</div>
-  <p class="hikeStoryContent"><%=h story.description %></p>
-  <div class"hikeStoryEditLink"><%= link_to 'Edit ' + dog + "\'s write-up", edit_hike_story_path(story) %></div>
+  <div class="roundedTitleArea">According to <%= dog %>... <%= link_to edit_icon, edit_hike_story_path(story) %>  </div>
+  <div class="roundedTextArea"><p><%=h story.description %></p></div>
+  <br>
 <% end %>
+

@@ -106,16 +106,47 @@
 	
 	/* hike story content */
 	
-	.hikeStoryHeader {
-	  background: brown;
-    color: #540;
-	}
-  .hikeStoryContent {
-    background: white;
-    color: black;   
-  }
-  .hikeStoryEditLink {
-    background: brown;
-    color: #540;
-  }
+.roundedTextArea {
+  -moz-border-radius-bottomleft: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-radius-bottonleft: 15px; 
+  -webkit-border-radius-bottomright: 15px; 
+  border-radius: 15px; 
+  border: 5px solid maroon;
+  padding: 12px;
+  background: #f8f698;
+  color: black;
+ }
 
+.roundedTitleArea {
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-radius-topleft: 15px; 
+  -webkit-border-radius-topright: 15px; 
+  padding: 8px;
+  background: maroon;
+ }
+
+.maroonRoundedBorder {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px; 
+  border-radius: 15px; 
+  border: 5px solid maroon;
+}
+
+.firstHorizontalColumnHeader{
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
+  padding: 5px;
+}
+
+.lastHorizontalColumnHeader{
+  -moz-border-radius-topright: 8px;
+  -webkit-border-radius-topright: 8px;
+  padding: 5px;
+}
+
+td.horizontalData {
+  padding: 5px;
+  vertical-align: top;
+}
