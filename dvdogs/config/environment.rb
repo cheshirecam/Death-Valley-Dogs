@@ -39,7 +39,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   
-  config.gem "tabs_on_rails", :source => "http://gemcutter.org" 
+  #config.gem "tabs_on_rails", :source => "http://gemcutter.org" 
 
-  config.gem "simple-navigation" 
+  #config.gem "simple-navigation" 
 end
