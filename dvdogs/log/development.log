@@ -36140,3 +36140,117 @@ Rendering hikes/show
   [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 18) [0m
 Rendered shared/_tabs_top_level (1.4ms)
 Completed in 449ms (View: 265, DB: 91) | 200 OK [http://localhost/hikes/3]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddFieldsToDogs (201005043)
+Migrating to ChangeHikesFieldType (201005121)
+Migrating to CreateDogs (20100313015405)
+Migrating to AddBirthdateToDogs (20100313022421)
+Migrating to CreateTrips (20100314225043)
+Migrating to CreateCamps (20100314225135)
+Migrating to CreateHikes (20100314225225)
+Migrating to CreateRigs (20100314225918)
+Migrating to CreateRadios (20100314230014)
+Migrating to CreateGps (20100314230033)
+Migrating to CreateRigBreakdowns (20100314230204)
+Migrating to CreateRigUpgrades (20100314230235)
+Migrating to CreateHikeStories (20100314230326)
+Migrating to CreateHikeEvents (20100314230356)
+Migrating to AddHikeFields (20100430230356)
+Migrating to AddFieldsToRigs (20100430230357)
+Migrating to LinkDogsToTrips (20100502230357)
+Migrating to LinkDogsToRigs (20100503230357)
+Migrating to LinkHikesToTrips (20100503230358)
+Migrating to LinkDogsToHikes (20100503230359)
+Migrating to AddHikeStoriesFields (20100504230352)
+Migrating to LinkRigsToTrips (20100504230357)
+Migrating to CreateTinyMceMedia (20100518034725)
+Migrating to ChangeTextareaType (20100518040100)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_hike_stories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "hike_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime, "dog_id" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("hike_stories")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "hike_stories"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "hike_stories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "hike_id" integer, "description" text(255), "created_at" datetime, "updated_at" datetime, "dog_id" integer) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_hike_stories")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_hike_stories"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100518040100')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("camps")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("dogs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("dogs_hikes")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("dogs_trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("gps")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("hike_events")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("hike_stories")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("hikes")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("prints")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("radios")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("rig_breakdowns")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rig_upgrades")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rigs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rigs_trips")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("trips")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("videos")[0m
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 16:03:50) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 3) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 3) [0m
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 3 ) [0m
+  [4;36;1mHikeStory Load (0.3ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 3) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 18) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 59ms (View: 49, DB: 2) | 200 OK [http://localhost/hikes/3]
+
+
+Processing HikeStoriesController#edit (for 127.0.0.1 at 2010-05-18 16:03:53) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 10) [0m
+Rendering template within layouts/hike_stories
+Rendering hike_stories/edit
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.6ms)[0m   [0mSELECT * FROM "dogs" [0m
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" [0m
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 182ms (View: 132, DB: 3) | 200 OK [http://localhost/hike_stories/10/edit]
+
+
+Processing HikeStoriesController#update (for 127.0.0.1 at 2010-05-18 16:04:29) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "id"=>"10", "hike_story"=>{"description"=>"<p>I didn't do it.&nbsp; But I wanted to do it.&nbsp; We were there and then we were not there and all I had was a bottle of brandy and cheese and another way to communicate and then I had a whole picture of my pictoramius familicus and all that jazz...</p>", "dog_id"=>"18", "hike_id"=>"3"}}
+  [4;35;1mHikeStory Load (0.2ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 10) [0m
+  [4;36;1mHikeStory Update (0.4ms)[0m   [0;1mUPDATE "hike_stories" SET "updated_at" = '2010-05-18 23:04:29', "description" = '<p>I didn''t do it.&nbsp; But I wanted to do it.&nbsp; We were there and then we were not there and all I had was a bottle of brandy and cheese and another way to communicate and then I had a whole picture of my pictoramius familicus and all that jazz...</p>' WHERE "id" = 10[0m
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 3) [0m
+Redirected to http://localhost:3000/hikes/3
+Completed in 37ms (DB: 1) | 302 Found [http://localhost/hike_stories/10]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 16:04:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 3) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 3) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 3 ) [0m
+  [4;35;1mHikeStory Load (0.3ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 3) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 18) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 128ms (View: 119, DB: 2) | 200 OK [http://localhost/hikes/3]
