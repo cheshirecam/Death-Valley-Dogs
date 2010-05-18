@@ -63,23 +63,46 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-radius-topleft: 15px; 
+  -webkit-border-radius-topright: 15px; 
+  padding: 8px 8px 0 8px;
+
 	}
 	
 	#header li {
 		display: inline;
 		margin: 0 2px 0 0;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-radius-topleft: 15px; 
+  -webkit-border-radius-topright: 15px; 
+  padding: 8px 2px 0 2px;
+
 	}
 	
 	.tab a {
-		padding: 0 1em;
 		text-decoration: none;
 		color: #a80;
 		background: #f8f698;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-radius-topleft: 5px; 
+  -webkit-border-radius-topright: 5px; 
+  padding: 0 8px 0 8px;
+
 	}
 	
 	#header a:hover {
 		background: #fc0;
 		color: #540;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-radius-topleft: 15px; 
+  -webkit-border-radius-topright: 15px; 
+  padding: 8px 8px 0 8px;
+
 	}0123456789a
 	
 	#header .selected_tab {
@@ -88,10 +111,15 @@
 	.selected_tab a {
 		padding: 0 1em;
 		text-decoration: none;
-		padding-bottom: 2px;
 		font-weight: bold;
 		color: #f8f698;
 		background: maroon;
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-radius-topleft: 15px; 
+  -webkit-border-radius-topright: 15px; 
+  padding: 8px 8px 0 8px;
+		
 	}
 
 /* Page content beneath tabs */

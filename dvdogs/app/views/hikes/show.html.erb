@@ -20,9 +20,9 @@
 
 </table>
 <p>
-<%= link_to edit_icon_large, edit_hike_path(@hike) %> |
-<%= link_to back_icon_large, hikes_path %> | 
-<%= link_to "Add a write-up for this hike", new_hike_story_path(:hike_id => @hike.id) %>
+<%= link_to edit_icon_large, edit_hike_path(@hike) , {:title => "Edit Hike Info"} %> |
+<%= link_to back_icon_large, hikes_path, {:title => "View Hike List"}%> | 
+<%= link_to "Write-up", new_hike_story_path(:hike_id => @hike.id), {:title => "Add a write-up for this hike"} %>
 </p>
 <% @hike.hike_stories.each do |story| %>
   <% dog = Dog.find(story.dog_id).name %>
