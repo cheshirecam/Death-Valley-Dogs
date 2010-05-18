@@ -35313,3 +35313,830 @@ Rendering hike_stories/edit
   [4;35;1mHike Load (0.4ms)[0m   [0mSELECT * FROM "hikes" [0m
 Rendered shared/_tabs_top_level (1.2ms)
 Completed in 106ms (View: 97, DB: 3) | 200 OK [http://localhost/hike_stories/5/edit]
+
+
+Processing HikeStoriesController#update (for 127.0.0.1 at 2010-05-18 10:54:41) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "id"=>"5", "hike_story"=>{"description"=>"<p>It was a very cool thing</p>\r\n<p><strong>This is bold</strong></p>\r\n<p><em>This is italic</em></p>\r\n<p><span style=\"text-decoration: underline;\">and this is underlined</span></p>\r\n<p>These are bullets</p>\r\n<ul>\r\n</ul>\r\n<ol>\r\n<li>one</li>\r\n<li>two</li>\r\n<li>three</li>\r\n</ol> \r\n<ul>\r\n</ul>\r\n<p>Very cool stuff...</p>", "dog_id"=>"1", "hike_id"=>"2"}}
+  [4;36;1mHikeStory Load (24.8ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 5) [0m
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Redirected to http://localhost:3000/hikes/2
+Completed in 42ms (DB: 25) | 302 Found [http://localhost/hike_stories/5]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 10:54:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (56.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (25.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (0.9ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (7.5ms)
+Completed in 552ms (View: 188, DB: 85) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 14:12:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (4.7ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (2.9ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (19.7ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (1.2ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (2.1ms)
+Completed in 435ms (View: 354, DB: 30) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 14:15:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 2) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.5ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (9.2ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 2 ) [0m
+  [4;35;1mHikeStory Load (0.5ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 2) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (1.5ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 13) [0m
+Rendered shared/_tabs_top_level (4.6ms)
+Completed in 134ms (View: 84, DB: 14) | 200 OK [http://localhost/hikes/2]
+
+
+Processing HikeStoriesController#destroy (for 127.0.0.1 at 2010-05-18 14:15:57) [DELETE]
+  Parameters: {"authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "id"=>"4"}
+  [4;36;1mHikeStory Load (0.3ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 4) [0m
+  [4;35;1mHikeStory Destroy (8.8ms)[0m   [0mDELETE FROM "hike_stories" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/hike_stories
+Completed in 85ms (DB: 9) | 302 Found [http://localhost/hike_stories/4]
+
+
+Processing HikeStoriesController#index (for 127.0.0.1 at 2010-05-18 14:15:58) [GET]
+  [4;36;1mHikeStory Load (0.9ms)[0m   [0;1mSELECT * FROM "hike_stories" [0m
+Rendering template within layouts/hike_stories
+Rendering hike_stories/index
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 42ms (View: 36, DB: 1) | 200 OK [http://localhost/hike_stories]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-18 14:17:59) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;35;1mHike Load (0.8ms)[0m   [0mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 14:18:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 2) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 44ms (View: 35, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikeStoriesController#destroy (for 127.0.0.1 at 2010-05-18 14:18:11) [DELETE]
+  Parameters: {"authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "id"=>"8"}
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 8) [0m
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+  [4;36;1mHikeStory Destroy (0.2ms)[0m   [0;1mDELETE FROM "hike_stories" WHERE "id" = 8[0m
+Redirected to http://localhost:3000/hikes/1
+Completed in 21ms (DB: 1) | 302 Found [http://localhost/hike_stories/8]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 14:18:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;36;1mHikeStory Load (0.3ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 99ms (View: 30, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikeStoriesController#new (for 127.0.0.1 at 2010-05-18 14:23:00) [GET]
+  Parameters: {"hike_id"=>"1"}
+Rendering template within layouts/hike_stories
+Rendering hike_stories/new
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.6ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mHike Load (0.4ms)[0m   [0mSELECT * FROM "hikes" [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 114ms (View: 106, DB: 2) | 200 OK [http://localhost/hike_stories/new?hike_id=1]
+
+
+Processing HikeStoriesController#create (for 127.0.0.1 at 2010-05-18 14:23:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "hike_story"=>{"description"=>"When did this happen?", "dog_id"=>"5", "hike_id"=>"1"}}
+  [4;36;1mHikeStory Create (0.4ms)[0m   [0;1mINSERT INTO "hike_stories" ("created_at", "updated_at", "description", "dog_id", "hike_id") VALUES('2010-05-18 21:23:14', '2010-05-18 21:23:14', 'When did this happen?', 5, 1)[0m
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Redirected to http://localhost:3000/hikes/1
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/hike_stories]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 14:23:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (0.6ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 5) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 112ms (View: 102, DB: 2) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikeStoriesController#new (for 127.0.0.1 at 2010-05-18 14:24:17) [GET]
+  Parameters: {"hike_id"=>"1"}
+Rendering template within layouts/hike_stories
+Rendering hike_stories/new
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.6ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mHike Load (0.4ms)[0m   [0mSELECT * FROM "hikes" [0m
+Rendered shared/_tabs_top_level (18.2ms)
+Completed in 183ms (View: 170, DB: 3) | 200 OK [http://localhost/hike_stories/new?hike_id=1]
+
+
+Processing AttachmentsController#manage (for 127.0.0.1 at 2010-05-18 14:24:32) [GET]
+  Parameters: {"media"=>"print", "_"=>"1274217872449"}
+  [4;36;1mPrint Load (0.6ms)[0m   [0;1mSELECT * FROM "prints" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendered attachments/_show_attachment_list (12.8ms)
+Completed in 72ms (View: 19, DB: 1) | 200 OK [http://localhost/attachments/manage?media=print&_=1274217872449]
+
+
+Processing AttachmentsController#create (for 127.0.0.1 at 2010-05-18 14:24:57) [POST]
+  Parameters: {"commit"=>"Upload", "print"=>{"image"=>#<File:/var/folders/Wk/Wk7Zm0L1Fwucso5sEZ20YU+++TM/-Tmp-/RackMultipart20100518-29965-1v0rv6w-0>}, "media"=>"print"}
+  [4;35;1mPrint Create (0.6ms)[0m   [0mINSERT INTO "prints" ("image_file_name", "created_at", "image_file_size", "updated_at", "image_content_type") VALUES('muddy_boot.gif', '2010-05-18 21:24:58', 23845, '2010-05-18 21:24:58', 'image/gif')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/cameron/Documents/Aptana Studio 3 Workspace/Death Valley Dogs/dvdogs/public/system/images/1/small_thumb/muddy_boot.jpg
+[paperclip] saving /Users/cameron/Documents/Aptana Studio 3 Workspace/Death Valley Dogs/dvdogs/public/system/images/1/medium_thumb/muddy_boot.jpg
+[paperclip] saving /Users/cameron/Documents/Aptana Studio 3 Workspace/Death Valley Dogs/dvdogs/public/system/images/1/original/muddy_boot.gif
+[paperclip] saving /Users/cameron/Documents/Aptana Studio 3 Workspace/Death Valley Dogs/dvdogs/public/system/images/1/large_thumb/muddy_boot.jpg
+[paperclip] saving /Users/cameron/Documents/Aptana Studio 3 Workspace/Death Valley Dogs/dvdogs/public/system/images/1/detail_preview/muddy_boot.jpg
+Completed in 490ms (View: 0, DB: 0) | 200 OK [http://localhost/attachments/create?media=print]
+
+
+Processing AttachmentsController#manage (for 127.0.0.1 at 2010-05-18 14:24:58) [GET]
+  Parameters: {"media"=>"print", "page"=>"1", "_"=>"1274217898495"}
+  [4;36;1mPrint Load (0.7ms)[0m   [0;1mSELECT * FROM "prints" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+Rendered attachments/_show_attachment_list (4.8ms)
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/attachments/manage?media=print&page=1&_=1274217898495]
+
+
+Processing HikeStoriesController#create (for 127.0.0.1 at 2010-05-18 14:25:28) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"ORThm7bgKOr4W0uZm9A5t6hgsxk3tl+6DZo3gGCxNxU=", "hike_story"=>{"description"=>"<p>Dude, I was so fast.&nbsp; Check it out.&nbsp; These are my boots.&nbsp; Giggidy!</p>\r\n<p><img src=\"/system/images/1/medium_thumb/muddy_boot.jpg\" border=\"0\" alt=\"image\" width=\"68\" height=\"100\" /></p>", "dog_id"=>"4", "hike_id"=>"1"}}
+  [4;35;1mHikeStory Create (0.4ms)[0m   [0mINSERT INTO "hike_stories" ("created_at", "updated_at", "description", "dog_id", "hike_id") VALUES('2010-05-18 21:25:28', '2010-05-18 21:25:28', '<p>Dude, I was so fast.&nbsp; Check it out.&nbsp; These are my boots.&nbsp; Giggidy!</p>
+<p><img src="/system/images/1/medium_thumb/muddy_boot.jpg" border="0" alt="image" width="68" height="100" /></p>', 4, 1)[0m
+  [4;36;1mHike Load (0.3ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Redirected to http://localhost:3000/hikes/1
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/hike_stories]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 14:25:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTrip Load (1.1ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.6ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 1 ) [0m
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 1) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 1) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 5) [0m
+  [4;35;1mDog Load (0.4ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 4) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 134ms (View: 124, DB: 4) | 200 OK [http://localhost/hikes/1]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-18 14:26:06) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;36;1mHike Load (1.0ms)[0m   [0;1mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 54ms (View: 47, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 14:26:09) [GET]
+  [4;35;1mTrip Load (0.8ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (1.6ms)[0m   [0mSELECT * FROM "dogs" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (64.7ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (1.1ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.7ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.1ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.1ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;36;1mDog Load (1.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (57.0ms)
+  [4;36;1mDog Load (0.8ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (30.6ms)
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 218ms (View: 112, DB: 76) | 200 OK [http://localhost/dogs]
+
+
+Processing TripsController#index (for 127.0.0.1 at 2010-05-18 14:26:12) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;35;1mTrip Load (1.3ms)[0m   [0mSELECT * FROM "trips" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 124ms (View: 118, DB: 1) | 200 OK [http://localhost/trips]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 14:26:15) [GET]
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.6ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (1.1ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (50.4ms)
+  [4;35;1mDog Load (0.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (100.9ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 193ms (View: 153, DB: 11) | 200 OK [http://localhost/dogs]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 15:07:16) [GET]
+  [4;36;1mTrip Load (1.1ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.7ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (1.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (1.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (48.3ms)
+  [4;35;1mDog Load (0.8ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (101.3ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 229ms (View: 151, DB: 12) | 200 OK [http://localhost/dogs]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-18 15:07:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/boots-icon.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 15:07:34) [GET]
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.7ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (1.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (121.0ms)
+  [4;35;1mDog Load (0.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (31.9ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 196ms (View: 155, DB: 12) | 200 OK [http://localhost/dogs]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 15:08:03) [GET]
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.6ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.6ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (1.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (123.5ms)
+  [4;35;1mDog Load (0.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (30.7ms)
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 197ms (View: 156, DB: 12) | 200 OK [http://localhost/dogs]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 15:11:04) [GET]
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (2.2ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (1.6ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (1.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (1.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.8ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (1.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (132.3ms)
+  [4;35;1mDog Load (0.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (37.6ms)
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 224ms (View: 172, DB: 15) | 200 OK [http://localhost/dogs]
+
+
+Processing DogsController#index (for 127.0.0.1 at 2010-05-18 15:12:43) [GET]
+  [4;36;1mTrip Load (1.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (1.8ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.9ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.4ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.3ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (1.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 8 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 2 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 11 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 4 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 21 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 19 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 3 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 13 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 14 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 6 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 16 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 20 ) [0m
+Rendered shared/_dog_list (274.0ms)
+  [4;35;1mDog Load (0.9ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 'f') ORDER BY name[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 7 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 9 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 10 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 5 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 12 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 18 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 15 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 17 ) [0m
+Rendered shared/_dog_list (34.4ms)
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 570ms (View: 311, DB: 13) | 200 OK [http://localhost/dogs]
+
+
+Processing HikesController#index (for 127.0.0.1 at 2010-05-18 15:13:11) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;36;1mHike Load (1.4ms)[0m   [0;1mSELECT * FROM "hikes" ORDER BY date[0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 90ms (View: 19, DB: 1) | 200 OK [http://localhost/hikes]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 15:13:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mHike Load (0.3ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 3) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 3) [0m
+  [4;35;1mTrip Load (53.1ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mDog Load (0.7ms)[0m   [0mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 3 ) [0m
+  [4;36;1mHikeStory Load (0.3ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 3) [0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 18) [0m
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 285ms (View: 223, DB: 55) | 200 OK [http://localhost/hikes/3]
+
+
+Processing HikesController#show (for 127.0.0.1 at 2010-05-18 15:17:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mHike Load (31.8ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 3) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mTrip Load (16.1ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 3) [0m
+  [4;36;1mTrip Load (0.5ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mDog Load (41.5ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_hikes" ON "dogs".id = "dogs_hikes".dog_id WHERE ("dogs_hikes".hike_id = 3 ) [0m
+  [4;35;1mHikeStory Load (0.4ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories".hike_id = 3) [0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 18) [0m
+Rendered shared/_tabs_top_level (1.4ms)
+Completed in 449ms (View: 265, DB: 91) | 200 OK [http://localhost/hikes/3]
