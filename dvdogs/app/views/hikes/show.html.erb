@@ -26,7 +26,7 @@
 <% @hike.hike_stories.each do |story| %>
   <% dog = Dog.find(story.dog_id).name %>
   <div class="roundedTitleArea">According to <%= dog %>... <%= link_to edit_icon, edit_hike_story_path(story) %>  </div>
-  <div class="roundedTextArea"><p><%=h story.description %></p></div>
+  <div class="roundedTextArea"><%= story.description %></div>
   <br>
 <% end %>
 
