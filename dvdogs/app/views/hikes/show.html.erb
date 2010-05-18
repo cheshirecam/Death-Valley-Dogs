@@ -1,15 +1,14 @@
 
 <h1><%=h @hike.name %> Hike</h1>
+<h3><%=h @hike.date.strftime('%A %B %d, %Y') %></h3>
 
 <table class="maroonRoundedBorder">
   
 <tr>
-  <th class="firstHorizontalColumnHeader" >Date:</th>
-  <th>Trip:</th>
+  <th class="firstHorizontalColumnHeader" >Trip:</th>
   <th class="lastHorizontalColumnHeader" >Dogs:</th>
 </tr>
 <tr>
-  <td class="horizontalData"><%=h @hike.date %></td>
   <td class="horizontalData"><%= link_to @hike.trip.name, @hike.trip %></td>
   <td class="horizontalData">
       <% @hike.dogs.each do |obj| %>

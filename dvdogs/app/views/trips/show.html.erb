@@ -1,19 +1,30 @@
 <h1><%=h @trip.name %></h1>
-<table>
+<h3><%=h @trip.date.strftime('%A %B %d, %Y') %></h3>
+<table class="maroonRoundedBorder">
   
 <tr>
-  <th>Date:</th>
-  <td><%=h @trip.date %></td>
+  <th class="firstHorizontalColumnHeader" >Dogs:</th>
+  <th>Rigs:</th>
+  <th class="lastHorizontalColumnHeader" >Hikes:</th>
 </tr>
-  <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Dogs", :obj_array => @trip.dogs } %>
-  <%= render :partial => "/shared/show_table_list", 
-					:locals => { :label => "Rigs", :obj_array => @trip.rigs } %>
-  <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Hikes", :obj_array => @trip.hikes } %>
-
+<tr>
+  <td class="horizontalData">
+      <% @trip.dogs.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
+  <td class="horizontalData">
+      <% @trip.rigs.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
+  <td class="horizontalData">
+      <% @trip.hikes.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
+</tr>
 </table>
-
 <%= link_to edit_icon_large, edit_trip_path(@trip) %> |
 <%= link_to new_icon_large, new_trip_path %> |
 <%= link_to back_icon_large, trips_path %>

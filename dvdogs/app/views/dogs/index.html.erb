@@ -1,11 +1,5 @@
 <%= link_to new_icon_large, new_dog_path %>
-<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_active_hominid, :name_label => "Man Dog" } %>
+<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_active, :name_label => "Active Dogs" } %>
 
-<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_active_canine, :name_label => "Canine Dog" } %>
-
-<h3>Retired Canines</h3>
-<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_inactive_canine, :name_label => "Canine Dog" } %>
-
-
-<h3>Dogs that haven't joined us in a while:</h3>
-<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_inactive_hominid, :name_label => "Old Dog" } %>
+<h3>Retired</h3>
+<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_inactive, :name_label => "Old Dogs" } %>

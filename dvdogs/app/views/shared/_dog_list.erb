@@ -1,12 +1,14 @@
 <table>
   <tr>
     <th><%= name_label %></th>
+    <th></th>
 	<th>Trips</th>
   </tr>
 
 <% dog_list.each do |dog| %>
   <tr>
     <td><%= link_to dog.name, dog %></td>
+    <td><%= dog.family == "Hominid" ? boots_icon : paws_icon %></td>
     <td><%=h dog.trips.size %></td>
     <td><%= link_to edit_icon, edit_dog_path(dog) %></td>
     <td><%= link_to delete_icon, dog, :confirm => 'Are you sure?', :method => :delete %></td>

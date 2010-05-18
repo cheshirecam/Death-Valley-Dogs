@@ -4,6 +4,9 @@ class Dog < ActiveRecord::Base
   has_many :rigs
   belongs_to :hike_stories
 
+  named_scope :active, :conditions => {:active => true}, :order => 'name'
+  named_scope :inactive, :conditions => {:active => false}, :order => 'name'
+
   named_scope :active_hominid, :conditions => {:family => "Hominid", :active => true}, :order => 'name'
   named_scope :inactive_hominid, :conditions => {:family => "Hominid", :active => false}, :order => 'name'
   named_scope :active_canine, :conditions => {:family => "Canine", :active => true}, :order => 'name'

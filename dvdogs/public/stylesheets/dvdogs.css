@@ -1,7 +1,7 @@
 /* basic elements */ 
 
 	body { 
-		color: #f8f698; 
+		color: beige; 
 		font-style: normal; 
 		font-variant: normal; 
 		font-weight: normal; 
@@ -24,7 +24,7 @@
 	} 
  
 	a:visited { 
-		color: #f8f698; 
+		color: beige; 
 		text-decoration: underline 
 	}
   
@@ -63,45 +63,32 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		  -moz-border-radius-topleft: 15px;
-  -moz-border-radius-topright: 15px;
-  -webkit-border-radius-topleft: 15px; 
-  -webkit-border-radius-topright: 15px; 
-  padding: 8px 8px 0 8px;
-
 	}
 	
 	#header li {
 		display: inline;
 		margin: 0 2px 0 0;
-  -moz-border-radius-topleft: 15px;
-  -moz-border-radius-topright: 15px;
-  -webkit-border-radius-topleft: 15px; 
-  -webkit-border-radius-topright: 15px; 
-  padding: 8px 2px 0 2px;
-
 	}
 	
 	.tab a {
 		text-decoration: none;
 		color: #a80;
-		background: #f8f698;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  -webkit-border-radius-topleft: 5px; 
-  -webkit-border-radius-topright: 5px; 
-  padding: 0 8px 0 8px;
-
+		background: beige;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-radius-topleft: 5px; 
+    -webkit-border-radius-topright: 5px; 
+    padding: 0 8px 0 8px;
 	}
 	
 	#header a:hover {
 		background: #fc0;
 		color: #540;
-  -moz-border-radius-topleft: 15px;
-  -moz-border-radius-topright: 15px;
-  -webkit-border-radius-topleft: 15px; 
-  -webkit-border-radius-topright: 15px; 
-  padding: 8px 8px 0 8px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-radius-topleft: 10px; 
+    -webkit-border-radius-topright: 10px; 
+    padding: 4px 8px 0 8px;
 
 	}0123456789a
 	
@@ -112,13 +99,13 @@
 		padding: 0 1em;
 		text-decoration: none;
 		font-weight: bold;
-		color: #f8f698;
+		color: beige;
 		background: maroon;
-  -moz-border-radius-topleft: 15px;
-  -moz-border-radius-topright: 15px;
-  -webkit-border-radius-topleft: 15px; 
-  -webkit-border-radius-topright: 15px; 
-  padding: 8px 8px 0 8px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-radius-topleft: 10px; 
+    -webkit-border-radius-topright: 10px; 
+    padding: 4px 8px 0 8px;
 		
 	}
 
@@ -142,7 +129,7 @@
   border-radius: 15px; 
   border: 5px solid maroon;
   padding: 12px;
-  background: #f8f698;
+  background: beige;
   color: black;
  }
 

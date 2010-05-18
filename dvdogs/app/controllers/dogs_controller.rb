@@ -4,11 +4,8 @@ class DogsController < ApplicationController
   # GET /dogs.xml
   def index
     @dogs = Dog.all
-    @dogs_active_hominid = Dog.active_hominid
-    @dogs_inactive_hominid = Dog.inactive_hominid
-    
-    @dogs_active_canine = Dog.active_canine
-    @dogs_inactive_canine = Dog.inactive_canine
+    @dogs_active = Dog.active
+    @dogs_inactive = Dog.inactive
     
     @dogs_current = []
     @dogs_old = []
