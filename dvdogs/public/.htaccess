@@ -1,2 +1,5 @@
+RewriteEngine On
+RewriteBase /~deathval
+
 PassengerEnabled on
-PassengerAppRoot /public_html/app
+PassengerAppRoot /home/deathval/git/Death-Valley-Dogs.git/Death-Valley-Dogs/dvdogs 
