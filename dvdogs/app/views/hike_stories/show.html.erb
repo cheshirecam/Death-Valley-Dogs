@@ -1,13 +1,12 @@
-<p>
-  <b>Hike:</b>
-  <%=h @hike_story.hike_id %>
-</p>
+<h1><%= link_to @hike_story.hike.name, @hike_story.hike%></h1>
+<% if @hike_story.photo.exists? then %>
+  <%= image_tag @hike_story.photo.url(:large) %>
+<% end %>
 
-<p>
-  <b>Description:</b>
-  <%=h @hike_story.description %>
-</p>
+<%= @hike_story.description %>
 
-
-<%= link_to 'Edit', edit_hike_story_path(@hike_story) %> |
-<%= link_to 'Back', hike_stories_path %>
+<div style = "clear: both;">
+<br>
+<%= link_to edit_icon, edit_hike_story_path(@hike_story) %> |
+<%= link_to list_icon_large, hike_stories_path %>
+</div>

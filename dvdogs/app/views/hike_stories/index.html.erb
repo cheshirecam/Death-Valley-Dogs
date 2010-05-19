@@ -1,22 +1,26 @@
-<h1>Listing hike_stories</h1>
 
 <table>
-  <tr>
-    <th>Hike</th>
-    <th>Description</th>
-  </tr>
-
 <% @hike_stories.each do |hike_story| %>
+
+<% if hike_story.photo.exists? then %>
+<% img_link = image_tag hike_story.photo.url(:medium) %>
+<% else %>
+<% img_link = "Get the story"%>
+<% end %>
+
+
   <tr>
-    <td><%=h hike_story.hike_id %></td>
-    <td><%=h hike_story.description %></td>
-    <td><%= link_to 'Show', hike_story %></td>
-    <td><%= link_to 'Edit', edit_hike_story_path(hike_story) %></td>
-    <td><%= link_to 'Destroy', hike_story, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to img_link, hike_story %></td>
+    <td><%= link_to hike_story.short_description, hike_story %></td>
+    <td><%= link_to hike_story.hike.name, hike_story.hike %> Hike<br>
+      <%= hike_story.hike.date %><br>
+      By <%= link_to hike_story.dog.name, hike_story.dog %></td>
+    <td><%= link_to edit_icon, edit_hike_story_path(hike_story) %></td>
+    <td><%= link_to delete_icon, hike_story, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New hike_story', new_hike_story_path %>
+<%= link_to new_icon_large, new_hike_story_path %>

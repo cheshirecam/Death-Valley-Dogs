@@ -1,6 +1,6 @@
 <h1>Editing Write-Up</h1>
 
-<% form_for(@hike_story) do |f| %>
+<% form_for(@hike_story,:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :dog_id, "According to" %><br/>
@@ -9,6 +9,10 @@
   <p>
     <%= f.label :hike_id, "Hike" %><br/>
     <%= f.collection_select(:hike_id, Hike.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label 'Photo' %><br />
+    <%= f.file_field :photo %>
   </p>
   <p>
     <%= f.label "Write-up:" %><br />

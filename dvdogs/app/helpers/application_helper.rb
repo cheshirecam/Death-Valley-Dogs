@@ -27,7 +27,7 @@ module ApplicationHelper
 
 
   def list_icon_large
-    image_tag("grunge_up_arrow.png", :border=>0, :size=> "32x32")
+    image_tag("up-icon32.png", :border=>0, :size=> "32x32")
   end
 
   def new_icon_large

@@ -24,13 +24,14 @@
 <%= link_to write_up_icon, new_hike_story_path(:hike_id => @hike.id), {:title => "Add a write-up for this hike"} %>
 </p>
 <% @hike.hike_stories.each do |hike_story| %>
-  <% dog = Dog.find(hike_story.dog_id).name %>
-  <div class="roundedTitleArea">According to <%= dog %>... 
-    <%= link_to edit_icon, edit_hike_story_path(hike_story) %>  
-    <%= link_to delete_icon, hike_story, :confirm => 'Are you sure?', :method => :delete %>
-
-    </div>
-  <div class="roundedTextArea"><%= hike_story.description %></div>
+  <div class="singleStory">
+    <div class="roundedTitleArea">According to <%= hike_story.dog.name %>... 
+      <%= link_to edit_icon, edit_hike_story_path(hike_story) %>  
+      <%= link_to delete_icon, hike_story, :confirm => 'Are you sure?', :method => :delete %>
+  
+      </div>
+    <div class="roundedTextArea"><%= hike_story.description %></div>
+  </div>
   <br>
 <% end %>
 

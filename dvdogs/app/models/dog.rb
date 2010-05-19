@@ -2,7 +2,7 @@ class Dog < ActiveRecord::Base
   has_and_belongs_to_many :trips
   has_and_belongs_to_many :hikes
   has_many :rigs
-  belongs_to :hike_stories
+  has_many :hike_stories
 
   named_scope :active, :conditions => {:active => true}, :order => 'name'
   named_scope :inactive, :conditions => {:active => false}, :order => 'name'

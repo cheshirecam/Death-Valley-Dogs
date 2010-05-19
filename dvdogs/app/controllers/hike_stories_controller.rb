@@ -48,7 +48,7 @@ class HikeStoriesController < ApplicationController
       if @hike_story.save
         flash[:notice] = 'Write-up was successfully created.'
         format.html { redirect_to(@hike_story.hike) }
-        format.xml  { render :xml => @hike_story.hike, :status => :created, :location => @hike_story.hike }
+        format.xml  { render :xml => @hike_story, :status => :created, :location => @hike_story }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @hike_story.errors, :status => :unprocessable_entity }
@@ -64,7 +64,7 @@ class HikeStoriesController < ApplicationController
     respond_to do |format|
       if @hike_story.update_attributes(params[:hike_story])
         flash[:notice] = 'HikeStory was successfully updated.'
-        format.html { redirect_to(@hike_story.hike) }
+        format.html { redirect_to(@hike_story) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
