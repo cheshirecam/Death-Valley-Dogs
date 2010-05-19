@@ -8,10 +8,13 @@
 <% img_link = "Get the story"%>
 <% end %>
 
-
   <tr>
     <td><%= link_to img_link, hike_story %></td>
-    <td><%= link_to hike_story.short_description, hike_story %></td>
+    <td>
+      <% if hike_story.short_description then %>
+        <%= link_to hike_story.short_description, hike_story %>
+      <% end %>   
+    </td>
     <td><%= link_to hike_story.hike.name, hike_story.hike %> Hike<br>
       <%= hike_story.hike.date %><br>
       By <%= link_to hike_story.dog.name, hike_story.dog %></td>

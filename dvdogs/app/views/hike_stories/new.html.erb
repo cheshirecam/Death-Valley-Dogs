@@ -12,9 +12,13 @@
     <%= f.collection_select(:hike_id, Hike.all, :id, :name) %>
   </p>
   <p>
-  <%= f.label 'Photo' %><br />
-  <%= f.file_field :photo %>
-</p>
+    <%= f.label 'Photo' %><br />
+    <%= f.file_field :photo %>
+  </p>
+  <p>
+    <%= f.label "Brief description:" %><br />
+    <%= f.text_area :short_description %>
+  </p>
   <p>
     <%= f.label "Write-up:" %><br />
     <%= f.text_area :description, :class => "mceEditor" %>
