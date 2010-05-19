@@ -6,8 +6,8 @@
     <%= f.text_field :name %>
 </p>
 <p>
-    Classifiation <%= f.label :family %><br/>
-	<%= f.select :family, ["Hominid", "Canine" ] %>
+  <%= f.radio_button :family, "Hominid" %> <%= boots_icon %>
+  <%= f.radio_button :family, "Canine" %> <%= paws_icon %>
 </p>
 <p>
     <%= f.label :birth_date %><br/>

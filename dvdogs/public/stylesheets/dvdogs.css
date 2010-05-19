@@ -1,5 +1,20 @@
 /* basic elements */ 
 
+  #mainImageHeader {
+    background-color: black;
+    background-image: url('../images/dvdogs_header_200.png');
+    background-repeat: no-repeat;
+    height: 190px;
+    position: relative;
+  }
+  
+  #mainImageHeader div {
+    vertical-align: bottom;
+    bottom: 0;
+    position: absolute;
+    padding-left: 1em;
+  }
+
 	body { 
 		color: beige; 
 		font-style: normal; 
