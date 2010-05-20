@@ -140,6 +140,19 @@
     clear: both;
 	}
 
+  .shortDescriptionTextArea {
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px; 
+    border-radius: 15px; 
+    border: 5px solid maroon;
+    padding: 12px;
+    background: beige;
+    color: black;
+    clear: both;
+    height: 100%;
+    width: 250px;
+   }
+
   .roundedTextArea {
     -moz-border-radius-bottomleft: 15px;
     -moz-border-radius-bottomright: 15px;

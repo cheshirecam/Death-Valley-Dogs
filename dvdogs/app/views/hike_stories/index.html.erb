@@ -3,16 +3,16 @@
 <% @hike_stories.each do |hike_story| %>
 
 <% if hike_story.photo.exists? then %>
-<% img_link = image_tag hike_story.photo.url(:medium) %>
+  <% img_link = image_tag hike_story.photo.url(:medium) %>
 <% else %>
-<% img_link = "Get the story"%>
+  <% img_link = "Get the story"%>
 <% end %>
 
   <tr>
     <td><%= link_to img_link, hike_story %></td>
-    <td>
+    <td class="shortDescriptionTextArea">
       <% if hike_story.short_description then %>
-        <%= link_to hike_story.short_description, hike_story %>
+        <p ><%= hike_story.short_description %></p>
       <% end %>   
     </td>
     <td><%= link_to hike_story.hike.name, hike_story.hike %> Hike<br>
