@@ -3,21 +3,23 @@
 <% @hike_stories.each do |hike_story| %>
 
 <% if hike_story.photo.exists? then %>
-  <% img_link = image_tag hike_story.photo.url(:medium) %>
+  <% img_link = image_tag hike_story.photo.url(:list_thumb) %>
 <% else %>
   <% img_link = "Get the story"%>
 <% end %>
 
   <tr>
     <td><%= link_to img_link, hike_story %></td>
-    <td class="shortDescriptionTextArea">
+    <td>
+      <div class="roundedTitleArea">
+        <%= link_to "#{hike_story.hike.name} Hike in #{hike_story.hike.date.strftime('%B %Y')}, by #{hike_story.dog.name}", hike_story %>
+      </div>
+      <div class="roundedTextArea">
       <% if hike_story.short_description then %>
         <p ><%= hike_story.short_description %></p>
       <% end %>   
+      </div>   
     </td>
-    <td><%= link_to hike_story.hike.name, hike_story.hike %> Hike<br>
-      <%= hike_story.hike.date %><br>
-      By <%= link_to hike_story.dog.name, hike_story.dog %></td>
     <td><%= link_to edit_icon, edit_hike_story_path(hike_story) %></td>
     <td><%= link_to delete_icon, hike_story, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

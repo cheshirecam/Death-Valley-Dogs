@@ -144,7 +144,7 @@
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px; 
     border-radius: 15px; 
-    border: 5px solid maroon;
+    border: 3px solid maroon;
     padding: 12px;
     background: beige;
     color: black;
@@ -164,6 +164,7 @@
     background: beige;
     color: black;
     clear: both;
+    height: 110px;
    }
   
   .roundedTitleArea {
