@@ -165,6 +165,7 @@
     color: black;
     clear: both;
     height: 110px;
+    width: 400px;
     font-size: small;
    }
   
@@ -175,6 +176,7 @@
     -webkit-border-radius-topright: 15px; 
     padding: 8px;
     background: maroon;
+    width: 400px;
   }
 
 /* Tables */
