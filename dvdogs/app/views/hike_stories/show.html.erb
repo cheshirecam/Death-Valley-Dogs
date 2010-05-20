@@ -1,8 +1,4 @@
 <h1><%= link_to @hike_story.hike.name, @hike_story.hike%></h1>
-<% if @hike_story.photo.exists? then %>
-  <%= image_tag @hike_story.photo.url(:large) %>
-<% end %>
-
 <%= @hike_story.description %>
 
 <div style = "clear: both;">
