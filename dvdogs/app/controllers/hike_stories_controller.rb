@@ -77,11 +77,10 @@ class HikeStoriesController < ApplicationController
   # DELETE /hike_stories/1.xml
   def destroy
     @hike_story = HikeStory.find(params[:id])
-    @hike = @hike_story.hike
     @hike_story.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@hike) }
+      format.html { redirect_to(hike_stories_url) }
       format.xml  { head :ok }
     end
   end

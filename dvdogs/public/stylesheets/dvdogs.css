@@ -165,6 +165,8 @@
     color: black;
     clear: both;
     height: 110px;
+    width: 400px;
+    font-size: small;
    }
   
   .roundedTitleArea {
