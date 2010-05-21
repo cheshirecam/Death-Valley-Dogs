@@ -25,6 +25,7 @@
   </td>
 </tr>
 </table>
-<%= link_to edit_icon_large, edit_trip_path(@trip) %> |
-<%= link_to new_icon_large, new_trip_path %> |
-<%= link_to back_icon_large, trips_path %>
+
+<%= render :partial => "/shared/crud_links_edit_new_list_writeup", :locals => { 
+    :obj => @trip
+ } %>

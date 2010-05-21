@@ -1,0 +1,41 @@
+<!-- this is a comment 
+  :obj_stories => @hike.hike_stories,
+  :obj_field => "hike"
+
+  -->
+
+
+<table>
+<% obj_stories.each do |obj_story| %>
+
+<% obj_controller = obj_story.class.name.tableize %>
+
+<% if obj_story.photo.exists? then %>
+  <% img_link = image_tag obj_story.photo.url(:list_thumb) %>
+<% else %>
+  <% img_link = "Get the story"%>
+<% end %>
+
+  <tr>
+    <td><%= link_to img_link, obj_story %></td>
+    <td>
+      <div class="roundedTitleArea">
+        <%= link_to "#{obj_story.send(obj_field).name} #{obj_field} in #{obj_story.send(obj_field).date.strftime('%B %Y')}, by #{obj_story.dog.name}", obj_story %>
+
+      </div>
+      <div class="roundedTextArea">
+      <% if obj_story.short_description then %>
+        <%= obj_story.short_description %>
+      <% end %>   
+      </div>   
+    </td>
+    <td>
+      <%= render :partial => "/shared/crud_links_edit_delete_small", :locals => { 
+        :obj => obj_story
+     } %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />

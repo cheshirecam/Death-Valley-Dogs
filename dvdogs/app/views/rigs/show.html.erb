@@ -42,5 +42,6 @@
 
 
 
-<%= link_to edit_icon_large, edit_rig_path(@rig) %> |
-<%= link_to back_icon_large, rigs_path %>
+<%= render :partial => "/shared/crud_links_edit_new_list", :locals => { 
+    :obj => @rig
+ } %>

@@ -30,9 +30,16 @@ module ApplicationHelper
     image_tag("up-icon32.png", :border=>0, :size=> "32x32")
   end
 
+
   def new_icon_large
     image_tag("add-2-icon32.png", :border=>0, :size=> "32x32")
   end
+
+
+  def writeup_icon_large
+    image_tag("documents-icon32.png", :border=>0, :size=> "32x32")
+  end
+  
   
   def paws_icon
     image_tag("pawprint.gif", :border=>0, :size=> "20x20")
@@ -42,7 +49,4 @@ module ApplicationHelper
     image_tag("boot-icon2.png", :border=>0, :size=> "20x20")
   end
 
-  def write_up_icon
-    image_tag("documents-icon32.png", :border=>0, :size=> "20x20")
-  end
 end

@@ -10,12 +10,15 @@
   	<td><%= link_to rig.dog.name + "\'s " + rig.make, rig %></td>
     <td><%=h rig.name %></td>
     <td><%=h rig.picture %></td>
-    <td><%= link_to edit_icon, edit_rig_path(rig) %></td>
-    <td><%= link_to delete_icon, rig, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
+        :obj => rig
+     } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to new_icon_large, new_rig_path %>
+<%= render :partial => "/shared/crud_links_new", :locals => { 
+    :obj => Rig
+} %>
