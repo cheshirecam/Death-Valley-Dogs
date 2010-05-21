@@ -2,5 +2,5 @@
 <%= render :partial => "/shared/crud_links_new", :locals => { 
     :obj => Dog
 } %>
-<h3>Retired</h3>
-<%= render :partial => "/shared/dog_list", :locals => { :dog_list => @dogs_inactive, :name_label => "Old Dogs" } %>
+
+<p><%= link_to "Retired Dogs", retired_index_dogs_path %></p>

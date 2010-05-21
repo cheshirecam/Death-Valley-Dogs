@@ -28,6 +28,17 @@ class DogsController < ApplicationController
     end
   end
 
+  # GET /dogs
+  # GET /dogs.xml
+  def retired_index
+    @dogs_inactive = Dog.inactive
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @dogs_inactive }
+    end
+  end
+
   # GET /dogs/1
   # GET /dogs/1.xml
   def show

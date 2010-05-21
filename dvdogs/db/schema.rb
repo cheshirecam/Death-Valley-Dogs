@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100521194720) do
+ActiveRecord::Schema.define(:version => 20100521232325) do
 
   create_table "camps", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(:version => 20100521194720) do
     t.datetime "updated_at"
     t.date     "birth_date"
     t.string   "family"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   create_table "dogs_hikes", :id => false, :force => true do |t|
@@ -75,6 +78,9 @@ ActiveRecord::Schema.define(:version => 20100521194720) do
     t.datetime "updated_at"
     t.string   "album"
     t.integer  "trip_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   create_table "prints", :force => true do |t|
@@ -120,6 +126,10 @@ ActiveRecord::Schema.define(:version => 20100521194720) do
     t.string   "color"
     t.string   "picture"
     t.integer  "dog_id"
+    t.boolean  "active"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   create_table "rigs_trips", :id => false, :force => true do |t|
@@ -144,6 +154,9 @@ ActiveRecord::Schema.define(:version => 20100521194720) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   create_table "videos", :force => true do |t|

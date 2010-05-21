@@ -4,6 +4,18 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :dog_id, "Owner" %><br/>
+    <%= f.collection_select(:dog_id, Dog.by_name, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :active %><br/>
+    <%= f.check_box :active %>
+  </p>
+  <p>
     <%= f.label :year %><br />
     <%= f.text_field :year %>
   </p>
@@ -27,14 +39,7 @@
     <%= f.label :tires %><br />
     <%= f.text_field :tires %>
   </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :dog_id, "Owner" %><br/>
-    <%= f.collection_select(:dog_id, Dog.by_name, :id, :name) %>
-  </p>
+
   <%= render :partial => "/shared/checkbox_selector", 
     				:locals => { :label => "Trips", 
 					:item_array => Trip.by_date, 

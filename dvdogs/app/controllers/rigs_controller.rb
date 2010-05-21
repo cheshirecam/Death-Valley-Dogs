@@ -2,7 +2,18 @@ class RigsController < ApplicationController
   # GET /rigs
   # GET /rigs.xml
   def index
-    @rigs = Rig.all
+    @rigs = Rig.active
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @rigs }
+    end
+  end
+
+  # GET /rigs
+  # GET /rigs.xml
+  def retired_index
+    @rigs = Rig.inactive
 
     respond_to do |format|
       format.html # index.html.erb
