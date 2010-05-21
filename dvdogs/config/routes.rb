@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :trip_stories
+
   map.resources :hike_events
 
   map.resources :hike_stories

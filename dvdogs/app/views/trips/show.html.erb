@@ -29,3 +29,9 @@
 <%= render :partial => "/shared/crud_links_edit_new_list_writeup", :locals => { 
     :obj => @trip
  } %>
+
+<h2><%= @trip.name %> <%= @trip.class.name %> Write-ups</h2>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @trip.trip_stories,
+  :obj_field => "trip"
+ } %>
