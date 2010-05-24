@@ -20,8 +20,8 @@
     <td><%= link_to img_link, obj_story %></td>
     <td>
       <div class="roundedTitleArea">
-        <%= link_to "#{obj_story.send(obj_field).name} #{obj_field} in #{obj_story.send(obj_field).date.strftime('%B %Y')}, by #{obj_story.dog.name}", obj_story %>
-
+        <%= link_to "#{obj_story.send(obj_field).name} #{obj_field} - #{obj_story.send(obj_field).date.strftime('%B %Y')}", obj_story %><br>
+        by <%= link_to "#{obj_story.dog.name}", obj_story.dog %>
       </div>
       <div class="roundedTextArea">
       <% if obj_story.short_description then %>

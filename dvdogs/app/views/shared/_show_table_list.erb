@@ -1,5 +1,6 @@
+<% header_class = nil unless defined?(header_class) %>
 <tr>
-  <th><%= label %>:</th>
+  <th class="<%= header_class %>" ><%= label %>:</th>
   <td>
   	<ul>
    	  <% obj_array.each do |obj| %>

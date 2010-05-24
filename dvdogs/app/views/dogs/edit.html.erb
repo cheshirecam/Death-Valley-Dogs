@@ -1,5 +1,5 @@
 <h1>Editing dog</h1>
-<% form_for(@dog) do |f| %>
+<% form_for(@dog,:html => { :multipart => true })) do |f| %>
 <%= f.error_messages %>
 <p>
     <%= f.label :name %><br/>
@@ -35,6 +35,11 @@
 					:item_array => Hike.by_date, 
 					:check_field => @dog.hikes,
 					:array_to_update => "dog[hike_ids][]" } %>
+
+  <p>
+    <%= f.label 'Photo' %><br />
+    <%= f.file_field :photo %>
+  </p>
 
 <p>
     <%= f.submit 'Update' %>

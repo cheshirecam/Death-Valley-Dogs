@@ -2,7 +2,7 @@ class HikesController < ApplicationController
   # GET /hikes
   # GET /hikes.xml
   def index
-    @hikes = Hike.by_date
+    @hikes = Hike.by_date_desc
 
     respond_to do |format|
       format.html # index.html.erb

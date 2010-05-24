@@ -39,14 +39,11 @@ module ApplicationHelper
   def writeup_icon_large
     image_tag("documents-icon32.png", :border=>0, :size=> "32x32")
   end
-  
-  
-  def paws_icon
-    image_tag("pawprint.gif", :border=>0, :size=> "20x20")
-  end
 
-  def boots_icon
-    image_tag("boot-icon2.png", :border=>0, :size=> "20x20")
+  def writeup_icon
+    image_tag("documents-icon32.png", :border=>0, :size=> "16x16")
   end
+  
+  
 
 end

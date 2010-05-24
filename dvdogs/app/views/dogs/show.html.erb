@@ -1,9 +1,17 @@
-<h1><%=h @dog.name %></h1>
-<table>
-  
+<div class="showTitleObject"><%=h @dog.name %> <%= @dog.family == "Hominid" ? boots_icon_white : paws_icon_white %></div>
+
+<table><tr>
+  <td>
+    <% if @dog.photo.exists? then %>
+      <%= image_tag @dog.photo.url(:large) %>
+    <% end %>
+  </td>
+<td>
+
+<table class="maroonRoundedBorder">
 <tr>
-  <th>Birth Date:</th>
-  <td><%=h @dog.birth_date %></td>
+  <th class="firstVerticalColumnHeader">Age:</th>
+  <td><%=h age(@dog.birth_date) %></td>
 </tr>
 
 <tr>
@@ -11,24 +19,17 @@
   <td><%=h @dog.ham %></td>
 </tr>
 
-<tr>
-  <th>Family</th>
-  <td><%=h @dog.family %></td>
-</tr>
-
-<tr>
-  <th>Profile:</th>
-  <td><%=h @dog.profile %></td>
-</tr>
-
   <%= render :partial => "/shared/show_table_list", 
     				:locals => { :label => "Trips", :obj_array => @dog.trips } %>
   <%= render :partial => "/shared/show_table_list", 
     				:locals => { :label => "Hikes", :obj_array => @dog.hikes } %>
   <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Rigs", :obj_array => @dog.rigs } %>
+    				:locals => { :label => "Rigs", 
+                         :header_class => "lastVerticalColumnHeader",
+    				             :obj_array => @dog.rigs } %>
 
 </table>
+</td></table>
 
 <%= render :partial => "/shared/crud_links_edit_new_list", :locals => { 
     :obj => @dog

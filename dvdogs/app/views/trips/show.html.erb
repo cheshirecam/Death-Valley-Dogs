@@ -1,5 +1,15 @@
-<h1><%=h @trip.name %></h1>
-<h3><%=h @trip.date.strftime('%A %B %d, %Y') %></h3>
+<%= render :partial => "/shared/title_header", :locals => { 
+    :title => @trip.name,
+    :date => @trip.date
+} %>
+
+<table><tr>
+  <td>
+    <% if @trip.photo.exists? then %>
+      <%= image_tag @trip.photo.url(:large) %>
+    <% end %>
+  </td>
+<td>
 <table class="maroonRoundedBorder">
   
 <tr>
@@ -25,13 +35,22 @@
   </td>
 </tr>
 </table>
-
+</td></tr></table>
 <%= render :partial => "/shared/crud_links_edit_new_list_writeup", :locals => { 
     :obj => @trip
  } %>
 
+<% if @trip.trip_stories.size > 0 then %>
 <h2><%= @trip.name %> <%= @trip.class.name %> Write-ups</h2>
 <%= render :partial => "/shared/writeup_list", :locals => { 
   :obj_stories => @trip.trip_stories,
   :obj_field => "trip"
  } %>
+ 
+<% else %>
+<h2>No write-up exists for this trip yet.  
+  <%= link_to "Write one!", 
+  {:controller => :trip_story, :action => "new", :trip_id => @trip.id}, 
+  {:title => "Add a write-up for this trip"} %>
+  </h2>
+<% end %>

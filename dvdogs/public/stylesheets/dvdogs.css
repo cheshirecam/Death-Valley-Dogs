@@ -16,7 +16,7 @@
   }
 
 	body { 
-		color: beige; 
+		/* color: beige; */ 
 		font-style: normal; 
 		font-variant: normal; 
 		font-weight: normal; 
@@ -33,13 +33,13 @@
 	} 
 
 	a:link { 
-		color: blue; 
+		color: black; 
 		font-weight: bold; 
 		text-decoration: underline
 	} 
  
 	a:visited { 
-		color: beige; 
+		color: black; 
 		text-decoration: underline 
 	}
   
@@ -49,6 +49,7 @@
 	} 
 
 	th  { 
+	  color: beige;
 		background-color: maroon; 
 		border-top: 3px none; 
 		border-right: 3px none; 
@@ -125,15 +126,23 @@
 	}
 
 /* Page content beneath tabs */
-	#content {
-		clear: both;
-	}
 		
 	#content {
+    clear: both;
 		border-top: 5px solid maroon;
-		padding: 1em;
 	}
 	
+  .showTitleObject {
+    color: beige;
+    background: black;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-radius-bottomleft: 10px; 
+    -webkit-border-radius-bottomright: 10px; 
+    padding: 10px 5px 10px 15px;
+    font-size: xx-large;
+  }
+  
 	/* hike story content */
 	
 	.singleStory {
@@ -164,7 +173,7 @@
     background: beige;
     color: black;
     clear: both;
-    height: 110px;
+    height: 95px;
     width: 400px;
     font-size: small;
    }
@@ -176,8 +185,21 @@
     -webkit-border-radius-topright: 15px; 
     padding: 8px;
     background: maroon;
+    color: beige;
     width: 418px;
   }
+  
+  .roundedTitleArea a:link { 
+    color: beige; 
+    font-weight: bold; 
+    text-decoration: underline
+  } 
+ 
+  .roundedTitleArea a:visited { 
+    color: beige; 
+    text-decoration: underline 
+  }
+
 
 /* Tables */
 .maroonRoundedBorder {
@@ -196,6 +218,18 @@
 .lastHorizontalColumnHeader{
   -moz-border-radius-topright: 8px;
   -webkit-border-radius-topright: 8px;
+  padding: 5px;
+}
+
+.firstVerticalColumnHeader{
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-radius-topleft: 8px;
+  padding: 5px;
+}
+
+.lastVerticalColumnHeader{
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-radius-bottomleft: 8px;
   padding: 5px;
 }
 

@@ -1,6 +1,6 @@
 <h1>Editing rig</h1>
 
-<% form_for(@rig) do |f| %>
+<% form_for(@rig,:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -47,8 +47,8 @@
 					:array_to_update => "rig[trip_ids][]" } %>
 
   <p>
-    <%= f.label :picture %><br />
-    <%= f.text_field :picture %>
+    <%= f.label 'Photo' %><br />
+    <%= f.file_field :photo %>
   </p>
   <p>
     <%= f.submit 'Update' %>

@@ -1,15 +1,13 @@
 <table>
-  <tr>
-    <th>Rig</th>
-    <th>Name</th>
-    <th>Picture</th>
-  </tr>
 
 <% @rigs.each do |rig| %>
   <tr>
-  	<td><%= link_to rig.dog.name + "\'s " + rig.make, rig %></td>
-    <td><%=h rig.name %></td>
-    <td><%=h rig.picture %></td>
+    <td>
+      <% if rig.photo.exists? then %>
+        <%= link_to image_tag(rig.photo.url(:thumb)), rig %>
+      <% end %>
+    </td>
+  	<td><%= link_to rig.dog.name + "\'s \"" + rig.name + "\"", rig %></td>
     <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
         :obj => rig
      } %></td>

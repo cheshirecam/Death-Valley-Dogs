@@ -1,15 +1,19 @@
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Album</th>
-  </tr>
 
 <% @hikes.each do |hike| %>
   <tr>
+    <td>
+      <% if hike.photo.exists? then %>
+        <%= link_to image_tag(hike.photo.url(:thumb)), hike %>
+      <% end %>
+    </td>
+    <td><%=h hike.date.strftime('%b %Y') %></td>
+    <td>
+      <% if hike.hike_stories.size > 0 then %>
+      <%= link_to writeup_icon, hike, {:title => "View write-ups for the #{hike.name} hike."} %>
+      <% end %>  
+    </td>
     <td><%= link_to hike.name, hike %></td>
-    <td><%=h hike.date %></td>
-    <td><%=h hike.album %></td>
     <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
         :obj => hike
      } %></td>

@@ -8,7 +8,7 @@
 <% dog_list.each do |dog| %>
   <tr>
     <td><%= link_to dog.name, dog %></td>
-    <td><%= dog.family == "Hominid" ? boots_icon : paws_icon %></td>
+    <td><%= dog.family == "Hominid" ? boots_icon_black : paws_icon_black %></td>
     <td><%=h dog.trips.size %></td>
     <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
         :obj => dog

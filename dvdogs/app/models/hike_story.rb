@@ -2,6 +2,8 @@ class HikeStory < ActiveRecord::Base
   belongs_to :hike
   belongs_to :dog
 
+  named_scope :last3, :order => 'created_at DESC', :limit => 2
+
 # Paperclip
 has_attached_file :photo,
   :styles => {
@@ -12,3 +14,4 @@ has_attached_file :photo,
     :large =>   "400x400>" }
     
 end
+

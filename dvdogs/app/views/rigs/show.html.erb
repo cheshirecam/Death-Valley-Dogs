@@ -1,8 +1,16 @@
-<h1><%=h @rig.name %></h1>
-<table>
-  
+<div class="showTitleObject"><%=h @rig.name %> </div>
+
+<table><tr>
+  <td>
+    <% if @rig.photo.exists? then %>
+      <%= image_tag @rig.photo.url(:large) %>
+    <% end %>
+  </td>
+<td>
+
+<table class="maroonRoundedBorder">
 <tr>
-  <th>Owner:</th>
+  <th class="firstVerticalColumnHeader">Owner:</th>
   <td><%= link_to @rig.dog.name, @rig.dog %></td>
 </tr>
 <tr>
@@ -31,14 +39,12 @@
 </tr>
   <%= render :partial => "/shared/show_table_list", 
     				:locals => { :label => "Trips", 
-					:obj_array => @rig.trips } %>
+    				             :header_class => "lastVerticalColumnHeader",
+					               :obj_array => @rig.trips } %>
 
-<tr>
-  <th>Picture:</th>
-  <td><%=h @rig.picture %></td>
-</tr>
 
 </table>
+</td></table>
 
 
 
