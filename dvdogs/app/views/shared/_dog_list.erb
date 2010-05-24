@@ -1,12 +1,11 @@
 <table>
-  <tr>
-    <th><%= name_label %></th>
-    <th></th>
-	<th>Trips</th>
-  </tr>
-
 <% dog_list.each do |dog| %>
   <tr>
+    <td>
+      <% if dog.photo.exists? then %>
+        <%= link_to image_tag(dog.photo.url(:thumb)), dog %>
+      <% end %>
+    </td>
     <td><%= link_to dog.name, dog %></td>
     <td><%= dog.family == "Hominid" ? boots_icon_black : paws_icon_black %></td>
     <td><%=h dog.trips.size %></td>
