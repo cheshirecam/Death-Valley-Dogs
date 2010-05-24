@@ -143,6 +143,11 @@
     font-size: xx-large;
   }
   
+  .showTitleObject a {
+    color: beige;
+    font-size: xx-large;
+  }
+
 	/* hike story content */
 	
 	.singleStory {
