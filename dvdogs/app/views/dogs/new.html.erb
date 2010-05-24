@@ -1,4 +1,4 @@
-<h1>New dog</h1>
+<div class="showTitleObject">New Dog</div>
 
 <% form_for(@dog,:html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
@@ -8,8 +8,8 @@
     <%= f.text_field :name %>
   </p>
 <p>
-  <%= f.radio_button :family, "Hominid" %> <%= boots_icon %>
-  <%= f.radio_button :family, "Canine" %> <%= paws_icon %>
+  <%= f.radio_button :family, "Hominid" %> <%= boots_icon_black %>
+  <%= f.radio_button :family, "Canine" %> <%= paws_icon_black %>
 </p>
   <p>
     <%= f.label :birth_date %><br />
