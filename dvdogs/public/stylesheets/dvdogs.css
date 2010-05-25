@@ -131,6 +131,17 @@
     clear: both;
 		border-top: 5px solid maroon;
 	}
+
+  h1 {
+    color: beige;
+    background: black;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-radius-bottomleft: 10px; 
+    -webkit-border-radius-bottomright: 10px; 
+    padding: 10px 5px 10px 15px;
+    margin-top: 0;
+  }
 	
   .showTitleObject {
     color: beige;
@@ -203,6 +214,92 @@
   .roundedTitleArea a:visited { 
     color: beige; 
     text-decoration: underline 
+  }
+
+/* Dog Cubes */
+  .dogCube {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: black; 
+    border-radius: 15px; 
+    border: 5px solid maroon;
+    width: 130px;
+    float:left;
+    margin: 5px;
+  }
+
+  .dogName {
+    clear: both;
+    text-align:center;
+    vertical-align: middle;
+  }
+
+  .dogName a:link { 
+    color: beige; 
+    font-weight: bold; 
+    text-decoration: none
+    padding: 3px;
+  } 
+ 
+  .dogName a:visited { 
+    color: beige; 
+    text-decoration: none 
+  }
+
+  .dogThumb {
+    float: left;
+  }
+
+  .dogPrint {
+    float: right;
+    margin: 15px;
+  }
+
+  .centeredPrint {
+    text-align:center;
+    vertical-align:middle;
+  }
+  
+  .dogCubeContainer {
+    column-count: 3;
+  }
+
+/* Rig Cubes */
+  .rigCube {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: black; 
+    border-radius: 15px; 
+    border: 5px solid maroon;
+    width: 130px;
+    float:left;
+    margin: 5px;
+  }
+
+  .rigName {
+    clear: both;
+    text-align:center;
+    vertical-align: middle;
+  }
+
+  .rigName a:link { 
+    color: beige; 
+    font-weight: bold; 
+    text-decoration: none
+    padding: 3px;
+  } 
+ 
+  .rigName a:visited { 
+    color: beige; 
+    text-decoration: none 
+  }
+
+  .rigThumb {
+    text-align: center;
+  }
+
+  .rigCubeContainer {
+    column-count: 3;
   }
 
 

@@ -37,8 +37,10 @@
 					:array_to_update => "dog[hike_ids][]" } %>
 
   <p>
-    <%= f.label 'Photo' %><br />
-    <%= f.file_field :photo %>
+    <%= render :partial => "/shared/photo_browser", 
+            :locals => {
+              :f => f, 
+              :obj => @dog } %>
   </p>
 
 <p>

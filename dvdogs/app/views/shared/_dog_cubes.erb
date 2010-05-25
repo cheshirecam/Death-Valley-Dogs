@@ -1,0 +1,20 @@
+<div class="dogCubeContainer">
+<% dog_list.each do |dog| %>
+  <div class="dogCube">
+    <div class="dogImages">
+
+      <%= link_to image_tag(dog.photo.url(:thumb), :class => "dogThumb"), dog %>
+
+      <div>
+        <div class="dogPrint">
+          <%= dog.family == "Hominid" ? boots_icon_white("centeredPrint") : paws_icon_white("centeredPrint") %>
+        </div>
+      </div>
+    </div>
+    <div class="dogName">
+      <%= link_to dog.name, dog %>
+    </div>
+  </div>
+<% end %>
+</div>
+<div style="clear:both;"></div>

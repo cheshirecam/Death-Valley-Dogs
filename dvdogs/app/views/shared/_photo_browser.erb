@@ -1,0 +1,5 @@
+    <%= f.label 'Photo' %><br />
+    <% if obj.photo.exists? then %>
+      <%= image_tag(obj.photo.url(:medium)) %>
+    <% end %>
+    <br/><%= f.file_field :photo %>

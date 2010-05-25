@@ -22,8 +22,10 @@
 					:array_to_update => "hike[dog_ids][]" } %>
 
   <p>
-    <%= f.label 'Photo' %><br />
-    <%= f.file_field :photo %>
+    <%= render :partial => "/shared/photo_browser", 
+            :locals => {
+              :f => f, 
+              :obj => @hike } %>
   </p>
   <p>
     <%= f.submit 'Update' %>

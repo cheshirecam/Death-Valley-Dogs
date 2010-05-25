@@ -47,8 +47,10 @@
 					:array_to_update => "rig[trip_ids][]" } %>
 
   <p>
-    <%= f.label 'Photo' %><br />
-    <%= f.file_field :photo %>
+    <%= render :partial => "/shared/photo_browser", 
+            :locals => {
+              :f => f, 
+              :obj => @rig } %>
   </p>
   <p>
     <%= f.submit 'Update' %>

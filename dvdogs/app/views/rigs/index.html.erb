@@ -1,21 +1,7 @@
-<div class="showTitleObject"></div>
+<h1>Rigs</h1>
 
-<table>
+<%= render :partial => "/shared/rig_cubes", :locals => { :rig_list => @rigs } %>
 
-<% @rigs.each do |rig| %>
-  <tr>
-    <td>
-      <% if rig.photo.exists? then %>
-        <%= link_to image_tag(rig.photo.url(:thumb)), rig %>
-      <% end %>
-    </td>
-  	<td><%= link_to rig.dog.name + "\'s \"" + rig.name + "\"", rig %></td>
-    <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
-        :obj => rig
-     } %></td>
-  </tr>
-<% end %>
-</table>
 
 <br />
 

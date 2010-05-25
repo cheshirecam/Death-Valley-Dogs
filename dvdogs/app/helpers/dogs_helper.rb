@@ -8,12 +8,12 @@ module DogsHelper
     image_tag("dog-boot-print-black.png", :border=>0, :size=> "20x20")
   end
 
-  def paws_icon_white
-    image_tag("dog-paw-print-white.gif", :border=>0, :size=> "30x30")
+  def paws_icon_white(imgclass = "whitePrint")
+    image_tag("dog-paw-print-white.gif", :border=>0, :size=> "30x30", :class => imgclass)
   end
 
-  def boots_icon_white
-    image_tag("dog-boot-print-white.png", :border=>0, :size=> "30x30")
+  def boots_icon_white(imgclass = "whitePrint")
+    image_tag("dog-boot-print-white.png", :border=>0, :size=> "30x30", :class => imgclass)
   end
 
   def age(birthday)

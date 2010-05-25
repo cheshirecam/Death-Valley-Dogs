@@ -14,7 +14,8 @@ class Rig < ActiveRecord::Base
       :small  => "150x150>",
       :medium => "300x300>",
       :large =>   "400x400>",
-      :default_url => "/images/fs_icon_jeep.gif"
-  }
+    },
+    :default_url => "/images/fs_icon_jeep.gif"
+
 
 end

@@ -11,8 +11,10 @@
     <%= f.collection_select(:trip_id, Trip.all, :id, :name) %>
   </p>
   <p>
-    <%= f.label 'Photo' %><br />
-    <%= f.file_field :photo %>
+    <%= render :partial => "/shared/photo_browser", 
+            :locals => {
+              :f => f, 
+              :obj => @trip_story } %>
   </p>
   <p>
     <%= f.label "Synopsis to show in list:" %><br />

@@ -1,0 +1,13 @@
+<div class="rigCubeContainer">
+<% rig_list.each do |rig| %>
+  <div class="rigCube">
+    <div class="rigImages">
+      <%= link_to image_tag(rig.photo.url(:thumb), :class => "rigThumb"), rig %>
+    </div>
+    <div class="rigName">
+      <%= link_to rig.name, rig %>
+    </div>
+  </div>
+<% end %>
+</div>
+<div style="clear:both;"></div>
