@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-   skip_before_filter :require_user, :only => [:new, :create, :edit, :update]
+   # for now, we only have the one user, don't need more.
+   #skip_before_filter :require_user, :only => [:new, :create, :edit, :update]
 
    def new  
        @user = User.new  
