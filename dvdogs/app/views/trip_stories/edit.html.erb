@@ -13,17 +13,14 @@
   <p>
     <%= render :partial => "/shared/photo_browser", 
             :locals => {
-              :f => f, 
-              :obj => @trip_story } %>
+            :f => f, 
+            :obj => @trip_story } %>
   </p>
-  <p>
-    <%= f.label "Synopsis to show in list:" %><br />
-    <%= f.text_area :short_description %>
-  </p>
-  <p>
-    <%= f.label "Write-up:" %><br />
-    <%= f.text_area :description, :class => "mceEditor" %>
-  </p>
+  
+  <%= render :partial => "/shared/writeup_synopsis_and_editor", 
+            :locals => {
+            :f => f } %>
+  
   <p>
     <%= f.submit 'Update' %>
   </p>

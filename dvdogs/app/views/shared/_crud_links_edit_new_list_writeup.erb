@@ -10,9 +10,12 @@
 <% obj_id_field = obj.class.name.foreign_key %>
 <% obj_story_controller = "#{obj.class.name}_stories" %>
 
+<% if current_user %>  
+
 <%= render :partial => "/shared/crud_links_edit_new_list", :locals => { 
     :obj => obj
 } %> | 
 <%= link_to writeup_icon_large, {:controller => obj_story_controller, :action => "new", obj_id_field => obj.id}, 
   {:title => "Add a write-up for this #{obj_name}"} %>
 </p>
+<% end %>

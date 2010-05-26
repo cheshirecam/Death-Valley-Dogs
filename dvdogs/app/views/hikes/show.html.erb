@@ -30,10 +30,21 @@
     :obj => @hike,
  } %>
 
+<% if @hike.hike_stories.size > 0 then %>
+
 <h2><%= @hike.name %> <%= @hike.class.name %> Write-ups</h2>
 <%= render :partial => "/shared/writeup_list", :locals => { 
   :obj_stories => @hike.hike_stories,
   :obj_field => "hike"
  } %>
 
+<% else %>
+<h2>No write-up exists for this hike yet.  
+  <% if current_user %>  
 
+  <%= link_to "Write one!", 
+  {:controller => :hike_stories, :action => "new", :hike_id => @hike.id}, 
+  {:title => "Add a write-up for this hike"} %>
+  </h2>
+  <% end %>
+<% end %>

@@ -1,20 +1,5 @@
 /* basic elements */ 
 
-  #mainImageHeader {
-    background-color: black;
-    background-image: url('../images/dvdogs_header_200.png');
-    background-repeat: no-repeat;
-    height: 190px;
-    position: relative;
-  }
-  
-  #mainImageHeader div {
-    vertical-align: bottom;
-    bottom: 0;
-    position: absolute;
-    padding-left: 1em;
-  }
-
 	body { 
 		/* color: beige; */ 
 		font-style: normal; 
@@ -74,6 +59,33 @@
 	}
 
 /* Tabs */
+
+  #mainImageHeader {
+    background-color: black;
+    background-image: url('../images/dvdogs_header_200.png');
+    background-repeat: no-repeat;
+    height: 190px;
+    position: relative;
+  }
+  
+  #header {
+    vertical-align: bottom;
+    bottom: 0;
+    position: absolute;
+    float: left;
+    padding-left: 1em;
+  }
+  
+  #userAuthLinks {
+    vertical-align: bottom;
+    bottom: 0;
+    position: absolute;
+    margin-left: 450px;
+  }
+
+  #userAuthLinks a {
+    color: beige;
+  }
 
 	#header ul {
 		list-style: none;

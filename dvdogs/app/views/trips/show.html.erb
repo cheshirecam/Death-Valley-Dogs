@@ -49,8 +49,11 @@
  
 <% else %>
 <h2>No write-up exists for this trip yet.  
+  <% if current_user %>  
+
   <%= link_to "Write one!", 
-  {:controller => :trip_story, :action => "new", :trip_id => @trip.id}, 
+  {:controller => :trip_stories, :action => "new", :trip_id => @trip.id}, 
   {:title => "Add a write-up for this trip"} %>
   </h2>
+  <% end %>
 <% end %>

@@ -3,9 +3,12 @@
 <% obj_id_field = obj.class.name.foreign_key %>
 <% obj_story_controller = "#{obj.class.name}_stories" %>
 
+<% if current_user %>  
+
 <%= link_to edit_icon, 
     {:controller => obj_controller, :action => "edit", :id => obj}, 
     {:title => "Edit this info" }%> |
 <%= link_to delete_icon, obj,
     {:title => "Delete", :confirm => 'Are you sure?', :method => :delete }  %>
 
+<% end %>

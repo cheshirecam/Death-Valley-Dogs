@@ -3,8 +3,11 @@
     :obj => @hike,
 
   -->
+<% if current_user %>  
 
 <% obj_name = obj.class.name == "Class"? obj.name: obj.class.name %>
 <% obj_controller = obj_name.tableize %>
 
 <%= link_to new_icon_large, {:controller => obj_controller, :action => "new"}, {:title => "Create new #{obj_name}"} %>
+
+<% end %>
