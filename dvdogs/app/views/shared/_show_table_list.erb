@@ -1,4 +1,5 @@
 <% header_class = nil unless defined?(header_class) %>
+<% if obj_array.size > 0 %>
 <tr>
   <th class="<%= header_class %>" ><%= label %>:</th>
   <td>
@@ -9,3 +10,4 @@
 	  </ul>
   </td>
 </tr>
+<% end %>

@@ -14,10 +14,12 @@
   <td><%=h age(@dog.birth_date) %></td>
 </tr>
 
+<% unless @dog.ham == nil || @dog.ham.strip.size == 0 %>
 <tr>
   <th>Ham:</th>
   <td><%=h @dog.ham.upcase %></td>
 </tr>
+<% end %>
 
 <tr>
   <th>Known for:</th>
