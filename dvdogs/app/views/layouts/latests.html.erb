@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Death Valley Dogs: Home</title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tiny_mce_if_used %>
+  <%= tiny_mce if using_tiny_mce? %>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+<%= render :partial => "shared/tabs_top_level", :locals =>  { :selected_top_tab => "home"  } %>
+
+<div id="content">
+<%= yield %>
+</div>
+</body>
+</html>

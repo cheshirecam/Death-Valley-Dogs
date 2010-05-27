@@ -1,0 +1,14 @@
+<h1>Latest Write-ups</h1>
+
+<h2>Trips</h2>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @latest_trip_stories,
+  :obj_field => "trip"
+ } %>
+
+<h2>Hikes</h2>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @latest_hike_stories,
+  :obj_field => "hike"
+ } %>
+

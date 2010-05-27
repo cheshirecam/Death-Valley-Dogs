@@ -2,7 +2,7 @@ class TripStory < ActiveRecord::Base
   belongs_to :trip
   belongs_to :dog
 
-  named_scope :last3, :order => 'created_at DESC', :limit => 2
+  named_scope :latest, :order => 'created_at DESC', :limit => 2
 
 # Paperclip
 has_attached_file :photo,

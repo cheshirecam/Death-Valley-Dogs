@@ -1,32 +1,10 @@
-<div class="showTitleObject"></div>
+<h1>Trip Write-ups</h1>
 
-<table>
-  <tr>
-    <th>Trip</th>
-    <th>Description</th>
-    <th>Dog</th>
-    <th>Short description</th>
-    <th>Photo file name</th>
-    <th>Photo content type</th>
-    <th>Photo file size</th>
-  </tr>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @trip_stories,
+  :obj_field => "trip"
+ } %>
 
-<% @trip_stories.each do |trip_story| %>
-  <tr>
-    <td><%=h trip_story.trip_id %></td>
-    <td><%=h trip_story.description %></td>
-    <td><%=h trip_story.dog_id %></td>
-    <td><%=h trip_story.short_description %></td>
-    <td><%=h trip_story.photo_file_name %></td>
-    <td><%=h trip_story.photo_content_type %></td>
-    <td><%=h trip_story.photo_file_size %></td>
-    <td><%= link_to 'Show', trip_story %></td>
-    <td><%= link_to 'Edit', edit_trip_story_path(trip_story) %></td>
-    <td><%= link_to 'Destroy', trip_story, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New trip_story', new_trip_story_path %>
+<%= render :partial => "/shared/crud_links_new", :locals => { 
+    :obj => TripStory
+} %>
