@@ -16,7 +16,18 @@
 
 <tr>
   <th>Ham:</th>
-  <td><%=h @dog.ham %></td>
+  <td><%=h @dog.ham.upcase %></td>
+</tr>
+
+<tr>
+  <th>Known for:</th>
+  <td><ul>
+    <% if @dog.known_for != nil %>
+      <% @dog.known_for.each_line do |kf| %>
+        <li><%=h kf %></li>
+      <% end %>
+    <% end %>
+  </ul></td>
 </tr>
 
   <%= render :partial => "/shared/show_table_list", 

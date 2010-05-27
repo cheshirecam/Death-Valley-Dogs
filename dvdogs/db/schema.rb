@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100526180243) do
+ActiveRecord::Schema.define(:version => 20100527153239) do
 
   create_table "camps", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20100526180243) do
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.text     "known_for"
   end
 
   create_table "dogs_hikes", :id => false, :force => true do |t|
