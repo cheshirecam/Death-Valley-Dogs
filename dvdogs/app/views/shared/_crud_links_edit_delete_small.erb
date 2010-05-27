@@ -1,13 +1,13 @@
-<% obj_controller = obj.class.name.tableize %>
-<% obj_name = obj.class.name %>
-<% obj_id_field = obj.class.name.foreign_key %>
-<% obj_story_controller = "#{obj.class.name}_stories" %>
+<% obj_name = obj.class.name == "Class"? obj.name: obj.class.name %>
+<% obj_controller = obj_name.tableize %>
+<% obj_id_field = obj_name.foreign_key %>
+<% obj_story_controller = "#{obj_name}_stories" %>
 
 <% if current_user %>  
 
 <%= link_to edit_icon, 
     {:controller => obj_controller, :action => "edit", :id => obj}, 
-    {:title => "Edit this info" }%> |
+    {:title => "Edit this info" }%>
 <%= link_to delete_icon, obj,
     {:title => "Delete", :confirm => 'Are you sure?', :method => :delete }  %>
 

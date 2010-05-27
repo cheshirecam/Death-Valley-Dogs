@@ -1,8 +1,6 @@
 <div class="showTitleObject"><%= link_to @hike_story.hike.name, @hike_story.hike%> - according to <%= link_to @hike_story.dog.name, @hike_story.dog %></div>
 <%= @hike_story.description %>
 
-<div style = "clear: both;">
-<br>
-<%= link_to edit_icon_large, edit_hike_story_path(@hike_story) %> |
-<%= link_to list_icon_large, hike_stories_path %>
-</div>
+<%= render :partial => "/shared/crud_links_edit_new_list", :locals => { 
+    :obj => @hike_story
+} %>
