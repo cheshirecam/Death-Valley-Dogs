@@ -31,18 +31,52 @@
     <% end %>
   </ul></td>
 </tr>
-
-  <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Trips", :obj_array => @dog.trips } %>
-  <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Hikes", :obj_array => @dog.hikes } %>
-  <%= render :partial => "/shared/show_table_list", 
-    				:locals => { :label => "Rigs", 
-                         :header_class => "lastVerticalColumnHeader",
-    				             :obj_array => @dog.rigs } %>
-
 </table>
+<br/>
+<table class="maroonRoundedBorder">
+  
+<tr>
+  <th class="firstHorizontalColumnHeader" >Trips:</th>
+  <th>Hikes:</th>
+  <th class="lastHorizontalColumnHeader" >Rigs:</th>
+</tr>
+<tr>
+  <td class="horizontalData">
+      <% @dog.trips.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
+  <td class="horizontalData">
+      <% @dog.hikes.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
+  <td class="horizontalData">
+      <% @dog.rigs.each do |obj| %>
+        <%= link_to obj.name, obj %><br>
+      <% end %>
+  </td>
+</tr>
+</table>
+
+
 </td></table>
+
+<% if @dog.trip_stories.size > 0 then %>
+<h2><%= @dog.name %>'s Trip Write-ups</h2>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @dog.trip_stories,
+  :obj_field => "trip"
+ } %>
+ <% end %>
+
+<% if @dog.hike_stories.size > 0 then %>
+<h2><%= @dog.name %>'s Hike Write-ups</h2>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @dog.hike_stories,
+  :obj_field => "hike"
+ } %>
+ <% end %>
 
 <%= render :partial => "/shared/crud_links_edit_new_list", :locals => { 
     :obj => @dog
