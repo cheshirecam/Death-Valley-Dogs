@@ -30,6 +30,9 @@
     :obj => @hike,
  } %>
 
+  <%= @map.to_html %>
+<%= @map.div(:width => 600, :height => 350) %>
+
 <% if @hike.hike_stories.size > 0 then %>
 
 <h2><%= @hike.name %> <%= @hike.class.name %> Write-ups</h2>
@@ -48,3 +51,5 @@
   </h2>
   <% end %>
 <% end %>
+
+

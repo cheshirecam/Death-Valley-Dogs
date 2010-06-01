@@ -15,6 +15,22 @@ class HikesController < ApplicationController
   def show
     @hike = Hike.find(params[:id])
 
+    # Create a new map object, also defining the div ("map") 
+    # where the map will be rendered in the view
+    @map = GMap.new("map")
+    # Use the larger pan/zoom control but disable the map type
+    # selector
+    @map.control_init(:large_map => true,:map_type => true)
+    # Center the map on specific coordinates and focus in fairly
+    # closely
+    @map.center_zoom_init([36.747993,-117.578404], 15)
+    ubehebe = GMarker.new([36.747993,-117.578404],
+  :title => "Ubehebe Mine", 
+  :info_window => "Kyle and I rolled in at 3am!")
+    @map.overlay_init(ubehebe)
+
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @hike }
