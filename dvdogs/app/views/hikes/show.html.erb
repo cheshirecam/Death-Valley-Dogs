@@ -30,9 +30,8 @@
     :obj => @hike,
  } %>
 
-<!--%= render (:partial=>"/shared/map", :locals=>{:data=>"/test.xml"}) %-->
 
-  <div id="map_canvas" style="width:600px; height:350px"></div>
+<div id="map_canvas" style="width:650px; height:400px"></div>
 
 
 <% if @hike.hike_stories.size > 0 then %>
@@ -63,7 +62,7 @@
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     //var ctaLayer = new google.maps.KmlLayer('http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml');
-    var mapUrl = "http://" + document.domain + "/hikes/get_kml/3/" + <%= @hike.id %> + ".kml"
+    var mapUrl = "http://" + document.domain + "/hikes/get_kml/3/" + <%= @hike.id %> + ".kml";
     alert(mapUrl);
     var ctaLayer = new google.maps.KmlLayer(mapUrl);
 //    var ctaLayer = new google.maps.KmlLayer('/hikes/get_kml/3/1.kml');
