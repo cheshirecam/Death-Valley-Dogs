@@ -30,6 +30,8 @@
     :obj => @hike,
  } %>
 
+<INPUT TYPE="button" value="Open in Google Earth" onClick="location.href=getMapKml()">
+
 
 <div id="map_canvas" style="width:650px; height:400px"></div>
 
@@ -62,17 +64,24 @@
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-    // this won't work with localhost, because when sent to google, it must be a publicly available url.    
-    var this_domain = document.domain;
-    var randomnumber=Math.floor(Math.random()*101);
-    var mapUrl = "http://" + this_domain + "/hikes/get_kml/"+ randomnumber + "/" + <%= @hike.id %> + ".kml";
-
-    //alert("shibby!:" + mapUrl);
+    var mapUrl = getMapKml();
+    alert("shibby!:" + mapUrl);
     
     // use that layer now
     var ctaLayer = new google.maps.KmlLayer(mapUrl);
     ctaLayer.setMap(map);
     
+  }
+  
+  function getMapKml() {
+    // this won't work with localhost, because when sent to google, it must be a publicly available url.    
+    var this_domain = document.domain;
+    if (this_domain == "localhost") {
+      this_domain += ":3000";
+    }
+    var randomnumber=Math.floor(Math.random()*101);
+    var mapUrl = "http://" + this_domain + "/hikes/get_kml/"+ randomnumber + "/" + <%= @hike.id %> + ".kml";
+    return mapUrl;
   }
 
 </script>
