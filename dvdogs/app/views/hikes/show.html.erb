@@ -32,7 +32,7 @@
 
 <!--%= render (:partial=>"/shared/map", :locals=>{:data=>"/test.xml"}) %-->
 
-<button onclick="initialize()">mappit</button>
+  <div id="map_canvas" style="width:600px; height:350px"></div>
 
 
 <% if @hike.hike_stories.size > 0 then %>
@@ -55,14 +55,19 @@
 
 <script type="text/javascript">
   function initialize() {
-    alert("shibby!");
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var latlng = new google.maps.LatLng(36.338446, -117.47087);
     var myOptions = {
       zoom: 8,
       center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    //var ctaLayer = new google.maps.KmlLayer('http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml');
+
+    var ctaLayer = new google.maps.KmlLayer('http://localhost:3000/hikes/get_kml/3/1.kml');
+    ctaLayer.setMap(map);
+//    ctaLayer.gotoDefaultViewport(map);
+    
   }
 
 </script>
