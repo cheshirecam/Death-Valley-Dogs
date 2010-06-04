@@ -64,7 +64,8 @@
 
     // this won't work with localhost, because when sent to google, it must be a publicly available url.    
     var this_domain = document.domain;
-    var mapUrl = "http://" + this_domain + "/hikes/get_kml/3/" + <%= @hike.id %> + ".kml";
+    var randomnumber=Math.floor(Math.random()*101);
+    var mapUrl = "http://" + this_domain + "/hikes/get_kml/"+ randomnumber + "/" + <%= @hike.id %> + ".kml";
 
     //alert("shibby!:" + mapUrl);
     
