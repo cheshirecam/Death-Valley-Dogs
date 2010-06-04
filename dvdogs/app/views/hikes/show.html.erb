@@ -61,18 +61,16 @@
       mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    //var ctaLayer = new google.maps.KmlLayer('http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml');
+
+    // this won't work with localhost, because when sent to google, it must be a publicly available url.    
     var this_domain = document.domain;
-    alert("shibby2");
-    if (this_domain == "localhost") {
-      this_domain += ":3000";
-    }
-    alert("shibby1");
     var mapUrl = "http://" + this_domain + "/hikes/get_kml/3/" + <%= @hike.id %> + ".kml";
-    alert("shibby!:" + mapUrl);
+
+    //alert("shibby!:" + mapUrl);
+    
+    // use that layer now
     var ctaLayer = new google.maps.KmlLayer(mapUrl);
     ctaLayer.setMap(map);
-//    ctaLayer.gotoDefaultViewport(map);
     
   }
 
