@@ -31,10 +31,11 @@ module Ym4r
         options[:hl] ||= ''
         options[:local_search] = false unless options.has_key?(:local_search)
         options[:sensor] = false unless options.has_key?(:sensor)
+        options[:version] ||= "2.x"
         api_key = ApiKey.get(options)
-        a = "<script src=\"http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=#{api_key}&amp;hl=#{options[:hl]}&amp;sensor=#{options[:sensor]}\" type=\"text/javascript\"></script>\n"
+        a = "<script src=\"http://maps.google.com/maps?file=api&amp;v=#{options[:version]}&amp;key=#{api_key}&amp;hl=#{options[:hl]}&amp;sensor=#{options[:sensor]}\" type=\"text/javascript\"></script>\n"
         a << "<script src=\"#{ActionController::Base.relative_url_root}/javascripts/ym4r-gm.js\" type=\"text/javascript\"></script>\n" unless options[:without_js]
-        a << "<style type=\"text/css\">\n v\:* { behavior:url(#default#VML);}\n</style>" if options[:with_vml]
+        a << "<!--[if IE]>\n<style type=\"text/css\">\n v\\:* { behavior:url(#default#VML);}\n</style>\n<![endif]-->\n" if options[:with_vml]
         a << "<script src=\"http://www.google.com/uds/api?file=uds.js&amp;v=1.0\" type=\"text/javascript\"></script>" if options[:local_search]
         a << "<script src=\"http://www.google.com/uds/solutions/localsearch/gmlocalsearch.js\" type=\"text/javascript\"></script>\n" if options[:local_search]
         a << "<style type=\"text/css\">@import url(\"http://www.google.com/uds/css/gsearch.css\");@import url(\"http://www.google.com/uds/solutions/localsearch/gmlocalsearch.css\");}</style>" if options[:local_search]
@@ -42,6 +43,9 @@ module Ym4r
       end
      
       #Outputs the <div id=...></div> which has been configured to contain the map. You can pass <tt>:width</tt> and <tt>:height</tt> as options to output this in the style attribute of the DIV element (you could also achieve the same effect by putting the dimension info into a CSS or using the instance method GMap#header_width_height). You can aslo pass <tt>:class</tt> to set the classname of the div.
+      # To include initial content in the div, such as a loading message, you
+      # may pass a <tt>:content</tt> option specifying a string, or other
+      # object, such as a REXML fragment, that responds to #to_s.
       def div(options = {})
         attributes = "id=\"#{@container}\" "
         if options.has_key?(:height) && options.has_key?(:width)
@@ -58,7 +62,7 @@ module Ym4r
         if options.has_key?(:class)
           attributes += options.keys.map {|opt| "#{opt}=\"#{options[opt]}\"" }.join(" ")
         end
-        "<div #{attributes}></div>"
+        "<div #{attributes}>#{options[:content].to_s}</div>"
       end
 
       #Outputs a style declaration setting the dimensions of the DIV container of the map. This info can also be set manually in a CSS.
@@ -71,7 +75,7 @@ module Ym4r
         @init << code
       end
 
-      #Initializes the controls: you can pass a hash with keys <tt>:small_map</tt>, <tt>:large_map</tt>, <tt>:small_zoom</tt>, <tt>:scale</tt>, <tt>:map_type</tt>, <tt>:overview_map</tt> and a boolean value as the value (usually true, since the control is not displayed by default), <tt>:local_search</tt> and <tt>:local_search_options</tt>
+      #Initializes the controls: you can pass a hash with keys <tt>:small_map</tt>, <tt>:large_map</tt>, <tt>:small_zoom</tt>, <tt>:scale</tt>, <tt>:map_type</tt>, <tt>:overview_map</tt> and hash of options controlling its display (<tt>:hide</tt> and <tt>:size</tt>), <tt>:local_search</tt>, <tt>:local_search_options</tt>, and <tt>:show_on_focus</tt>
       def control_init(controls = {})
         @init_end << add_control(GSmallMapControl.new) if controls[:small_map]
         @init_end << add_control(GLargeMapControl.new) if controls[:large_map]
@@ -79,8 +83,22 @@ module Ym4r
         @init_end << add_control(GScaleControl.new) if controls[:scale]
         @init_end << add_control(GMapTypeControl.new) if controls[:map_type]
         @init_end << add_control(GHierarchicalMapTypeControl.new) if controls[:hierarchical_map_type]        
-        @init_end << add_control(GOverviewMapControl.new) if controls[:overview_map]
+        if controls[:overview_map]
+          if controls[:overview_map].is_a?(Hash)
+            hide = controls[:overview_map][:hide]
+            size = controls[:overview_map][:size]
+          end
+          overview_control = GOverviewMapControl.new(size)
+          @global_init << overview_control.declare("#{@variable}_ovm") if hide
+          @init_end << add_control(overview_control)
+          @init_end << "#{overview_control.variable}.hide(true);" if hide
+        end
         @init_end << add_control(GLocalSearchControl.new(controls[:anchor], controls[:offset_width], controls[:offset_height], controls[:local_search_options])) if controls[:local_search]
+        if controls[:show_on_focus]  # Should be last
+          @init_end << "#{@variable}.hideControls();"
+          event_init(self, :mouseover, "function(){#{@variable}.showControls();}")
+          event_init(self, :mouseout,  "function(){#{@variable}.hideControls();}")
+        end
       end
       
       #Initializes the interface configuration: double-click zoom, dragging, continuous zoom,... You can pass a hash with keys <tt>:dragging</tt>, <tt>:info_window</tt>, <tt>:double_click_zoom</tt>, <tt>:continuous_zoom</tt> and <tt>:scroll_wheel_zoom</tt>. The values should be true or false. Check the google maps API doc to know what the default values are.

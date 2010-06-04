@@ -33,6 +33,9 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'  
   map.resources :user_sessions  
   
+  # this is to sent kml to google
+  map.connect ':controller/:action/:ignore_this_bit/:uuid.:format'   
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

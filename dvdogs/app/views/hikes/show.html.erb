@@ -30,12 +30,12 @@
     :obj => @hike,
  } %>
 
-  <%= GMap.header %>
-  <%= @map.to_html %>
-<%= @map.div(:width => 600, :height => 350) %>
+<!--%= render (:partial=>"/shared/map", :locals=>{:data=>"/test.xml"}) %-->
+
+<button onclick="initialize()">mappit</button>
+
 
 <% if @hike.hike_stories.size > 0 then %>
-
 <h2><%= @hike.name %> <%= @hike.class.name %> Write-ups</h2>
 <%= render :partial => "/shared/writeup_list", :locals => { 
   :obj_stories => @hike.hike_stories,
@@ -53,4 +53,16 @@
   <% end %>
 <% end %>
 
+<script type="text/javascript">
+  function initialize() {
+    alert("shibby!");
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  }
 
+</script>

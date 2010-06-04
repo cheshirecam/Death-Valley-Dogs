@@ -28,8 +28,7 @@ class HikesController < ApplicationController
   :title => "Ubehebe Mine", 
   :info_window => "Kyle and I rolled in at 3am!")
     @map.overlay_init(ubehebe)
-
-
+    @map.add_map_type_init('G_PHYSICAL_MAP')
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,6 +36,18 @@ class HikesController < ApplicationController
     end
   end
 
+  # return KML for google maps
+  def get_kml  
+    @hike = Hike.find_by_id(params[:uuid])
+    @kml_data = @hike.map_points
+      
+    if @kml_data       
+       send_data @kml_data  
+    else  
+      render :text => 'Kml is empty'  
+    end  
+  end
+   
   # GET /hikes/new
   # GET /hikes/new.xml
   def new
