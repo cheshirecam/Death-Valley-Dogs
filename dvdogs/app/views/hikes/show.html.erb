@@ -62,10 +62,15 @@
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     //var ctaLayer = new google.maps.KmlLayer('http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml');
-    var mapUrl = "http://" + document.domain + "/hikes/get_kml/3/" + <%= @hike.id %> + ".kml";
-    alert(mapUrl);
+    var this_domain = document.domain;
+    alert("shibby2");
+    if (this_domain == "localhost") {
+      this_domain += ":3000";
+    }
+    alert("shibby1");
+    var mapUrl = "http://" + this_domain + "/hikes/get_kml/3/" + <%= @hike.id %> + ".kml";
+    alert("shibby!:" + mapUrl);
     var ctaLayer = new google.maps.KmlLayer(mapUrl);
-//    var ctaLayer = new google.maps.KmlLayer('/hikes/get_kml/3/1.kml');
     ctaLayer.setMap(map);
 //    ctaLayer.gotoDefaultViewport(map);
     
