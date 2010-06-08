@@ -3,7 +3,8 @@ class TripsController < ApplicationController
   # GET /trips.xml
   def index
     @trips = Trip.by_date_desc
-
+    @main_header = "Trips"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @trips }
@@ -25,7 +26,8 @@ class TripsController < ApplicationController
   # GET /trips/new.xml
   def new
     @trip = Trip.new
-
+    @main_header = "New Trip"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @trip }
@@ -35,6 +37,7 @@ class TripsController < ApplicationController
   # GET /trips/1/edit
   def edit
     @trip = Trip.find(params[:id])
+    @main_header = "Edit Trip"
   end
 
   # POST /trips

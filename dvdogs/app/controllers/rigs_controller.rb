@@ -3,7 +3,8 @@ class RigsController < ApplicationController
   # GET /rigs.xml
   def index
     @rigs = Rig.active
-
+    @main_header = "Rigs"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rigs }
@@ -14,7 +15,8 @@ class RigsController < ApplicationController
   # GET /rigs.xml
   def retired_index
     @rigs = Rig.inactive
-
+    @main_header = "Retired Rigs"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @rigs }
@@ -36,7 +38,8 @@ class RigsController < ApplicationController
   # GET /rigs/new.xml
   def new
     @rig = Rig.new
-
+    @main_header = "New Rig"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @rig }
@@ -46,6 +49,7 @@ class RigsController < ApplicationController
   # GET /rigs/1/edit
   def edit
     @rig = Rig.find(params[:id])
+    @main_header = "Edit Rig"
   end
 
   # POST /rigs

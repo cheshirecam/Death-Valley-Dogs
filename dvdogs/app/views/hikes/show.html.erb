@@ -1,8 +1,3 @@
-<%= render :partial => "/shared/title_header", :locals => { 
-    :title => @hike.name,
-    :date => @hike.date
-} %>
-
 <table><tr>
   <td>
     <% if @hike.photo.exists? then %>
@@ -33,7 +28,7 @@
 <INPUT TYPE="button" value="Open in Google Earth" onClick="location.href=getMapKml()">
 
 
-<div id="map_canvas" style="width:650px; height:400px"></div>
+<div id="map_canvas"></div>
 
 
 <% if @hike.hike_stories.size > 0 then %>

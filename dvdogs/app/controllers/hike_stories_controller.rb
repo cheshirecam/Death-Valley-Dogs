@@ -5,6 +5,7 @@ class HikeStoriesController < ApplicationController
   # GET /hike_stories.xml
   def index
     @hike_stories = HikeStory.all
+    @main_header = "Hike Write-ups"    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +28,7 @@ class HikeStoriesController < ApplicationController
   # GET /hike_stories/new.xml
   def new
     @hike_story = HikeStory.new
+    @main_header = "New Hike Write-up"    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +39,8 @@ class HikeStoriesController < ApplicationController
   # GET /hike_stories/1/edit
   def edit
     @hike_story = HikeStory.find(params[:id])
+    @main_header = "Edit Hike Write-up"    
+
   end
 
   # POST /hike_stories

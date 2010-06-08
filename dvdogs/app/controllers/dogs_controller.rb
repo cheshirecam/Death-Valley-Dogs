@@ -5,11 +5,11 @@ class DogsController < ApplicationController
   def index
     @dogs = Dog.all
     @dogs_active = Dog.active
-    @dogs_inactive = Dog.inactive
     
     @dogs_current = []
     @dogs_old = []
-    
+
+    @main_header = "Dogs"    
     # ok, this may be wrong, but I want to filter for if this dog has been on at least 
     # one of the last 3 trips.
     
@@ -32,6 +32,7 @@ class DogsController < ApplicationController
   # GET /dogs.xml
   def retired_index
     @dogs_inactive = Dog.inactive
+    @main_header = "Retired Dogs"    
     
     respond_to do |format|
       format.html # index.html.erb
@@ -54,6 +55,7 @@ class DogsController < ApplicationController
   # GET /dogs/new.xml
   def new
     @dog = Dog.new
+    @main_header = "New Dog"    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -64,6 +66,8 @@ class DogsController < ApplicationController
   # GET /dogs/1/edit
   def edit
     @dog = Dog.find(params[:id])
+    @main_header = "Edit Dog"    
+
   end
 
   # POST /dogs

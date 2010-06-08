@@ -4,7 +4,8 @@ class TripStoriesController < ApplicationController
   # GET /trip_stories.xml
   def index
     @trip_stories = TripStory.all
-
+    @main_header = "Trip Write-ups"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @trip_stories }
@@ -26,7 +27,8 @@ class TripStoriesController < ApplicationController
   # GET /trip_stories/new.xml
   def new
     @trip_story = TripStory.new
-
+    @main_header = "New Trip Write-up"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @trip_story }
@@ -36,6 +38,7 @@ class TripStoriesController < ApplicationController
   # GET /trip_stories/1/edit
   def edit
     @trip_story = TripStory.find(params[:id])
+    @main_header = "Edit Trip Write-up"
   end
 
   # POST /trip_stories

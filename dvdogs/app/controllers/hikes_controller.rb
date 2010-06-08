@@ -3,6 +3,7 @@ class HikesController < ApplicationController
   # GET /hikes.xml
   def index
     @hikes = Hike.by_date_desc
+    @main_header = "Hikes"    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -52,6 +53,7 @@ class HikesController < ApplicationController
   # GET /hikes/new.xml
   def new
     @hike = Hike.new
+    @main_header = "New Hike"    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -62,6 +64,8 @@ class HikesController < ApplicationController
   # GET /hikes/1/edit
   def edit
     @hike = Hike.find(params[:id])
+    @main_header = "Edit Hike"    
+
   end
 
   # POST /hikes

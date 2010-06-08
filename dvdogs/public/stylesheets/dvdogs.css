@@ -142,8 +142,25 @@
 	#content {
     clear: both;
 		border-top: 5px solid maroon;
+    background-image: url('../images/tile-topo-blk-trans.png');
+    background-repeat: repeat;
+    align: center;
+	}
+	
+	#content_center {
+    background-color: #7e8b4e;  
+    width: 650px;
+    align: center;
+    text-align: left;
+    margin: 0 auto;
+    padding: 5px;	  
 	}
 
+  #map_canvas {
+    width:630px;
+    height:400px;
+  }
+  
   h1 {
     color: beige;
     background: black;
