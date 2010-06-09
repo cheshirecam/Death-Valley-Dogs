@@ -149,7 +149,7 @@
 	
 	#content_center {
     background-color: #7e8b4e;  
-    width: 650px;
+    width: 750px;
     align: center;
     text-align: left;
     margin: 0 auto;
@@ -157,7 +157,7 @@
 	}
 
   #map_canvas {
-    width:630px;
+    width:740px;
     height:400px;
   }
   
