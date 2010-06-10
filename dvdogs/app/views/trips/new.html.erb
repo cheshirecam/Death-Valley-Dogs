@@ -16,13 +16,23 @@
 					:array_to_update => "trip[dog_ids][]" } %>
   <%= render :partial => "/shared/checkbox_selector", 
     				:locals => { :label => "Rigs", 
-					:item_array => Rig.all, 
+					:item_array => Rig.by_name, 
 					:check_field => @trip.rigs,
 					:array_to_update => "trip[rig_ids][]" } %>
+					
   <p>
-    <%= f.label 'Photo' %><br />
-    <%= f.file_field :photo %>
+    <%= render :partial => "/shared/photo_browser", 
+            :locals => {
+              :f => f, 
+              :obj => @trip } %>
   </p>
+  <p>
+    <%= render :partial => "/shared/map_editor", 
+            :locals => {
+              :f => f, 
+              :obj => @trip } %>
+  </p>
+
   <p>
     <%= f.submit 'Create' %>
   </p>

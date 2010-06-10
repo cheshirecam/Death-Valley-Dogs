@@ -35,6 +35,10 @@
     :obj => @trip
  } %>
 
+<INPUT TYPE="button" value="Open in Google Earth" onClick="location.href=getMapKml()">
+<div id="map_canvas"></div>
+
+
 <% if @trip.trip_stories.size > 0 then %>
 <h2><%= @trip.name %> <%= @trip.class.name %> Write-ups</h2>
 <%= render :partial => "/shared/writeup_list", :locals => { 
@@ -52,3 +56,7 @@
   </h2>
   <% end %>
 <% end %>
+
+<script language="javascript" type="text/javascript">
+  $("#map_canvas").load(initialize_map('trips', <%= @trip.id %>));
+</script>

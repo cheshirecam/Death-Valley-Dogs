@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100602162744) do
+ActiveRecord::Schema.define(:version => 20100610161027) do
 
   create_table "camps", :force => true do |t|
     t.string   "name"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20100602162744) do
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.text     "map_points"
   end
 
   create_table "users", :force => true do |t|

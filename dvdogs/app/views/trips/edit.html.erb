@@ -26,7 +26,12 @@
               :f => f, 
               :obj => @trip } %>
   </p>
-
+  <p>
+    <%= render :partial => "/shared/map_editor", 
+            :locals => {
+              :f => f, 
+              :obj => @trip } %>
+  </p>
 
   <p>
     <%= f.submit 'Update' %>
