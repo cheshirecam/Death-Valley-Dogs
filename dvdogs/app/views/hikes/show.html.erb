@@ -25,7 +25,7 @@
     :obj => @hike,
  } %>
 
-<INPUT TYPE="button" value="Open in Google Earth" onClick="location.href=getMapKml()">
+<INPUT TYPE="button" value="Open in Google Earth" onClick="location.href=getMapKml('hikes', <%= @hike.id %>)">
 <div id="map_canvas"></div>
 
 

@@ -22,6 +22,18 @@ class TripsController < ApplicationController
     end
   end
 
+  # return KML for google maps
+  def get_kml  
+    @trip = Trip.find_by_id(params[:uuid])
+    @kml_data = @trip.map_points
+      
+    if @kml_data       
+       send_data @kml_data  
+    else  
+      render :text => 'Kml is empty'  
+    end  
+  end
+
   # GET /trips/new
   # GET /trips/new.xml
   def new
