@@ -12,13 +12,13 @@
 </head>
 <body>
 
+<p style="color: green"><%= flash[:notice] %></p>
 <%= render :partial => "shared/tabs_top_level", :locals =>  { :selected_top_tab => "home"  } %>
 
 <div id="content">
   <div class="showTitleObject">
     <%= "Latest Write-ups"%>
   </div>
-<p style="color: green"><%= flash[:notice] %></p>
 
   <div id="content_center">
     <%= yield %>

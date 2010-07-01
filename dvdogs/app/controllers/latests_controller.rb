@@ -4,6 +4,8 @@ class LatestsController < ApplicationController
   def index
     @latest_hike_stories = HikeStory.latest
     @latest_trip_stories = TripStory.latest
+    @latest_all = @latest_hike_stories + @latest_trip_stories
+    @latest_all.sort! { |a,b| b.created_at <=> a.created_at}
 
     respond_to do |format|
       format.html # index.html.erb

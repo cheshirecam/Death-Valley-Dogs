@@ -1,17 +1,22 @@
 <!-- this is a comment 
-  :obj_stories => @hike.hike_stories,
-  :obj_field => "hike"
+  :obj_stories => @hike.hike_stories
 
   -->
 
 
 <table>
 <% obj_stories.each do |obj_story| %>
-
+<%= puts obj_story %>
+<% if obj_story.class.name.eql?("HikeStory") then 
+    obj_field = 'hike'
+  else
+    obj_field = 'trip'
+  end 
+ %>
 <% obj_controller = obj_story.class.name.tableize %>
 
 <% if obj_story.photo.exists? then %>
-  <% img_link = image_tag obj_story.photo.url(:list_thumb) %>
+  <% img_link = image_tag obj_story.photo.url(:list_thumb), :size => "110x110" %>
 <% else %>
   <% img_link = "Get the story"%>
 <% end %>
