@@ -46,3 +46,749 @@
 ** TabsOnRails: initialized properly
   [4;36;1mTrip Load (0.7ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
   [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (1.4ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (1.2ms)[0m   [0;1mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "camps" [0m
+
+
+Processing CampsController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"camp"=>{}}
+  [4;35;1mCamp Create (0.2ms)[0m   [0mINSERT INTO "camps" ("name", "rating", "location", "created_at", "updated_at", "description") VALUES(NULL, NULL, NULL, '2010-07-18 20:04:33', '2010-07-18 20:04:33', NULL)[0m
+Redirected to http://test.host/camps/980190963
+Completed in 5ms (DB: 5) | 302 Found [http://test.host/camps?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "camps" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "camps" [0m
+  [4;36;1mCamp Load (0.1ms)[0m   [0;1mSELECT * FROM "camps" WHERE ("camps"."id" = 980190962) [0m
+
+
+Processing CampsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:33) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/camps/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "camps" [0m
+  [4;36;1mCamp Load (0.2ms)[0m   [0;1mSELECT * FROM "camps" WHERE ("camps"."id" = 980190962) [0m
+
+
+Processing CampsController#edit (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/camps/980190962/edit]
+
+
+Processing CampsController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  [4;35;1mCamp Load (0.2ms)[0m   [0mSELECT * FROM "camps" [0m
+Rendering template within layouts/camps
+Rendering camps/index
+
+
+Processing CampsController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/camps/new]
+  [4;36;1mCamp Load (0.2ms)[0m   [0;1mSELECT * FROM "camps" WHERE ("camps"."id" = 980190962) [0m
+
+
+Processing CampsController#show (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mCamp Load (0.2ms)[0m   [0mSELECT * FROM "camps" WHERE ("camps"."id" = 980190962) [0m
+Rendering template within layouts/camps
+Rendering camps/show
+  [4;36;1mCamp Load (0.3ms)[0m   [0;1mSELECT * FROM "camps" WHERE ("camps"."id" = 980190962) [0m
+
+
+Processing CampsController#update (for 0.0.0.0 at 2010-07-18 15:04:33) [PUT]
+  Parameters: {"camp"=>{}, "id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/camps/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "dogs" [0m
+
+
+Processing DogsController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"dog"=>{}}
+  [4;36;1mDog Create (0.2ms)[0m   [0;1mINSERT INTO "dogs" ("name", "created_at", "photo_file_size", "profile", "known_for", "updated_at", "photo_file_name", "photo_content_type", "birth_date", "family", "ham", "active") VALUES(NULL, '2010-07-18 20:04:33', NULL, NULL, NULL, '2010-07-18 20:04:33', NULL, NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+Redirected to http://test.host/dogs/980190963
+Completed in 6ms (DB: 0) | 302 Found [http://test.host/dogs?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "dogs" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "dogs" [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 980190962) [0m
+
+
+Processing DogsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:33) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/dogs/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "dogs" [0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 980190962) [0m
+
+
+Processing DogsController#edit (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/dogs/980190962/edit]
+
+
+Processing DogsController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" [0m
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 298486374 ) [0m
+  [4;35;1mTrip Load (0.3ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC LIMIT 3[0m
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" INNER JOIN "dogs_trips" ON "trips".id = "dogs_trips".trip_id WHERE ("dogs_trips".dog_id = 980190962 ) [0m
+Rendering template within layouts/dogs
+Rendering dogs/index
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."active" = 't') ORDER BY name[0m
+Rendered shared/_dog_cubes (1.3ms)
+Rendered shared/_crud_links_new (1.0ms)
+Rendered shared/_tabs_top_level (1.5ms)
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://test.host/dogs]
+
+
+Processing DogsController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/dogs/new]
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 980190962) [0m
+
+
+Processing DogsController#show (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" WHERE ("dogs"."id" = 980190962) [0m
+Rendering template within layouts/dogs
+Rendering dogs/show
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" WHERE ("dogs"."id" = 980190962) [0m
+
+
+Processing DogsController#update (for 0.0.0.0 at 2010-07-18 15:04:33) [PUT]
+  Parameters: {"id"=>"980190962", "dog"=>{}}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/dogs/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gps" [0m
+
+
+Processing GpsController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"gp"=>{}}
+  [4;36;1mGp Create (0.2ms)[0m   [0;1mINSERT INTO "gps" ("model", "created_at", "updated_at", "make", "description") VALUES(NULL, '2010-07-18 20:04:33', '2010-07-18 20:04:33', NULL, NULL)[0m
+Redirected to http://test.host/gps/980190963
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/gps?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "gps" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gps" [0m
+  [4;35;1mGp Load (0.1ms)[0m   [0mSELECT * FROM "gps" WHERE ("gps"."id" = 980190962) [0m
+
+
+Processing GpsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:33) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/gps/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "gps" [0m
+  [4;35;1mGp Load (0.2ms)[0m   [0mSELECT * FROM "gps" WHERE ("gps"."id" = 980190962) [0m
+
+
+Processing GpsController#edit (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/gps/980190962/edit]
+
+
+Processing GpsController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  [4;36;1mGp Load (0.2ms)[0m   [0;1mSELECT * FROM "gps" [0m
+Rendering template within layouts/gps
+Rendering gps/index
+
+
+Processing GpsController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/gps/new]
+  [4;35;1mGp Load (0.2ms)[0m   [0mSELECT * FROM "gps" WHERE ("gps"."id" = 980190962) [0m
+
+
+Processing GpsController#show (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mGp Load (0.1ms)[0m   [0;1mSELECT * FROM "gps" WHERE ("gps"."id" = 980190962) [0m
+Rendering template within layouts/gps
+Rendering gps/show
+  [4;35;1mGp Load (0.2ms)[0m   [0mSELECT * FROM "gps" WHERE ("gps"."id" = 980190962) [0m
+
+
+Processing GpsController#update (for 0.0.0.0 at 2010-07-18 15:04:33) [PUT]
+  Parameters: {"id"=>"980190962", "gp"=>{}}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/gps/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "hike_events" [0m
+
+
+Processing HikeEventsController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"hike_event"=>{}}
+  [4;35;1mHikeEvent Create (0.2ms)[0m   [0mINSERT INTO "hike_events" ("created_at", "updated_at", "description", "hike_id") VALUES('2010-07-18 20:04:33', '2010-07-18 20:04:33', NULL, NULL)[0m
+Redirected to http://test.host/hike_events/980190963
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/hike_events?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "hike_events" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hike_events" [0m
+  [4;36;1mHikeEvent Load (0.1ms)[0m   [0;1mSELECT * FROM "hike_events" WHERE ("hike_events"."id" = 980190962) [0m
+
+
+Processing HikeEventsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:33) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hike_events/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hike_events" [0m
+  [4;36;1mHikeEvent Load (0.1ms)[0m   [0;1mSELECT * FROM "hike_events" WHERE ("hike_events"."id" = 980190962) [0m
+
+
+Processing HikeEventsController#edit (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hike_events/980190962/edit]
+
+
+Processing HikeEventsController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  [4;35;1mHikeEvent Load (0.2ms)[0m   [0mSELECT * FROM "hike_events" [0m
+Rendering template within layouts/hike_events
+Rendering hike_events/index
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/hike_events]
+
+
+Processing HikeEventsController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hike_events/new]
+  [4;36;1mHikeEvent Load (0.2ms)[0m   [0;1mSELECT * FROM "hike_events" WHERE ("hike_events"."id" = 980190962) [0m
+
+
+Processing HikeEventsController#show (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mHikeEvent Load (0.1ms)[0m   [0mSELECT * FROM "hike_events" WHERE ("hike_events"."id" = 980190962) [0m
+Rendering template within layouts/hike_events
+Rendering hike_events/show
+Rendered shared/_tabs_top_level (1.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/hike_events/980190962]
+  [4;36;1mHikeEvent Load (8.3ms)[0m   [0;1mSELECT * FROM "hike_events" WHERE ("hike_events"."id" = 980190962) [0m
+
+
+Processing HikeEventsController#update (for 0.0.0.0 at 2010-07-18 15:04:33) [PUT]
+  Parameters: {"hike_event"=>{}, "id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 8) | 302 Found [http://test.host/hike_events/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hike_stories" [0m
+
+
+Processing HikeStoriesController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"hike_story"=>{}}
+  [4;36;1mHikeStory Create (0.2ms)[0m   [0;1mINSERT INTO "hike_stories" ("created_at", "photo_file_size", "updated_at", "short_description", "photo_file_name", "photo_content_type", "description", "dog_id", "hike_id") VALUES('2010-07-18 20:04:33', NULL, '2010-07-18 20:04:33', NULL, NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hike_stories" [0m
+  [4;36;1mHikeStory Load (0.2ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 980190962) [0m
+
+
+Processing HikeStoriesController#destroy (for 0.0.0.0 at 2010-07-18 15:04:33) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/hike_stories/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hike_stories" [0m
+  [4;36;1mHikeStory Load (0.2ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 980190962) [0m
+
+
+Processing HikeStoriesController#edit (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hike_stories/980190962/edit]
+
+
+Processing HikeStoriesController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  [4;35;1mHikeStory Load (0.3ms)[0m   [0mSELECT * FROM "hike_stories" [0m
+Rendering template within layouts/hike_stories
+Rendering hike_stories/index
+  [4;36;1mHike Load (0.1ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+
+
+Processing HikeStoriesController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hike_stories/new]
+  [4;35;1mHikeStory Load (0.2ms)[0m   [0mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 980190962) [0m
+
+
+Processing HikeStoriesController#show (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mHikeStory Load (0.2ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 980190962) [0m
+Rendering template within layouts/hike_stories
+Rendering hike_stories/show
+Rendered shared/_crud_links_new (0.1ms)
+Rendered shared/_crud_links_edit_new_list (1.8ms)
+Rendered shared/_tabs_top_level (0.7ms)
+  [4;35;1mHike Load (0.1ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+  [4;36;1mHikeStory Load (0.2ms)[0m   [0;1mSELECT * FROM "hike_stories" WHERE ("hike_stories"."id" = 980190962) [0m
+
+
+Processing HikeStoriesController#update (for 0.0.0.0 at 2010-07-18 15:04:33) [PUT]
+  Parameters: {"id"=>"980190962", "hike_story"=>{}}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hike_stories/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hikes" [0m
+
+
+Processing HikesController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"hike"=>{}}
+  [4;36;1mHike Create (0.2ms)[0m   [0;1mINSERT INTO "hikes" ("name", "created_at", "trip_id", "photo_file_size", "map_tracks", "updated_at", "photo_file_name", "photo_content_type", "date", "album", "map_points") VALUES(NULL, '2010-07-18 20:04:33', NULL, NULL, NULL, '2010-07-18 20:04:33', NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+Redirected to http://test.host/hikes/980190963
+Completed in 5ms (DB: 0) | 302 Found [http://test.host/hikes?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hikes" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "hikes" [0m
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 980190962) [0m
+
+
+Processing HikesController#destroy (for 0.0.0.0 at 2010-07-18 15:04:33) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hikes/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "hikes" [0m
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 980190962) [0m
+
+
+Processing HikesController#edit (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hikes/980190962/edit]
+
+
+Processing HikesController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+  [4;36;1mHike Load (0.4ms)[0m   [0;1mSELECT * FROM "hikes" ORDER BY date DESC[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "hike_stories" WHERE ("hike_stories".hike_id = 298486374) [0m
+Rendered shared/_crud_links_edit_delete_small (1.0ms)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "hike_stories" WHERE ("hike_stories".hike_id = 980190962) [0m
+Rendered shared/_crud_links_edit_delete_small (0.1ms)
+Rendered shared/_crud_links_new (0.1ms)
+Rendered shared/_tabs_top_level (0.7ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://test.host/hikes]
+
+
+Processing HikesController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hikes/new]
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 980190962) [0m
+
+
+Processing HikesController#show (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mHike Load (0.2ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 980190962) [0m
+Rendering template within layouts/hikes
+Rendering hikes/show
+  [4;35;1mHike Load (0.2ms)[0m   [0mSELECT * FROM "hikes" WHERE ("hikes"."id" = 980190962) [0m
+
+
+Processing HikesController#update (for 0.0.0.0 at 2010-07-18 15:04:33) [PUT]
+  Parameters: {"hike"=>{}, "id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/hikes/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "latests" [0m
+
+
+Processing LatestsController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"latest"=>{}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "latests" [0m
+
+
+Processing LatestsController#index (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+  [4;36;1mHikeStory Load (0.4ms)[0m   [0;1mSELECT * FROM "hike_stories" ORDER BY created_at DESC LIMIT 2[0m
+  [4;35;1mTripStory Load (0.3ms)[0m   [0mSELECT * FROM "trip_stories" ORDER BY created_at DESC LIMIT 2[0m
+Rendering template within layouts/latests
+Rendering latests/index
+  [4;36;1mHike Load (0.1ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes"."id" = 1) [0m
+
+
+Processing LatestsController#new (for 0.0.0.0 at 2010-07-18 15:04:33) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/latests/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "radios" [0m
+
+
+Processing RadiosController#create (for 0.0.0.0 at 2010-07-18 15:04:33) [POST]
+  Parameters: {"radio"=>{}}
+  [4;36;1mRadio Create (0.3ms)[0m   [0;1mINSERT INTO "radios" ("model", "created_at", "updated_at", "make", "description") VALUES(NULL, '2010-07-18 20:04:34', '2010-07-18 20:04:34', NULL, NULL)[0m
+Redirected to http://test.host/radios/980190963
+Completed in 68ms (DB: 0) | 302 Found [http://test.host/radios?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "radios" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "radios" [0m
+  [4;35;1mRadio Load (0.2ms)[0m   [0mSELECT * FROM "radios" WHERE ("radios"."id" = 980190962) [0m
+
+
+Processing RadiosController#destroy (for 0.0.0.0 at 2010-07-18 15:04:34) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/radios/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "radios" [0m
+  [4;35;1mRadio Load (0.2ms)[0m   [0mSELECT * FROM "radios" WHERE ("radios"."id" = 980190962) [0m
+
+
+Processing RadiosController#edit (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/radios/980190962/edit]
+
+
+Processing RadiosController#index (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  [4;36;1mRadio Load (0.2ms)[0m   [0;1mSELECT * FROM "radios" [0m
+Rendering template within layouts/radios
+Rendering radios/index
+
+
+Processing RadiosController#new (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/radios/new]
+  [4;35;1mRadio Load (0.2ms)[0m   [0mSELECT * FROM "radios" WHERE ("radios"."id" = 980190962) [0m
+
+
+Processing RadiosController#show (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mRadio Load (0.2ms)[0m   [0;1mSELECT * FROM "radios" WHERE ("radios"."id" = 980190962) [0m
+Rendering template within layouts/radios
+Rendering radios/show
+  [4;35;1mRadio Load (0.2ms)[0m   [0mSELECT * FROM "radios" WHERE ("radios"."id" = 980190962) [0m
+
+
+Processing RadiosController#update (for 0.0.0.0 at 2010-07-18 15:04:34) [PUT]
+  Parameters: {"radio"=>{}, "id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/radios/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rig_breakdowns" [0m
+
+
+Processing RigBreakdownsController#create (for 0.0.0.0 at 2010-07-18 15:04:34) [POST]
+  Parameters: {"rig_breakdown"=>{}}
+  [4;35;1mRigBreakdown Create (0.2ms)[0m   [0mINSERT INTO "rig_breakdowns" ("rig_id", "location", "created_at", "updated_at", "description") VALUES(NULL, NULL, '2010-07-18 20:04:34', '2010-07-18 20:04:34', NULL)[0m
+Redirected to http://test.host/rig_breakdowns/980190963
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/rig_breakdowns?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rig_breakdowns" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rig_breakdowns" [0m
+  [4;36;1mRigBreakdown Load (0.1ms)[0m   [0;1mSELECT * FROM "rig_breakdowns" WHERE ("rig_breakdowns"."id" = 980190962) [0m
+
+
+Processing RigBreakdownsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:34) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_breakdowns/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rig_breakdowns" [0m
+  [4;36;1mRigBreakdown Load (0.2ms)[0m   [0;1mSELECT * FROM "rig_breakdowns" WHERE ("rig_breakdowns"."id" = 980190962) [0m
+
+
+Processing RigBreakdownsController#edit (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_breakdowns/980190962/edit]
+
+
+Processing RigBreakdownsController#index (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  [4;35;1mRigBreakdown Load (0.2ms)[0m   [0mSELECT * FROM "rig_breakdowns" [0m
+Rendering template within layouts/rig_breakdowns
+Rendering rig_breakdowns/index
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 6ms (View: 6, DB: 0) | 200 OK [http://test.host/rig_breakdowns]
+
+
+Processing RigBreakdownsController#new (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_breakdowns/new]
+  [4;36;1mRigBreakdown Load (0.2ms)[0m   [0;1mSELECT * FROM "rig_breakdowns" WHERE ("rig_breakdowns"."id" = 980190962) [0m
+
+
+Processing RigBreakdownsController#show (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mRigBreakdown Load (0.1ms)[0m   [0mSELECT * FROM "rig_breakdowns" WHERE ("rig_breakdowns"."id" = 980190962) [0m
+Rendering template within layouts/rig_breakdowns
+Rendering rig_breakdowns/show
+Rendered shared/_tabs_top_level (1.3ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/rig_breakdowns/980190962]
+  [4;36;1mRigBreakdown Load (0.2ms)[0m   [0;1mSELECT * FROM "rig_breakdowns" WHERE ("rig_breakdowns"."id" = 980190962) [0m
+
+
+Processing RigBreakdownsController#update (for 0.0.0.0 at 2010-07-18 15:04:34) [PUT]
+  Parameters: {"id"=>"980190962", "rig_breakdown"=>{}}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_breakdowns/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rig_upgrades" [0m
+
+
+Processing RigUpgradesController#create (for 0.0.0.0 at 2010-07-18 15:04:34) [POST]
+  Parameters: {"rig_upgrade"=>{}}
+  [4;36;1mRigUpgrade Create (0.2ms)[0m   [0;1mINSERT INTO "rig_upgrades" ("rig_id", "created_at", "updated_at", "description") VALUES(NULL, '2010-07-18 20:04:34', '2010-07-18 20:04:34', NULL)[0m
+Redirected to http://test.host/rig_upgrades/980190963
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/rig_upgrades?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rig_upgrades" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rig_upgrades" [0m
+  [4;35;1mRigUpgrade Load (0.1ms)[0m   [0mSELECT * FROM "rig_upgrades" WHERE ("rig_upgrades"."id" = 980190962) [0m
+
+
+Processing RigUpgradesController#destroy (for 0.0.0.0 at 2010-07-18 15:04:34) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_upgrades/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rig_upgrades" [0m
+  [4;35;1mRigUpgrade Load (0.2ms)[0m   [0mSELECT * FROM "rig_upgrades" WHERE ("rig_upgrades"."id" = 980190962) [0m
+
+
+Processing RigUpgradesController#edit (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_upgrades/980190962/edit]
+
+
+Processing RigUpgradesController#index (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  [4;36;1mRigUpgrade Load (0.2ms)[0m   [0;1mSELECT * FROM "rig_upgrades" [0m
+Rendering template within layouts/rig_upgrades
+Rendering rig_upgrades/index
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://test.host/rig_upgrades]
+
+
+Processing RigUpgradesController#new (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_upgrades/new]
+  [4;35;1mRigUpgrade Load (0.2ms)[0m   [0mSELECT * FROM "rig_upgrades" WHERE ("rig_upgrades"."id" = 980190962) [0m
+
+
+Processing RigUpgradesController#show (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mRigUpgrade Load (0.1ms)[0m   [0;1mSELECT * FROM "rig_upgrades" WHERE ("rig_upgrades"."id" = 980190962) [0m
+Rendering template within layouts/rig_upgrades
+Rendering rig_upgrades/show
+Rendered shared/_tabs_top_level (1.2ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/rig_upgrades/980190962]
+  [4;35;1mRigUpgrade Load (0.2ms)[0m   [0mSELECT * FROM "rig_upgrades" WHERE ("rig_upgrades"."id" = 980190962) [0m
+
+
+Processing RigUpgradesController#update (for 0.0.0.0 at 2010-07-18 15:04:34) [PUT]
+  Parameters: {"rig_upgrade"=>{}, "id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rig_upgrades/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rigs" [0m
+
+
+Processing RigsController#create (for 0.0.0.0 at 2010-07-18 15:04:34) [POST]
+  Parameters: {"rig"=>{}}
+  [4;35;1mRig Create (0.2ms)[0m   [0mINSERT INTO "rigs" ("model", "tires", "name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "color", "engine", "year", "make", "dog_id", "picture", "active") VALUES(NULL, NULL, NULL, '2010-07-18 20:04:34', NULL, '2010-07-18 20:04:34', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+Redirected to http://test.host/rigs/980190963
+Completed in 5ms (DB: 0) | 302 Found [http://test.host/rigs?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rigs" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rigs" [0m
+  [4;36;1mRig Load (0.2ms)[0m   [0;1mSELECT * FROM "rigs" WHERE ("rigs"."id" = 980190962) [0m
+
+
+Processing RigsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:34) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rigs/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "rigs" [0m
+  [4;36;1mRig Load (0.2ms)[0m   [0;1mSELECT * FROM "rigs" WHERE ("rigs"."id" = 980190962) [0m
+
+
+Processing RigsController#edit (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rigs/980190962/edit]
+
+
+Processing RigsController#index (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Rendering template within layouts/rigs
+Rendering rigs/index
+  [4;35;1mRig Load (0.2ms)[0m   [0mSELECT * FROM "rigs" WHERE ("rigs"."active" = 't') ORDER BY name[0m
+Rendered shared/_rig_cubes (1.1ms)
+Rendered shared/_crud_links_new (57.3ms)
+Rendered shared/_tabs_top_level (0.8ms)
+Completed in 70ms (View: 69, DB: 0) | 200 OK [http://test.host/rigs]
+
+
+Processing RigsController#new (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rigs/new]
+  [4;36;1mRig Load (0.3ms)[0m   [0;1mSELECT * FROM "rigs" WHERE ("rigs"."id" = 980190962) [0m
+
+
+Processing RigsController#show (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mRig Load (0.3ms)[0m   [0mSELECT * FROM "rigs" WHERE ("rigs"."id" = 980190962) [0m
+Rendering template within layouts/rigs
+Rendering rigs/show
+  [4;36;1mRig Load (0.3ms)[0m   [0;1mSELECT * FROM "rigs" WHERE ("rigs"."id" = 980190962) [0m
+
+
+Processing RigsController#update (for 0.0.0.0 at 2010-07-18 15:04:34) [PUT]
+  Parameters: {"rig"=>{}, "id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/rigs/980190962?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "trip_stories" [0m
+
+
+Processing TripStoriesController#create (for 0.0.0.0 at 2010-07-18 15:04:34) [POST]
+  Parameters: {"trip_story"=>{}}
+  [4;36;1mTripStory Create (0.2ms)[0m   [0;1mINSERT INTO "trip_stories" ("trip_id", "photo_file_size", "created_at", "short_description", "photo_file_name", "updated_at", "photo_content_type", "description", "dog_id") VALUES(NULL, NULL, '2010-07-18 20:04:34', NULL, NULL, '2010-07-18 20:04:34', NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+Redirected to http://test.host/trip_stories/980190963
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/trip_stories?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "trip_stories" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trip_stories" [0m
+  [4;35;1mTripStory Load (0.2ms)[0m   [0mSELECT * FROM "trip_stories" WHERE ("trip_stories"."id" = 980190962) [0m
+
+
+Processing TripStoriesController#destroy (for 0.0.0.0 at 2010-07-18 15:04:34) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trip_stories/980190962]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trip_stories" [0m
+  [4;35;1mTripStory Load (0.2ms)[0m   [0mSELECT * FROM "trip_stories" WHERE ("trip_stories"."id" = 980190962) [0m
+
+
+Processing TripStoriesController#edit (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trip_stories/980190962/edit]
+
+
+Processing TripStoriesController#index (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  [4;36;1mTripStory Load (0.3ms)[0m   [0;1mSELECT * FROM "trip_stories" [0m
+Rendering template within layouts/trip_stories
+Rendering trip_stories/index
+  [4;35;1mTrip Load (0.1ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+
+
+Processing TripStoriesController#new (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trip_stories/new]
+  [4;36;1mTripStory Load (0.3ms)[0m   [0;1mSELECT * FROM "trip_stories" WHERE ("trip_stories"."id" = 980190962) [0m
+
+
+Processing TripStoriesController#show (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mTripStory Load (0.2ms)[0m   [0mSELECT * FROM "trip_stories" WHERE ("trip_stories"."id" = 980190962) [0m
+Rendering template within layouts/trip_stories
+Rendering trip_stories/show
+Rendered shared/_crud_links_new (0.1ms)
+Rendered shared/_crud_links_edit_new_list (1.4ms)
+Rendered shared/_tabs_top_level (0.7ms)
+  [4;36;1mTrip Load (0.1ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 1) [0m
+  [4;35;1mTripStory Load (0.2ms)[0m   [0mSELECT * FROM "trip_stories" WHERE ("trip_stories"."id" = 980190962) [0m
+
+
+Processing TripStoriesController#update (for 0.0.0.0 at 2010-07-18 15:04:34) [PUT]
+  Parameters: {"id"=>"980190962", "trip_story"=>{}}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trip_stories/980190962?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trips" [0m
+
+
+Processing TripsController#create (for 0.0.0.0 at 2010-07-18 15:04:34) [POST]
+  Parameters: {"trip"=>{}}
+  [4;35;1mTrip Create (0.2ms)[0m   [0mINSERT INTO "trips" ("name", "created_at", "photo_file_size", "updated_at", "photo_file_name", "photo_content_type", "date", "map_points") VALUES(NULL, '2010-07-18 20:04:34', NULL, '2010-07-18 20:04:34', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+Redirected to http://test.host/trips/980190963
+Completed in 5ms (DB: 0) | 302 Found [http://test.host/trips?]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trips" [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "trips" [0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 980190962) [0m
+
+
+Processing TripsController#destroy (for 0.0.0.0 at 2010-07-18 15:04:34) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trips/980190962]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "trips" [0m
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 980190962) [0m
+
+
+Processing TripsController#edit (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trips/980190962/edit]
+
+
+Processing TripsController#index (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+  [4;35;1mTrip Load (0.4ms)[0m   [0mSELECT * FROM "trips" ORDER BY date DESC[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trip_stories" WHERE ("trip_stories".trip_id = 298486374) [0m
+Rendered shared/_crud_links_edit_delete_small (0.6ms)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "trip_stories" WHERE ("trip_stories".trip_id = 980190962) [0m
+Rendered shared/_crud_links_edit_delete_small (0.1ms)
+Rendered shared/_crud_links_new (0.1ms)
+Rendered shared/_tabs_top_level (0.7ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://test.host/trips]
+
+
+Processing TripsController#new (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trips/new]
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 980190962) [0m
+
+
+Processing TripsController#show (for 0.0.0.0 at 2010-07-18 15:04:34) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mTrip Load (0.2ms)[0m   [0mSELECT * FROM "trips" WHERE ("trips"."id" = 980190962) [0m
+Rendering template within layouts/trips
+Rendering trips/show
+  [4;36;1mDog Load (0.1ms)[0m   [0;1mSELECT * FROM "dogs" INNER JOIN "dogs_trips" ON "dogs".id = "dogs_trips".dog_id WHERE ("dogs_trips".trip_id = 980190962 ) [0m
+  [4;35;1mRig Load (0.1ms)[0m   [0mSELECT * FROM "rigs" INNER JOIN "rigs_trips" ON "rigs".id = "rigs_trips".rig_id WHERE ("rigs_trips".trip_id = 980190962 ) [0m
+  [4;36;1mHike Load (0.1ms)[0m   [0;1mSELECT * FROM "hikes" WHERE ("hikes".trip_id = 980190962) [0m
+Rendered shared/_crud_links_new (0.2ms)
+Rendered shared/_crud_links_edit_new_list (1.4ms)
+Rendered shared/_crud_links_edit_new_list_writeup (2.1ms)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "trip_stories" WHERE ("trip_stories".trip_id = 980190962) [0m
+Rendered shared/_tabs_top_level (0.7ms)
+Rendered shared/_title_header (0.4ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://test.host/trips/980190962]
+  [4;36;1mTrip Load (0.2ms)[0m   [0;1mSELECT * FROM "trips" WHERE ("trips"."id" = 980190962) [0m
+
+
+Processing TripsController#update (for 0.0.0.0 at 2010-07-18 15:04:34) [PUT]
+  Parameters: {"id"=>"980190962", "trip"=>{}}
+Redirected to http://test.host/
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/trips/980190962?]

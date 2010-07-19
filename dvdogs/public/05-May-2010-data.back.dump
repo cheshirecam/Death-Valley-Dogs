@@ -1,0 +1,520 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: deathval_data
+-- ------------------------------------------------------
+-- Server version	5.0.90-community-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `camps`
+--
+
+DROP TABLE IF EXISTS `camps`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `camps` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) collate utf8_unicode_ci default NULL,
+  `description` varchar(255) collate utf8_unicode_ci default NULL,
+  `rating` int(11) default NULL,
+  `location` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `camps`
+--
+
+LOCK TABLES `camps` WRITE;
+/*!40000 ALTER TABLE `camps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `camps` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dogs`
+--
+
+DROP TABLE IF EXISTS `dogs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dogs` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) collate utf8_unicode_ci default NULL,
+  `ham` varchar(255) collate utf8_unicode_ci default NULL,
+  `profile` varchar(255) collate utf8_unicode_ci default NULL,
+  `active` tinyint(1) default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  `birth_date` date default NULL,
+  `family` varchar(255) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dogs`
+--
+
+LOCK TABLES `dogs` WRITE;
+/*!40000 ALTER TABLE `dogs` DISABLE KEYS */;
+INSERT INTO `dogs` VALUES (1,'Cameron Dawson','KI6BTH','',1,'2010-05-18 17:28:18','2010-05-18 17:28:18','1969-08-10','Hominid'),(2,'Dan DeLong','KI6TCR','',1,'2010-05-18 17:36:00','2010-05-18 17:36:00','1967-02-03','Hominid'),(3,'Wheels','','',1,'2010-05-18 23:09:21','2010-05-18 23:09:30','2010-03-18','Canine'),(4,'Greg Rusky','KF6ALC','',1,'2010-05-19 23:15:35','2010-05-19 23:15:35','1965-08-06','Hominid'),(5,'Stuart Ellis','','',1,'2010-05-19 23:16:57','2010-05-19 23:16:57','1965-03-03','Hominid'),(6,'John Racine','KG6WQL','',1,'2010-05-19 23:18:22','2010-05-19 23:18:22','1967-05-19','Hominid'),(7,'Chris Dorris','','',1,'2010-05-21 20:46:05','2010-05-21 20:46:05','1969-05-21','Hominid'),(8,'Edric Money','','',1,'2010-05-21 20:47:17','2010-05-21 20:47:17','2010-05-21','Hominid'),(9,'Jammer','','',1,'2010-05-21 20:47:57','2010-05-21 20:47:57','2010-05-21','Canine'),(10,'Joe McLaine','','',1,'2010-05-21 20:48:31','2010-05-21 20:48:31','2010-05-21','Hominid'),(11,'Kyle Nichols','','',1,'2010-05-21 20:49:31','2010-05-21 20:49:31','2010-05-21','Hominid'),(12,'Mark Mooney','','',1,'2010-05-21 20:51:26','2010-05-21 20:51:26','2010-05-21','Hominid'),(13,'Matt Nichols','','',1,'2010-05-21 20:51:58','2010-05-21 20:51:58','2010-05-21','Hominid'),(14,'Blake Belaires','','',0,'2010-05-21 20:52:48','2010-05-21 20:52:48','2010-05-21','Hominid'),(15,'Chris Warlick','','',0,'2010-05-21 20:53:22','2010-05-21 20:53:22','2010-05-21','Hominid'),(16,'Dave Ceresa','','',0,'2010-05-21 20:53:40','2010-05-21 20:53:40','2010-05-21','Hominid'),(17,'Jack','','',0,'2010-05-21 20:54:28','2010-05-21 20:54:28','2010-05-21','Canine'),(18,'Joaquin','','',0,'2010-05-21 20:55:14','2010-05-21 20:55:14','2010-05-21','Canine'),(19,'Kyle Kraus','','',0,'2010-05-21 20:55:32','2010-05-21 20:55:32','2010-05-21','Hominid'),(20,'Reepacheep','','',0,'2010-05-21 20:55:56','2010-05-21 20:55:56','2010-05-21','Canine'),(21,'Skip Winters','','',0,'2010-05-21 20:56:20','2010-05-21 20:56:20','2010-05-21','Hominid');
+/*!40000 ALTER TABLE `dogs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dogs_hikes`
+--
+
+DROP TABLE IF EXISTS `dogs_hikes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dogs_hikes` (
+  `dog_id` int(11) default NULL,
+  `hike_id` int(11) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dogs_hikes`
+--
+
+LOCK TABLES `dogs_hikes` WRITE;
+/*!40000 ALTER TABLE `dogs_hikes` DISABLE KEYS */;
+INSERT INTO `dogs_hikes` VALUES (1,1),(2,1),(1,2),(2,2),(4,2),(5,2),(1,3),(2,3),(4,3),(1,4),(2,4),(4,4),(5,4),(1,5),(2,5),(4,5),(5,5),(1,6),(2,6),(4,6),(5,6),(8,6),(8,5),(13,5),(19,5);
+/*!40000 ALTER TABLE `dogs_hikes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dogs_trips`
+--
+
+DROP TABLE IF EXISTS `dogs_trips`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dogs_trips` (
+  `dog_id` int(11) default NULL,
+  `trip_id` int(11) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dogs_trips`
+--
+
+LOCK TABLES `dogs_trips` WRITE;
+/*!40000 ALTER TABLE `dogs_trips` DISABLE KEYS */;
+INSERT INTO `dogs_trips` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(1,4),(2,4),(1,5),(2,5),(1,6),(2,6),(1,7),(2,7),(1,8),(2,8),(1,9),(2,9),(1,10),(2,10),(1,11),(2,11),(1,12),(2,12),(4,1),(4,2),(4,3),(4,4),(4,5),(4,6),(4,7),(4,8),(4,11),(4,12),(5,1),(5,2),(5,3),(5,4),(5,5),(5,6),(5,11),(5,12),(6,9),(6,10),(6,11),(6,12),(7,9),(7,11),(7,12),(8,3),(8,6),(8,7),(8,8),(8,9),(8,10),(8,11),(8,12),(10,11),(10,12),(11,9),(11,10),(11,11),(11,12),(12,6),(12,7),(12,8),(12,9),(13,6),(16,6),(17,3),(17,4),(17,5),(17,6),(17,7),(17,8),(17,12),(18,7),(18,8),(18,9),(19,6),(20,1),(20,2),(21,2),(21,3);
+/*!40000 ALTER TABLE `dogs_trips` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gps`
+--
+
+DROP TABLE IF EXISTS `gps`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gps` (
+  `id` int(11) NOT NULL auto_increment,
+  `make` varchar(255) collate utf8_unicode_ci default NULL,
+  `model` varchar(255) collate utf8_unicode_ci default NULL,
+  `description` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gps`
+--
+
+LOCK TABLES `gps` WRITE;
+/*!40000 ALTER TABLE `gps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gps` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hike_events`
+--
+
+DROP TABLE IF EXISTS `hike_events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hike_events` (
+  `id` int(11) NOT NULL auto_increment,
+  `hike_id` int(11) default NULL,
+  `description` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hike_events`
+--
+
+LOCK TABLES `hike_events` WRITE;
+/*!40000 ALTER TABLE `hike_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `hike_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hike_stories`
+--
+
+DROP TABLE IF EXISTS `hike_stories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hike_stories` (
+  `id` int(11) NOT NULL auto_increment,
+  `hike_id` int(11) default NULL,
+  `description` text collate utf8_unicode_ci,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  `dog_id` int(11) default NULL,
+  `short_description` varchar(150) collate utf8_unicode_ci default NULL,
+  `photo_file_name` varchar(255) collate utf8_unicode_ci default NULL,
+  `photo_content_type` varchar(255) collate utf8_unicode_ci default NULL,
+  `photo_file_size` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hike_stories`
+--
+
+LOCK TABLES `hike_stories` WRITE;
+/*!40000 ALTER TABLE `hike_stories` DISABLE KEYS */;
+INSERT INTO `hike_stories` VALUES (1,2,'<p style=\"text-align: left;\">Skidoo was really cool. While this first Death Valley trip was still in\r\nits planning stages, I remember us talking about mine shafts we\'d find.\r\nI also remember talking about \"Bad Air.\" Bad air is when toxic gases\r\nthat are heavier than air settle into mine shafts, or caves for that\r\nmatter. They lay low on the ground, so when you\'re walking in, you\r\ndon\'t notice anything. But all the while, you\'re kicking up the \"Bad\r\nAir\" into the passage behind you. Then when you go to leave, you start\r\nwalking through it, pass out and die. Skidoo was really cool.</p>\r\n<p>We hiked around outside for a bit and noticed a couple\r\nparts where it looked like sink holes had collapsed. Reep was running\r\naround wild and having a great time with it. We found the main entrance\r\nand saw a steel net that had been ripped open. We smiled, grabbed our\r\nflashlights and walked in. When I saw the ancient timbers supporting\r\nthe walls of the passageway, my mind flashed back to the collapsed\r\nsink-holes we saw outside. Those weren\'t sink-holes. I recall feeling\r\nmuch more eerie at that point. The thought of the mine shaft collapsing\r\non us seemed like a pretty greusome way to <img src=\"/system/images/8/large_thumb/untitled_3_tif_3.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"217\" style=\"float: left;\" />go.  And, in a way, it made it more fun.</p>\r\n<p>We\r\nhad all been in the IXL cavern back home in Santa Cruz (Hell Hole, it\'s\r\ncalled) so spelunking was nothing new to us. In fact, I believe that\r\nwas when I first met Dan. Spelunking was, yes, claustrophobic and\r\nstrange. But it\'s also really, really fun. There\'s just something so\r\nprimal about being in the cold cold ground. And, yes, there\'s a certain\r\nthrill to it. It\'s kind of like skydiving, just not as safe. But\r\nI&nbsp;digress...</p>\r\n<p>As we got deeper into the mountain, the\r\npassages became tighter and tighter. And, unlike IXL which was\r\nnaturally formed and self-supporting, these spots were supported by 2\r\nto 3 foot sections of 2x4s, 4x4s and logs! At several points, you could\r\nshine your light at about a 45 degree angle upwards and see for 100\r\nfeet. The miners had sliced wafers of the mountain out to get their\r\nprecious minerals. I think Skidoo was predominantly Borax mining. All\r\nthat work and risk for soap?<img src=\"/system/images/9/large_thumb/untitled_4_tif_3.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"217\" style=\"float: right;\" /></p>\r\n<p>As\r\nwe climbed higher into the mountain, we eventually saw natural light.\r\nWe crawled to the light only to discover that the hole had been netted\r\nshut. This one was still tightly secure. I remember looking at Dan with\r\nan, \"Oh shit\" and laughed. I thought about the logs supporting the\r\nwhole hill and bad air and all that and thought, \"Gee, it\'d be nice to\r\nget <img src=\"/system/images/10/large_thumb/untitled_11.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"229\" style=\"float: left;\" />out\r\nthis way rather than go back.\" We scouted around a bit more and found\r\nanother location that hadn\'t been closed. It was a thin sliver of an\r\nopening that I had to crawl on my belly to get through. For some\r\nreason, right as I was half way out, I had this vision of an earthquake\r\nhappening and the rock crushing me in half. \"Whew.\" Once my feet\r\nfollowed me out, I felt a whole lot better.</p>\r\n<p>Hollow Mountain was really cool.  But I admit, it kinda gave me the creeps.</p>\r\n<p style=\"text-align: left;\">&nbsp;</p>\r\n<p><span style=\"padding: 1px 4px; position: absolute; -moz-appearance: tooltip; color: #000000; z-index: 10000; cursor: pointer; left: 351px; top: 209px;\">save</span></p>\r\n<p><span style=\"padding: 1px 4px; position: absolute; -moz-appearance: tooltip; color: #000000; z-index: 10000; cursor: pointer; left: 356px; top: 209px;\">save</span></p>\r\n<p><span style=\"padding: 1px 4px; position: absolute; -moz-appearance: tooltip; color: #000000; z-index: 10000; cursor: pointer; left: 351px; top: 1241px;\">save</span></p>\r\n<p><span style=\"padding: 1px 4px; position: absolute; -moz-appearance: tooltip; color: infotext; z-index: 10000; cursor: pointer; left: 356px; top: 209px;\">save</span></p>','2010-05-18 17:28:50','2010-05-20 18:35:48',1,'Climbed through \"Hollow Mountain\"  Between collapsed areas and shoddy supports, this was cool, and kinda freaky.','Untitled-9.tif-6.jpg','image/jpeg',96069),(2,1,'<p>\"Dude, we should probably be moving faster.\"<br /><img src=\"/system/images/3/large_thumb/funeral_mtns_hike_2.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"222\" style=\"float: right;\" /><br />Cameron, squatted down with his camera to his eye said \"Huh. This cactus is really cool looking. \"</p>\r\n<p><br />\"No. Really. I think we need to haul ass.\" Big puffy clouds had been growing darker by the minute. The steep trail up the canyon wasn\'t getting any less steep, and no matter how much I stared at the little dotted line on the USGS map I still couldn\'t pin point our exact location. But I was beginning to think it was a lot less further along than I\'d thought before.<br /><br />Cameron stood up, satisfied with his photo op. of the cactus. \"Ok.\" He said. Let\'s go.\"<br /><br />In the failing light of the funeral mountains, monolithic headwalls above us gave no hint as to where the trail might be. To our right, the gorge dropped into near darkness. Serveral mines were supposed to be up ahead, and I marveled at the thought of dusty 19th century miners negotiating the precipitus twists and turns of these paths, loading ore cars to travel down the unbelieivably steep tramway to the bottom of the mountain. One still hung from a single cable a hundred feet over the canyon, dangling where it stopped in mid-span more than a century ago.<br /><br />It started to rain.<br /><br />We pushed on, gloom wrapping around us. The whole hike was only about four miles, but the steepness of the trail, the switchbacks up the side of the rocky gorge made me think: if we lost the trail in the darkness, we were screwed.<br /><br />Cameron was no longer looking for things to photograph.<br /><br />By the time we reached the last of the mines, it was night, and a light rain fell steadily. We examined a small cavern. Bits and pieces of old things, miners things, were spread here and there. \"Well, I guess we could always spend the night in this place, if we had to. At least we\'d be dry.\" Cameron pondered the thought. He figured the same as me: we\'d survive the night, but it would suck.<br /><br />The key to whether or not we\'d spend the next 12 hours huddled in a dusty abandon mine shaft high in the Funeral Mountains lay in a tiny cairn of rocks, marking where the trail turned north, skirting a thin path around the massive headwall above.<br /><br />\"Dude. I found it!\"<br /><br />Our headlamps cast only the palest arcs as we pressed on into the rain and dark.<br /><br />It would have been different if we\'d started earlier in the day, but it was nearly three o\' clock when Greg and Stuart had dropped us off in the parking lot below Keene Wonder mine. The plan, conceived by Greg, was simple: two guys hike through while two guys drive around and meet them on the other side.<br /><br />It would become the signiture of our trips, these \"through-hikes\", ultimately refined to an art form: linking trails through canyons choaked with brush, finding a finger of ridge to descend by moonlight, the swig of Tequilla at the beginning, an icy Corona with lime waiting at the end, steaks sizzling, feet sore, all smiles and stories and \"I can\'t believe we just did that\" all around.<br /><br />Ultimately, 2-meter radios and GPS would be added to mix. But for now, it was just Cam and I, a slightly damp USGS map and one small walkie-talkie -- the kind you tried to play with as a kid but always got frustrated because they sucked so bad.<br /><br />Greg and Stuart had the other walkie-talkie.<br /><br />They also had Reep-i-cheep.<br /><br />I\'d considered bringing her on this hike, but her on-again-off-again limp had recently returned. So instead of hiking, the goofy dog rode. Considering what the hike had turned into, it was probably a good thing.</p>\r\n<p><span style=\"padding: 1px 4px; position: absolute; -moz-appearance: tooltip; color: infotext; z-index: 10000; cursor: pointer; left: 430px; top: 228px;\">save</span></p>','2010-05-20 17:58:49','2010-05-20 17:59:30',2,'\"Dude, we should probably be moving faster.\"','funeral_mtns_hike_2.jpg','image/jpeg',238718),(3,1,'<p>My memory on some parts of this is a little fuzzy now, as it was\r\nalmost 11 years ago. I\'ll probably leave a few things out,\r\naccidentally. But as I recall, we didn\'t start this hike till about 3\r\nin the afternoon. I think we had been looking around Artists Palette\r\nand decided to go over there. We talked about how we had the topo and\r\nit didn\'t look that far and would be kind of fun for a couple of us to\r\nhike to a certain point and the others would drive around and pick the\r\nhikers up. I knew right away that I wanted to hike this. I think\r\nsomeone said, \"So, who\'s up for it.\" I said, \"I\'ll go.\" and so did Dan.\r\nGreg nodded and said, \"OK, we\'ll meet you at this point,\" pointing to a\r\nlocation on the map where a road came to an end.</p>\r\n<p>So\r\nDan and I set off. I remember that it was uphill. A LOT uphill. We were\r\nclimbing and climbing and climbing. It was a really beautiful hike.\r\nThere were cool wild flowering cacti which looked pretty cool. I got a\r\npicture, even. And there were lots of mine shafts. Early on, we saw a\r\nfew mining structures, one of which had a cable that went across to a\r\npart of the hillside like a tyrolean traverse.</p>\r\n<p><img src=\"/system/images/4/large_thumb/funeral_mtns_hike_1.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"230\" style=\"float: left;\" />Dan\r\ndid all the navigating. I am (as everyone knows) clueless when it comes\r\nto navigation. One of my favorite pictures is of Dan\'s back looking at\r\nthe map and there\'s a huge expanse of desert in front of him. I just\r\nlove that picture because it pretty much described how we felt all day.\r\n\"Hmm, I think we\'re right here...\" I was pretty sure Dan would find our\r\nway through. I just did my best to keep a cheerful disposition.</p>\r\n<p>As\r\nthe afternoon progressed, we noticed rain clouds were chasing us. They\r\nlooked a little nasty, so we went as fast as we could. Plus, it was\r\nstarting to get dark. The trail was vague enough that it was getting\r\nhard to follow in the dark. When I stopped to take another picture of a\r\nflower or something, Dan said, \"Dude, we\'d really better keep moving.\r\nIt\'s getting dark.\" We started to scout different mine shafts, saying,\r\n\"well, we could stay there tonight if we had to.\"</p>\r\n<p>The\r\nrain started. It was very light. We were being caught by the rain, but\r\nit wasn\'t heavy enough to make the ground slippery or truly miserable.\r\nI was wearing a t-shirt, and had a flannel in my backpack. I remember\r\nnot wanting to take the flannel out in case we had to sleep in a cave,\r\nI\'d have something dry to wear. Plus, the climb was hard enough that it\r\nkept my core warm. I did, however, remember feeling my arms and the\r\nskin was cold and wet to the touch, yet I was comfortable.</p>\r\n<p>Well,\r\ndarkness finally set in totally. We were just cresting the top and\r\ntrying to look for Greg and Stuart. Luckily, the trail was pretty\r\nestablished at this point, so we could follow, even in the dark with\r\nflashlights. We had these shitty little CB handhelds that BARELY had\r\nline of sight range. We tried to contact Greg and Stuart, but got\r\nnothing.</p>\r\n<p>I remember walking in the dark along the\r\ntrail and seeing some headlights driving perpendicular to our trail\r\nfrom the left. Then they stopped. I said, \"Is that them?\" Dan said, \"I\r\ndon\'t know.\" Then he pointed his mag-light at them and flashed it a\r\ncouple times. To our great relief and shouts, they flashed back. As we\r\ngot closer, we tried the radio again and finally got them. I think we\r\nsaid a lot of things like, \"HOLY SHIT!\" etc...</p>\r\n<p>That\r\nnight we decided, rather than cooking at a camp to go down to town\r\n(Ridgecrest, I think) and get some steaks at a restaurant. It was\r\ngreat. It felt so surreal to be in a restaurant after hiking through\r\nwhat we did. It was an amazing hike and I feel it really solidified my\r\nfriendship with Dan. Ever since then we\'ve had an understanding that\r\ngoes beyond what a lot of friends have.</p>','2010-05-20 18:03:21','2010-05-20 18:03:21',1,'Late in the afternoon, we began hiking up the Funeral Mountains...','funeral_mtns_hike_1.jpg','image/jpeg',198951),(4,3,'<p>This was a great hike. It was hard as hell, but awesome. I only\r\nremember fragments now. I remember we all had double water-bottle fanny\r\npacks for the hike. They worked pretty well, except that they had\r\nlimited storage for food, etc. Part of the hike led us up a narrow path\r\nthrough a canopy of vines. We stopped there for lunch. I remember\r\neating oranges and banana flavored power bars. Greg mentioned that\r\nnothing banana \"flavored\" ever actually tasted like bananas. I had to\r\nadmit he was right.</p>\r\n<p>Further on up in Panamint City, we stopped\r\nagain under a huge smoke stack. We saw some of the homes that the\r\nminers had. They consisted of 3 mud and rock walls, presumably covered\r\nwith a wood roof at the time. Just big enough for someone to lay down.\r\nDan said that in its heyday, Panamint City sported 50 shooting deaths\r\nin 4 years (or something like that). I guess the gun was pretty much\r\nlaw up there. That kinda blew me away. While there, we met some guys on\r\nATVs coming through. They asked us how far we were going. We said all\r\nthe way through to Johnson Canyon on the other side. They seemed a\r\nlittle skeptical. Hah!</p>\r\n<p>Originally, we had intended to go to\r\nthe top of Sentinel peak. But our time was running short. We still had\r\na long way to go to get to camp. So Dan told Greg to set an agressive\r\npace. We did our best to keep up with him, but the fucker pretty much\r\nleft us in the dust. It was a brutal pace. By the time we were within\r\n100 yards of the crest of the saddle, Dan and I were nearing the point\r\nof exhaustion. We put our arms around each other and practically\r\ncarried each other the rest of the way up.</p>\r\n<p>At the top, we took\r\nanother rest. Greg said, \"This would be a good place for a USGS\r\nmarker.\" Then, \"Oh, hey. There it is!\" We opted not to go up Sentinel\r\npeak. Mostly because it was getting late. Not because we were too tired\r\nor anything. Nope, we could have done it easy. Seriously... No,\r\nseriously.</p>\r\n<p>So we headed down into Johnson Canyon. On the way\r\ndown, we were sliding down loose shale. We took as much care as\r\npossible so we didn\'t twist an ankle or anything. But I remember we\r\nended up kind of skiing down it trying not to be directly below one\r\nanother so as not to take an ankle buster. As we descended, we saw the\r\nlush area of Hungry Bill\'s Ranch. There\'s a spring there, so there is a\r\nlot of vegitation.</p>\r\n<p>What we hadn\'t planned on was just how much\r\nvegitation. It was clogged with it. There was no good trail around it.\r\nThe trail would go to the left of the brush, then cut across on hands\r\nand knees trail through the brush, then pick up on the other side for a\r\nfew. We tried hiking off the trail, but the walls got so steep that out\r\nfooting became dicey. Dan tried to just machette his way through the\r\nbrambles, but with only a Swiss Army knife, it was slow and arduous. He\r\neventually gave up.</p>\r\n<p>We\'d find the trail, then lose it, then\r\nfind it, then lose it. Hours of that. Reep would be under our feet\r\ntrying to find the right way. I can\'t tell you how annoying it is to\r\nhave a dog underfoot when you\'re so tired you\'re barely still walking.</p>\r\n<p>It\r\ngot darker and darker, and eventually, started to level off. We finally\r\nraised Skip on the radio and he said he had a camp site and was just\r\nwaiting for us to arrive. I remember being so damn happy to hear from\r\nthem. Skip came out and met us for the last couple hundred yards or so.\r\nAnd just as we were about to get back to camp, Greg twists his ankle to\r\nhell. Seemed so damn ironic. I guess that\'s when it happens, though.\r\nWhen you think you\'re home free. We were all just happy it happened\r\nthere and not up at the top of Johnson Canyon. That would have made the\r\nhike much more interesting.</p>\r\n<p>When we finally got to camp, we\r\ndrank many beers. I think we had steak and baked potatoes. Can\'t quite\r\nrecall, but I know it tasted damn good. I slept very well that night.</p>','2010-05-20 18:09:11','2010-05-20 18:09:11',1,'Greg, Dan and I blitzed up and over the saddle near Sentinal Peak and down into Johnson Canyon.','panamintcity.jpg','image/jpeg',220540),(5,4,'<p>As I watched Dan and Greg drive off, a cloud of dust blew away\r\nperpendicular to their travel. That was always what you hoped for while\r\ndriving in Death Valley. Especially if you were driving behind another\r\nrig. A cross wind meant you weren\'t breathing the dust kicked up by the\r\nlead vehicle.</p>\r\n<p>I turned to Stuart and he was looking across Badwater at the\r\nhills in the distance. We were standing near Shorty\'s grave. We\'d\r\ndecided that we\'d go ahead and hike across Badwater itself. Go as low\r\nas you can go in this hemisphere.</p>\r\n<p>He said, \"You know, it only\r\nlooks like about 20 minutes from here...\" I laughed. He was right. It\r\ndidn\'t look like 8 miles. It looked like you\'d start wandering that\r\ndirection and be there in about, yes, 20 minutes.</p>\r\n<p>Dan and Greg\r\nwent to drop off one of the vehicles. They\'d be back in about 20\r\nminutes. But it would take us far longer to walk that 8 miles.</p>\r\n<p>It\r\nhad been an amazing trip so far. We\'d done so many things. This,\r\nhowever, seemed like it would be a kind of pinnacle. As it turned out,\r\nit truly was. This was, and I think still is, the hardest hike I\'ve\r\never done.</p>\r\n<p>I remember telling Stuart that I was studying Tae\r\nKwon Do. It was actually a big deal to tell him. I\'m not the kind of\r\nperson that keeps secrets. I usually end up blabbing everything about\r\nmyself to my friends. But this one, I decided to keep to myself for 6\r\nmonths. I wanted to make sure I was going to stick with it before I\r\nwent bragging to my friends that I was going to learn Tae Kwon Do. But\r\nI had received my first colored belt just prior to the trip, so I felt\r\nI had proven to myself I would stick with it. It felt good to finally\r\ntell someone.</p>\r\n<p>Soon after, Dan and Greg came back in the Scout.\r\nThey were talking about those damn washes on the West Side Highway. The\r\nwater comes through from the alluvial fans in little rivulets across\r\nthe highway. The result is small trenches across the road about 1 foot\r\nwide and 7 or 8 inches deep. Just enough to knock the hell out of your\r\nvehicle. They had hit one hard and gave the Scout a good slam.</p>\r\n<p>Dan\r\ndecided to leave Reepacheep in one of the vehicles because she wasn\'t\r\nwalking so well. I think her paws were sore from the gravel she wasn\'t\r\nused to.</p>\r\n<p><img src=\"/system/images/6/large_thumb/badwater_hike_2.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"225\" style=\"float: right;\" />We set off and started joking that it looked like the\r\nother side was about \"20 minutes from here.\" The ground itself was\r\nsurprisingly spongy. It was sort of like a chocolate chip cookie that\r\nwas crispy on the outside, and chewy inside. My boots crunched through\r\nthe thin shell at the top and sponged into the soft earth beneath. Very\r\nweird, but also very cool.</p>\r\n<p><img src=\"/system/images/5/large_thumb/badwater_hike_3.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"222\" style=\"float: left;\" />As we continued to walk, the clouds\r\nin the sky reminded us that there was occasionally a bit of moisture in\r\nDeath Valley. The sky above the hills were amazing to look at in all\r\ndirections. The spongy groud, however, slowly transitioned into\r\nsomething altogether more moist. The further we went, the muddier it\r\ngot. The treads on my boots were caked with it as I continued to walk.\r\nI could feel the weight every step I took. As we continued on, the mud\r\nbecame deeper and deeper. Each step I took was not \"lifting\" my foot,\r\nbut \"pulling\" it free of the mud. The effort, after a few miles, was\r\nintense. I would stop for short rests as we went and I realized that\r\nthe longer I waited, the deeper I sunk. The faster you kept moving, the\r\nless you would sink and so the less you\'d have to pull to get your foot\r\nto the next stride. But the fatigue was incredible, yet it still looked\r\nlike \"20 minutes from here.\"</p>\r\n<p>I looked back to see Stuart close\r\nbehind me, clearly not enjoying his fatigue. I said, \"You\'re really\r\nliving now, huh?\" I laughed, but I don\'t think he felt like joining me\r\nin that laugh. He acknowledged me and just kept plugging along. What\r\nelse could we do? We\'d come too far to go back. The only choice was to\r\ngo on.</p>\r\n<p><img src=\"/system/images/7/large_thumb/badwater_hike_1.jpg\" border=\"0\" alt=\"image\" width=\"370\" height=\"260\" style=\"float: right;\" />I turned around at one point and the sky was just\r\nbreathtaking. I decided it was worth sinking a couple inches into the\r\nmud to get that shot. So I pulled out my camera and snapped a few\r\npictures. One, in particular, is my favorite. You can see all our sets\r\nof footprints in the mud beneath a sky peppered with rain clouds as you\r\nlook back to the Panamind range. Satisfied, I put my camera back in my\r\npack and began trudging again.</p>\r\n<p>I remember cursing Greg because\r\nhe was waaaay ahead of the rest of us. He\'s just a great hiker. I can\'t\r\ndeny it. I would like to say that it was easier for him because he\r\nweighs less than&nbsp;I do. But mostly it\'s that he\'s got an amazing\r\nconstitution. Fucker.</p>\r\n<p>A little further on, I saw something I\r\ntruly did not expect. The glare of the what sun there was on water. My\r\nmind quickly did some calculations: Dirt + Water = Mud. Dirt +\r\nMORE&nbsp;Water = DEEPER Mud. And if it was completely submersed, then the\r\nbottom of that water was likely a slog of strange and unpleasant goo. I\r\nthought of my camera with my Pulitzer winning photos. If I had to swim\r\nthrough that water, my camera was toast. But what if it was too shallow\r\nto actually swim through, yet the mud was thick enough to be... a bog?\r\nHmm.</p>\r\n<p>I admit, I was nervous for about 5 good minutes, then\r\nfigured, \"What the fuck. What\'s the worst that could happen? I\'d die?\r\nI\'ve had it coming for years... Plus, Greg will die first cause he\'s in\r\nthe lead...Fucker.\"</p>\r\n<p>Interestingly, when we got to the water,\r\nit did not produce an increase in mud. In fact, the water was a god\r\nsend. There was an icy layer of salt at the bottom of the water. All\r\nfresh water has SOME salt in it. And when the lake that once filled\r\nDeath Valley evaporated, the salt couldn\'t evaporate with it, so it\r\njust stayed down there. That\'s actually what makes up the Devil\'s Golf\r\nCourse. Just brown salt instead of white salt. This stuff was all\r\nwhite. And the water itself was completely saturated with salt. It was\r\nso lousy with salt that it felt like gasoline on your fingers.\r\nFortunately, it was only 2 deep where we walked through. As it splashed\r\nmy hands and legs, then dried, the salt looked like white paint. I was\r\nhappy that I was wearing shorts. I think walking through that with\r\npants must have felt a little ugly.</p>\r\n<p>But the good part was that\r\nthe mud was gone. The going in the water was MUCH MUCH easier. I looked\r\nback at Stuart and he was smiling. I\'d almost say \"giddy.\" I know *I*\r\nfelt a whole lot better.</p>\r\n<p>Perhaps another mile of that and we\r\nwere on the other side. We got there and all hugged. I looked down at\r\nmy legs and they had salt crystals forming on the hairs. They felt like\r\nVelcro when they touched.</p>\r\n<p>We met the road where the Ranger was\r\nparked. A little tourist parking lot where people can hang out at -282\r\nfeet. Greg said that some people saw him coming to the road and asked\r\nhim, \"How far out did you go?\" Greg said, \"I came from the other side.\"\r\nApparently they didn\'t look like they believed him. Oh well... This was\r\nOUR day. OUR hike. We didn\'t need anyone to believe us. We did it. Now\r\nit was time for some beers.</p>','2010-05-20 18:16:09','2010-05-20 18:17:28',1,'Is that water up ahead?','badwater_hike_1.jpg','image/jpeg',145946),(6,4,'<p>\"Herm... it doesn\'t look that far.\" That was the first thought. Almost disappointed, but not wanting to admit it.</p>\r\n<p>It\r\nwas the morning of my thirtieth birthday. This trip happened for this\r\nreason. This hike. This trek across the valley floor. A moment of\r\ntransition. A moment to claim as my own. \"What did you do for your\r\nbirthday?\"</p>\r\n<p>\"Oh, I walked across Death Valley.\"</p>\r\n<p>Cool.</p>\r\n<p>\"I stood at the lowest possible point in the Northern Hemisphere.\"</p>\r\n<p>Yeah. It sounded good to me.</p>\r\n<p>But\r\nthis... this didn\'t look like a challenging hike. It looked like a\r\npleasant stroll... I figured, what, twenty minutes to cross?</p>\r\n<p>Greg\r\nand I had often poured over maps of Death Valley in the past. The idea\r\nof the place always scared me, lets be honest. The very names conjured\r\nhazards of mythic proportions: Dante\'s View, Funeral Mountains, Hell\'s\r\nGate, Starvation Canyon, Coffin Peak, Furnace Creek, Dry Bone Canyon,\r\nand the subtle, Badwater.</p>\r\n<p>Badwater. That was the one that\r\nalways stuck in my mind. That one spot on the map grounded the\r\ndramatic, sweeping scope of the valley. A spot that denoted despair.\r\nNot a place to stop and marvel, but a place to move on away from.\r\nBadwater.</p>\r\n<p>\"Looks like it\'ll take about twenty minutes,\" Dan\r\nsaid squinting into the rising sun. The winds that had plagued us the\r\nnight before were gone. There were dark clouds hanging above the\r\nPanamint Range behind us, but the Funeral Mountains before us looked\r\nclear.</p>\r\n<p>We were all in good humor as we stood on the West Side\r\nHighway looking east. The only debate was whether to bring the\r\ncamcorder or not, but I opted not to. Cam said he was going to bring\r\nhis camera. Luckily it still seemed to work despite that it took a\r\nnasty ding the afternoon before, during our repelling adventure.\r\nBesides, I was pretty sure the other three were pretty fed up with\r\nhaving a camcorder in their face. Plus, there still was a chance of\r\nrain.</p>\r\n<p>\"So what do you want to do if we hit water?\" Greg\r\nshrugged. Deal with it, was the unspoken attitude. And with that we\r\nstarted out, laughing and working out the morning kinks. I took some\r\npictures of the dogs, and then slowly we all started to separate. I\r\nbranched out to the south, Cam to the north, Greg setting a quick,\r\nlight pace as is his way, up ahead.</p>\r\n<p>The silence of the valley\r\nwas magnificent. The view was unbroken by anything that gave a scale of\r\ndistance. There was just a breeze rumbling in my ears. Without any\r\nfamiliar distractions I became introspective, as was the idea for the\r\nday. I wandered off course for a good while until I felt completely\r\nalone. I found a good spot to lie down at, spread my arms out wide and\r\nstared at nothing but the clouds that drifted overhead. I had thought\r\nthat this place might become oppressive, make me edgy. But instead I\r\nfound a calming peace. I felt as if I were lying at the center of the\r\nuniverse. Everything revolved around me without touching me. I couldn\'t\r\nstop smiling. It was such a wonderful present. Happy Birthday, I told\r\nmyself.</p>\r\n<p>As I stood to resume my hike, I got such a head-rush.\r\nThe whole bowl of the valley seemed to sweep up and away from me.\r\nWhether it was from being two hundred eighty two feet below sea level,\r\nor the topography, or the atmosphere, I didn\'t know. But the Funeral\r\nMountains still looked about twenty minutes away.</p>\r\n<p>The ground\r\nslowly turned from a dusty hard pack to a soft plain that was a\r\npleasure to walk on. My knees and ankles, and especially my flat arches\r\nsighed with relief. While not dramatic, this was turning into a\r\npleasant stroll. I had to keep an eye on the Funeral cliffs, which\r\ndenoted where the trucks were parked, and maybe one eye on the shimmer\r\nthat came from the valley floor, which may be the lake, or just a heat\r\nmirage.</p>\r\n<p>A chilly wind brought a few sprinkles of rain. Just\r\nenough to roll down my sleeves and justify not bringing the camcorder.\r\nThe idea of rain seemed doable, but a downpour would probably turn the\r\nsoft turf to mud, and that was not something I wanted to look forward\r\nto.</p>\r\n<p>And speaking of turf, we crossed a demarcation line and\r\nthe sparse shrubs and copse of weeds vanished. Our feet just broke the\r\nground crust leaving slight indentations. Again, pleasant.</p>\r\n<p>Greg slowed down and Cameron and I regrouped with Dan once more.</p>\r\n<p>\"Looks like about, oh, say, twenty minutes to the other side,\" Dan laughed.</p>\r\n<p>I\r\npointed to the shimmer up ahead, \"That mirage sure does look like\r\nwater.\" Greg agreed and we shifted our route a little more south.</p>\r\n<p>It\r\nwas water all right. Water and waves. I knew that this had been too\r\neasy. Now would come the challenge. Would it be safe? Would we have to\r\nwade, or even swim? There was no way to tell. We could only trudge on.</p>\r\n<p>\"It\r\ncouldn\'t be all that deep, could it?\" I asked aloud to no one. With my\r\nconcentration on the distance I failed to note that we crossed another\r\nground demarcation line. It was a darker one this time. The crust was\r\nthinner and the soft pack underneath wetter. \"Whoa\" Cameron slipped and\r\ncaught himself. I felt my boots become heavier as mud clotted between\r\nthe treads of my boots, then to the soles, in larger clumps. Hopefully,\r\nit would not get worse...</p>\r\n<p>It got worse.</p>\r\n<p>We were all\r\nside by side then as we slogged through, becoming more and more aware\r\nof each step we took. I thought it was more of an annoyance,\r\nspeculating that once we hit the water our troubles would really begin.</p>\r\n<p>The\r\namount of mud caked to my boots had become troubling. Damn things were\r\ngetting heavy. It broke my pacing and required more energy than I\r\nwanted. I felt it in my thighs the most. And I had to begin to\r\nconcentrate. And it was getting deeper. My feet sloshed around as my\r\ntoes disappeared underneath the mud. I started to hear sucking sounds\r\nwhen I brought each foot up, and squelching sounds when my foot came\r\ndown. I was definitely annoyed. Even Greg had begun to slow down. Dan\'s\r\nface had become set, and Cameron, deep in the experience, looked like\r\nhe was in awe - like a kid experiencing snow for the first time.</p>\r\n<p>I\r\nremember turning and looking behind us and seeing the straight tracks\r\nof footprints that lead from across the valley floor. Cameron stopped\r\nto take the picture. I thought then, as I still do now, that it is a\r\nwonderfully symbolic shot and am proud to have been part of it.</p>\r\n<p>Unfortunately,\r\nthat pride quickly evaporated as we trudged against the mud. I was\r\nreduced to a snails crawl. Each step took effort. Signs of fatigue were\r\nshowing. I could no longer feel my toes, then the balls of my feet.\r\nEveryone else was having trouble too, but it became apparent that I was\r\nstruggling the most.</p>\r\n<p>I was losing my happy thought.</p>\r\n<p>Ahead, the expanse of mud seemed to stretch for miles, ending only with a far greater obstacle, the lake. Badwater.</p>\r\n<p>My\r\nthighs were trembling now, burning with fatigue. Some times when I\r\nstepped down, I could not feel any solid ground, just depthless mud\r\nsucking me down. I had to immediately shift my weight and wrench my\r\nback foot up without loosing my boot to the gripping mud. Then repeat.\r\nAnd repeat. Then...</p>\r\n<p>I was straining hard. And I hadn\'t gone\r\nanywhere. A prevailing sense of helplessness descended upon me. I did\r\nnot know if I could make it. What then? I mean, they would not be able\r\nto carry me out, right? And the idea of the hike was my idea. Failure\'s\r\nheavy hammer pounded me with alacrity.</p>\r\n<p>Splosh-suck-splosh-suck</p>\r\n<p>None of us could stop in fear of sinking. Mud was over my boots. Needed to rest. Just a moment. Sinking. Must move. So hard now.</p>\r\n<p>Suck-groan-splosh-groan-suck</p>\r\n<p>Dan was concerned with my progress. He slowed so I wouldn\'t be left behind. \"I\'m getting worried,\" I remember telling him.</p>\r\n<p>\"Just keep going.\"</p>\r\n<p>But\r\nto where? More mud? Deeper mud? Attitude has so much bearing when you\r\nare hiking. It is the most dominating force of momentum. And I was in\r\ncritical danger of losing mine.</p>\r\n<p>I don\'t know if Cameron said\r\nit, or I said it back to him, or whether simply remembered his words in\r\nmy head... but his voice, once again declared to me, \"You\'re really\r\nliving now.\"</p>\r\n<p>Ah, yes. To be totally in the moment. But still,\r\nthe mud &ndash; sinking, fighting against it, sinking deeper. I tried anger\r\nas a motivator. Rage. Anything to tap reserves of strength. I saw Greg\r\nup ahead and hated him. I have walked since the beginning of my life\r\nand there he was, up ahead of me with a light tread. Fuck him.</p>\r\n<p>My\r\nthighs were shaking. My calves were aching. I was numb from my ankles\r\non down. My feet were lead. Could not stop. Could not stop.</p>\r\n<p>Fear\r\nset in. If that would not get me out of the mess, I figured nothing\r\nwould. I was embarrassed about how bad my condition was. Panic\r\nover-road pride. I must get out! Everything and everybody was holding\r\nme back. I should be able to fly...</p>\r\n<p>Boy was I becoming\r\ndelirious. Then came a jolt of pure exultation. My right foot found\r\nfirmer ground. Not much, but it was enough to stop and rest. The next\r\nstep I was sinking into the mud again. Hope was ripped away from me.\r\nThen I heard Greg-the-antichrist call out, \"It gets harder up here!\"</p>\r\n<p>I did not think that I could make it. Let me be honest. I was going to die out here.</p>\r\n<p>Cameron then exclaimed, \"Yeah, the ground\'s harder.\"</p>\r\n<p>Dan\r\nwas encouraging me to keep going. Greg and Cam had stopped to cheer me\r\non. My crushed pride was pushed aside by gratitude. My legs were\r\nrubbery. My lower back was strained. Then I felt firmer ground beneath\r\nmy feet. Just a little, but it was enough. Enough to catch my breath\r\nagain. Enough to pause just a moment. Energy quickly returned. I would\r\nwalk two or three steps and pause again. Take the weight off of one\r\nleg. I was able to look up and smile and give the thumbs up sign. Greg,\r\nCam, and Dan applauded. Knowing he was no longer needed, Greg hiked\r\nonward toward the lake. Slowly I caught up with Dan and Cam.</p>\r\n<p>\"Dude, I thought I was going to die.\"</p>\r\n<p>\"That was harsh, man.\"</p>\r\n<p>I\r\nwas ready to piss myself with fatigue, but as long as was out of the\r\nmud, I didn\'t care. The ground was no longer flat, but increasingly\r\nrough with small ruts and burms encrusted with a layer of salt. We had\r\nto watch where we were stepping. It was easy to twist something or take\r\na tumble. But it was exhilarating to be able to walk on top of the\r\nground, not in it.</p>\r\n<p>I had found my happy thought again.</p>\r\n<p>When\r\nwe hit Badwater Lake I no longer cared. Fatigue had sapped all of my\r\nanxieties about what lay ahead. Sure, the ground started to turn to mud\r\nagain. Didn\'t care. Sure, we were slipping. Didn\'t care. Sure, there\r\nwere waves on the glistening water. Didn\'t care. Sure, I would sink up\r\nto my ass in mud and water and salt... Oh well. Cameron had said it.\r\nLive in the moment. I was too tired not to. Besides, I was powerless to\r\nchange what was up ahead. And it was a freeing experience.</p>\r\n<p>The lake looked much too large to go around so Greg plunged ahead.</p>\r\n<p>Funny\r\nthing about fatigue and perspective. It looked like Greg was walking on\r\nthe water. The glare, the clouds, the atmosphere, mixed with the\r\nexhaustion and tunnel vision, Greg was trotting along the top of the\r\nwaves.</p>\r\n<p>Crazy.</p>\r\n<p>Then Dan hit the water way off to my\r\nright. He did not sink. \"It\'s not too bad!\" he called out. Cameron was\r\nat an equal distance off to my left, and, I\'ll be damned, he too was\r\nwalking on the waves.</p>\r\n<p>Just as I neared the lake the ground\r\nfirmed right up again. The salt had crystallized so thickly that I had\r\nsolid footing. Then I too, stepped into the water.</p>\r\n<p>I had to\r\nlaugh. It was only inches deep. It was so vast that the wind caused\r\nripples that looked like miniature waves. From a distance, without\r\nanything around it to give it perspective, they looked like ocean waves.</p>\r\n<p>The laughter came from down deep.</p>\r\n<p>The\r\neuphoria lasted for the rest of the hike. Sure, the water started\r\ngetting deeper. Big deal. There were a couple of dips that brought the\r\nwater up past my knees, but if I would have to swim, then I would swim.\r\nBut it never came to that. I remember looking out to my left and seeing\r\nCameron, a silhouette walking on top of what looked like a glistening\r\nsilver sea, and shouted, \"Cameron, You are the only pagan that I know\r\nthat can walk on water!\"</p>\r\n<p>Dan, to my right, was also a dark\r\noutline, save for his smiling teeth. Greg was a dot on the ocean up in\r\nfront. I saw him pause once, turn back to us, and stomp his feet, He\r\nwas on dry land again. The thought crossed my mind - what if there was\r\nmud on the other side? Would I be able to get through? I could only\r\nride the wave of emotions that carried me forward and not stop, just\r\nkeep going to the end.</p>\r\n<p>After all, it looked like it would only take, say, twenty minutes.</p>\r\n<p>I\r\noften wonder if our footprints are still there - immortalized for all\r\ntime, across one of the deepest parts of the world. Or, more probably,\r\nhas wind and water and time swept the valley clean again - forever\r\npristine, forever forbidding. I don\'t know. It doesn\'t matter, really.\r\nBut to me the thought will stand forever; a testimony to adventure, and\r\nto the bonds of friendship. They will be imprinted forever - like\r\nfootprints on the moon.</p>','2010-05-20 18:20:19','2010-05-20 18:20:19',5,'It was the morning of my thirtieth birthday. This trip happened for this reason. This hike. This trek across the valley floor.','badwater_hike_3.jpg','image/jpeg',165049),(7,5,'<p>We arrived at Barker Ranch and took it all in. I was surprised at\r\nhow it looked. It was a fairly decrepit structure, yet there were many\r\nnice parts too. There was spring-fed irrigation hosing keeping\r\nbeautiful irises alive.</p>\r\n<p>Part of our mission on the trip was to\r\nfind Charle\'s Manson\'s bus. Once we took a look at the building of the\r\nranch itself, most of us fanned out to search for the bus. I headed out\r\nshirtless, with only my Death Valley cap and an FRS radio. I walked up\r\nthe hill with Greg, Dan, Edric and the rest. Eventually, we fanned out\r\nenough that we were mostly out of eye-shot. We communicated over radio\r\nregarding our progress. I wanted to find it bad. I hiked as fast as I\r\ncould. I saw something that looked like white-painted metal down in a\r\nsmall canyon. I rushed down to look at it. It was only a flat white\r\nrock. I repeated this a few times as I got further and further from\r\nBarker Ranch.</p>\r\n<p>Eventually, we decided to call off the search\r\nfor the day. So we all started to head back. I came down the ridge I\'d\r\nclimbed. However, the fingers of the ridges and canyons were\r\nintertwined. I found I\'d come down a different ridge than I\'d gone up.\r\nAs I hiked down, I came to a road. I quickly realized I\'d gone the\r\nwrong way. I began to hike a tangental route back to where I thought\r\nthe ranch was. As I hiked, I heard a scratch on the radio. I hiked to a\r\ntall spot and made contact. Here is where we had our oft quoted\r\nconversation.</p>\r\n<p>\"Which way is west?\"</p>','2010-05-20 18:24:03','2010-05-20 18:24:03',1,'Searching for Charlie Manson\'s bus near Barker Ranch.  \"Which way is west?\"','barker_ranch.jpg','image/jpeg',123504),(8,6,'<p>I\'ll have to write this one up for real later. But I remember hiking\r\nthrough a lot of sand on this one. It was very hard. This is probably\r\nthe hardest hike we\'ve ever done. At least, this is the most tired\r\nafterwards I\'ve ever felt. Mark and Skip were waiting for us at camp\r\nwith Corona\'s with limes in them. Those were the best beers I\'ve ever\r\nhad.</p>','2010-05-20 18:26:29','2010-05-20 18:26:29',1,'It was a long trek through the dessert.',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `hike_stories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hikes`
+--
+
+DROP TABLE IF EXISTS `hikes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `hikes` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) collate utf8_unicode_ci default NULL,
+  `date` date default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  `album` varchar(255) collate utf8_unicode_ci default NULL,
+  `trip_id` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hikes`
+--
+
+LOCK TABLES `hikes` WRITE;
+/*!40000 ALTER TABLE `hikes` DISABLE KEYS */;
+INSERT INTO `hikes` VALUES (1,'Funeral Mountains','1995-02-28','2010-05-18 17:25:37','2010-05-18 17:26:21','',1),(2,'Skidoo','1995-02-28','2010-05-19 22:26:53','2010-05-19 22:26:53','',1),(3,'Panamint City','1995-10-20','2010-05-20 18:05:08','2010-05-20 18:05:08','',2),(4,'Badwater','1995-03-03','2010-05-20 18:11:04','2010-05-20 18:11:04','',1),(5,'Barker Ranch','2000-10-20','2010-05-20 18:21:35','2010-05-20 18:21:35','',6),(6,'Cottonwood','1996-10-20','2010-05-20 18:25:36','2010-05-20 18:25:56','',3);
+/*!40000 ALTER TABLE `hikes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `prints`
+--
+
+DROP TABLE IF EXISTS `prints`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `prints` (
+  `id` int(11) NOT NULL auto_increment,
+  `image_file_name` varchar(255) collate utf8_unicode_ci default NULL,
+  `image_file_size` varchar(255) collate utf8_unicode_ci default NULL,
+  `image_content_type` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prints`
+--
+
+LOCK TABLES `prints` WRITE;
+/*!40000 ALTER TABLE `prints` DISABLE KEYS */;
+INSERT INTO `prints` VALUES (1,'boot-icon2.png','3886','image/png','2010-05-18 22:31:25','2010-05-18 22:31:25'),(2,'Untitled-1.tif-3.jpg','8999260','image/jpeg','2010-05-18 22:32:35','2010-05-18 22:32:35'),(3,'funeral_mtns_hike_2.jpg','238718','image/jpeg','2010-05-20 17:56:42','2010-05-20 17:56:42'),(4,'funeral_mtns_hike_1.jpg','198951','image/jpeg','2010-05-20 18:02:31','2010-05-20 18:02:31'),(5,'badwater_hike_3.jpg','165049','image/jpeg','2010-05-20 18:13:59','2010-05-20 18:13:59'),(6,'badwater_hike_2.jpg','236328','image/jpeg','2010-05-20 18:15:44','2010-05-20 18:15:44'),(7,'badwater_hike_1.jpg','145946','image/jpeg','2010-05-20 18:17:01','2010-05-20 18:17:01'),(8,'untitled_3_tif_3.jpg','39524','image/jpeg','2010-05-20 18:31:16','2010-05-20 18:31:16'),(9,'untitled_4_tif_3.jpg','56025','image/jpeg','2010-05-20 18:32:20','2010-05-20 18:32:20'),(10,'untitled_11.jpg','69369','image/jpeg','2010-05-20 18:33:02','2010-05-20 18:33:02');
+/*!40000 ALTER TABLE `prints` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `radios`
+--
+
+DROP TABLE IF EXISTS `radios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `radios` (
+  `id` int(11) NOT NULL auto_increment,
+  `make` varchar(255) collate utf8_unicode_ci default NULL,
+  `model` varchar(255) collate utf8_unicode_ci default NULL,
+  `description` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `radios`
+--
+
+LOCK TABLES `radios` WRITE;
+/*!40000 ALTER TABLE `radios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `radios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rig_breakdowns`
+--
+
+DROP TABLE IF EXISTS `rig_breakdowns`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rig_breakdowns` (
+  `id` int(11) NOT NULL auto_increment,
+  `rig_id` int(11) default NULL,
+  `location` varchar(255) collate utf8_unicode_ci default NULL,
+  `description` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rig_breakdowns`
+--
+
+LOCK TABLES `rig_breakdowns` WRITE;
+/*!40000 ALTER TABLE `rig_breakdowns` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rig_breakdowns` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rig_upgrades`
+--
+
+DROP TABLE IF EXISTS `rig_upgrades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rig_upgrades` (
+  `id` int(11) NOT NULL auto_increment,
+  `rig_id` int(11) default NULL,
+  `description` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rig_upgrades`
+--
+
+LOCK TABLES `rig_upgrades` WRITE;
+/*!40000 ALTER TABLE `rig_upgrades` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rig_upgrades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rigs`
+--
+
+DROP TABLE IF EXISTS `rigs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rigs` (
+  `id` int(11) NOT NULL auto_increment,
+  `year` int(11) default NULL,
+  `make` varchar(255) collate utf8_unicode_ci default NULL,
+  `model` varchar(255) collate utf8_unicode_ci default NULL,
+  `engine` varchar(255) collate utf8_unicode_ci default NULL,
+  `tires` varchar(255) collate utf8_unicode_ci default NULL,
+  `name` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  `color` varchar(255) collate utf8_unicode_ci default NULL,
+  `picture` varchar(255) collate utf8_unicode_ci default NULL,
+  `dog_id` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rigs`
+--
+
+LOCK TABLES `rigs` WRITE;
+/*!40000 ALTER TABLE `rigs` DISABLE KEYS */;
+INSERT INTO `rigs` VALUES (1,1994,'Jeep','Wranger','4.0','31','Black Death','2010-05-18 17:33:04','2010-05-18 17:33:04','Black','',1),(2,1969,'International','Scout','V8','','The Scout','2010-05-21 20:43:47','2010-05-21 20:43:47','Blue & White','',4),(3,1993,'Ford','Ranger','','','The Ranger','2010-05-21 20:44:43','2010-05-21 20:44:43','Maroon','',2),(4,2001,'Jeep','Wrangler Sahara','4.0','31','Sarge','2010-05-21 21:00:07','2010-05-21 21:00:07','Green','',6),(5,2001,'Jeep','Wranger Sahara','4.0','33','The Iron Lung','2010-05-21 21:01:01','2010-05-21 21:01:01','Black','',4),(6,2001,'Dodge','Ram','V8','31','White Trash','2010-05-21 21:02:13','2010-05-21 21:03:43','White','',2),(7,2008,'Jeep','Rubicon','3.8','31','Black Cherry','2010-05-21 21:03:08','2010-05-21 21:03:08','Black','',10);
+/*!40000 ALTER TABLE `rigs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rigs_trips`
+--
+
+DROP TABLE IF EXISTS `rigs_trips`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rigs_trips` (
+  `rig_id` int(11) default NULL,
+  `trip_id` int(11) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rigs_trips`
+--
+
+LOCK TABLES `rigs_trips` WRITE;
+/*!40000 ALTER TABLE `rigs_trips` DISABLE KEYS */;
+INSERT INTO `rigs_trips` VALUES (2,1),(2,2),(2,3),(2,4),(2,5),(3,1),(3,3),(3,4),(3,5),(4,10),(4,11),(4,12),(5,8),(5,9),(5,10),(5,11),(5,12),(6,7),(6,8),(6,9),(6,10),(6,11),(6,12),(7,11),(7,12),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12);
+/*!40000 ALTER TABLE `rigs_trips` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) collate utf8_unicode_ci NOT NULL,
+  UNIQUE KEY `unique_schema_migrations` (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schema_migrations`
+--
+
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+INSERT INTO `schema_migrations` VALUES ('20100313015405'),('20100313022421'),('20100314225043'),('20100314225135'),('20100314225225'),('20100314225918'),('20100314230014'),('20100314230033'),('20100314230204'),('20100314230235'),('20100314230326'),('20100314230356'),('20100430230356'),('20100430230357'),('20100502230357'),('20100503230357'),('20100503230358'),('20100503230359'),('20100504230352'),('20100504230357'),('201005043'),('201005121'),('20100518034725'),('20100518040100'),('20100519015300'),('20100519112600'),('20100519211632'),('20100520173855'),('20100520174312'),('20100521194720');
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trip_stories`
+--
+
+DROP TABLE IF EXISTS `trip_stories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `trip_stories` (
+  `id` int(11) NOT NULL auto_increment,
+  `trip_id` int(11) default NULL,
+  `description` text collate utf8_unicode_ci,
+  `dog_id` int(11) default NULL,
+  `short_description` varchar(255) collate utf8_unicode_ci default NULL,
+  `photo_file_name` varchar(255) collate utf8_unicode_ci default NULL,
+  `photo_content_type` varchar(255) collate utf8_unicode_ci default NULL,
+  `photo_file_size` int(11) default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trip_stories`
+--
+
+LOCK TABLES `trip_stories` WRITE;
+/*!40000 ALTER TABLE `trip_stories` DISABLE KEYS */;
+INSERT INTO `trip_stories` VALUES (1,1,'<p><strong>2-25-95</strong><br /><br />I leave for Death Valley tomorrow.&nbsp; I\'m going with Dan DeLong, Stuart Ellis and Greg Rusky.&nbsp; I think I\'ve packed everything I need.&nbsp; We\'re bringing a lot of shit with us including a dog.&nbsp; I\'m in really good spirits. about trip.&nbsp; I know something will happen that will piss me off.&nbsp; It\'s just the way these things go.&nbsp; But I also know that they\'re the parts that I\'ll look back on and smile about.<br /><br /><strong>2-26-95</strong><br /><br />We\'re off.&nbsp; Dan and I are heading south on I5.&nbsp; Pretty good start so far.&nbsp; Everything\'s RED.&nbsp; We\'re flying.&nbsp; Dan\'s got the speedometer pegged.&nbsp; Someone made it obvious to me that 55 is too slow for I5.&nbsp; Hawk on a fence post.&nbsp; Bag of Art.&nbsp; We made it through Buttonwillow without incident.&nbsp; Except the dog.&nbsp; It finally took a leak.&nbsp; We\'re just exiting Tehechape.&nbsp; Lotsa windmills here.&nbsp; I want to fight them.&nbsp; Graves on a hilltop.<br /><br /><strong>2-27-95</strong><br /><br />We 4-wheeled it up a ridge last night.&nbsp; We couldn\'t make it to Panamint City.&nbsp; The road was gone.&nbsp; Greg\'s Scout almost went over the edge.&nbsp; The sleeping went ok.&nbsp; Greg snored like a fucker, but I threw rocks at him till he stopped.&nbsp; Had eggs and hash for breakfast.&nbsp; Yum.<br /><strong><br />2-28-95</strong><br /><br />On Death Valley floor.&nbsp; We spent yesterday exploring the landscape.&nbsp; We also entered a mine.&nbsp; It was incredible.&nbsp; Most of the mountain was supported by wood on the inside.&nbsp; I entered the mountain from the side and squeezed out an exit in the top.&nbsp; Tight fit.&nbsp; The image of my mid-section being crushed flooded my head the whole time I was extracting myself from the hill.<br /><br />Devil\'s Golf Course.&nbsp; I must come back here.&nbsp; The salt is incredible.&nbsp; Bleak Vastness.&nbsp; It is incredibly moving.&nbsp; So fragile but unstoppable at the same time.<br /><br />Artists Palette - Oh my god!<br /><br />Restaurant in Beatty.&nbsp; Dan and I took a little hike over the mtns.&nbsp; It was the most intense hiking experience I have ever had.&nbsp; For a large portion of the hike, we didn\'t know if we were going the right way.<br />Stuart and Greg dropped us off, and drove around to the point where we\'d meet up.&nbsp; It was 4:00 pm.&nbsp; The hill went up and up and up and up.&nbsp; Dan did a great job of figuring out where we were at any given time.&nbsp; I was really impressed with his attitude.&nbsp; We had a good time together.&nbsp; It was a hard fucking hike, but it was a blast.&nbsp; About 6:00 it got dark.&nbsp; This was shortly after it began to rain.&nbsp; I never really felt cold.&nbsp; My skin was soaked, and cold, but my body felt warm despite the wet.&nbsp; At about 6:20 we were in total dark, but we were on trail.&nbsp; And then we spotted the truck\'s tail lights.&nbsp; We signaled and they signaled back.&nbsp; Dan and I let loose an inspired yell.&nbsp; That was a great feeling.&nbsp; We got back, and decided to eat in some casino restaurant that evening.&nbsp; That\'s where I am right now.&nbsp; A great fucking day.&nbsp; Devil\'s Golf Course and the hike through the Funeral Mountains.&nbsp; My legs are tired.<br /><br /><strong>3-2-95</strong><br /><br />Couldn\'t make an entry yesterday.&nbsp; We were busy.&nbsp; We woke up in the morning, ate, and then rappelled down a waterfall.&nbsp; We got some pix.&nbsp; It was incredible.&nbsp; We all had a pretty good time about it.&nbsp; Stuart had some trouble, but we got him down ok.<br /><br />My camera took a tumble and broke the readout.&nbsp; But it still works except that readout.&nbsp; Oh well...<br /><br />Then Stuart and Greg climbed down the mountain that Dan and I climbed up the day before.&nbsp; Dan and I went and got a burger at some joint and then buried the treasure.&nbsp; I made the treasure map.&nbsp; It worked out pretty well.&nbsp; Treasure was a bottle of Champagne.&nbsp; The spot where the treasure was buried was the most awesome camp site.&nbsp; It\'s really cool.&nbsp; Flat, protected from most of the wind.&nbsp; It didn\'t rain last night.&nbsp; That was kinda nice.<br /><br />Today\'s Stuart\'s birthday.&nbsp; I think we\'re going to walk the valley floor today.&nbsp; I want to see those salt flats again.<br /><br />Dan has heard me sing a couple times this trip.&nbsp; He says I have a pretty good voice.&nbsp; I\'m going to try to learn to sing.&nbsp; <br /><br />Mmm... The wind feels good.<br /><strong><br />3-3-95</strong><br /><br />Well, we did walk the valley floor yesterday.&nbsp; It was great!&nbsp; Pretty hard though.&nbsp; Most of the way through was just salt + rock.&nbsp; Then about half-way was the beginning of the mud.&nbsp; Fuckin\' A!&nbsp; That mud was probably 6 inches deep after a while.&nbsp; I was so damn tired I began to wonder if I could even continue.&nbsp; Well... not really...&nbsp; I knew I could make it.&nbsp; I HAD to.&nbsp; There was no turning back.&nbsp; Then about 3/4 the way across we hit the water.&nbsp; The going was easier.&nbsp; The ground was crusted firm with salt.&nbsp; The water was never deeper than my knees.&nbsp; The going was nice and easy though.&nbsp; It was great, but due to the salt, I\'m really beginning to feel scummy...<br /><br />I talked to Dan.&nbsp; He\'s got a couple songs he hasn\'t written lyrics for yet.&nbsp; I\'m going to try to write some.&nbsp; Sounds like fun!<br /><br />Today we\'re going to explore the mines at Skidoo.&nbsp; We\'ve been there already, but didn\'t get to spend much time.<br /><br /><strong>3-4-95</strong><br /><br />The mines at Skidoo were cool!&nbsp; We explored a little and had some fun.&nbsp; Then I watched the dog while the other three went into a different mine shaft.&nbsp; They all started feeling dizzy, so they got the fuck out.&nbsp; Bad air is somewhat common there.<br /><br />After that we hooked up the scout to be towed by the Ranger.&nbsp; Pretty squirly, but it worked.&nbsp; We drove 45mph the whole way home.<br /><br />Finally got here at 8:00 this morning.&nbsp; Dan and I crashed at my pad.&nbsp; I took a shower first.&nbsp; It felt incredible.&nbsp; I could not believe how dirty I was.<br /></p>',1,'My journal entry from my first trip to Death Valley','untitled_2_tif_5.jpg','image/jpeg',34681,'2010-05-21 20:40:36','2010-05-21 21:14:37');
+/*!40000 ALTER TABLE `trip_stories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trips`
+--
+
+DROP TABLE IF EXISTS `trips`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `trips` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) collate utf8_unicode_ci default NULL,
+  `date` date default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trips`
+--
+
+LOCK TABLES `trips` WRITE;
+/*!40000 ALTER TABLE `trips` DISABLE KEYS */;
+INSERT INTO `trips` VALUES (1,'Badwater','1995-02-26','2010-05-18 17:26:04','2010-05-18 17:26:04'),(2,'Panamint City','1995-10-09','2010-05-19 23:09:36','2010-05-19 23:09:36'),(3,'Cottonwood','1996-10-05','2010-05-19 23:10:02','2010-05-19 23:10:02'),(4,'Night Drive','1997-04-19','2010-05-19 23:10:20','2010-05-19 23:10:20'),(5,'Wildrose','1998-10-07','2010-05-19 23:10:41','2010-05-19 23:10:41'),(6,'Barker Ranch','2000-10-19','2010-05-19 23:11:01','2010-05-19 23:11:01'),(7,'Butte Valley','2003-10-19','2010-05-19 23:11:17','2010-05-19 23:11:17'),(8,'South Park Canyon','2004-10-19','2010-05-19 23:11:38','2010-05-19 23:11:38'),(9,'Saline Valley','2006-10-19','2010-05-19 23:11:55','2010-05-19 23:11:55'),(10,'Greenwater','2007-05-05','2010-05-19 23:12:24','2010-05-19 23:12:24'),(11,'Eureka Dunes','2009-04-19','2010-05-19 23:12:46','2010-05-19 23:12:46'),(12,'Telescope Peak','2009-10-10','2010-05-19 23:13:11','2010-05-19 23:13:11');
+/*!40000 ALTER TABLE `trips` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `videos`
+--
+
+DROP TABLE IF EXISTS `videos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `videos` (
+  `id` int(11) NOT NULL auto_increment,
+  `original_file_name` varchar(255) collate utf8_unicode_ci default NULL,
+  `original_file_size` varchar(255) collate utf8_unicode_ci default NULL,
+  `original_content_type` varchar(255) collate utf8_unicode_ci default NULL,
+  `created_at` datetime default NULL,
+  `updated_at` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `videos`
+--
+
+LOCK TABLES `videos` WRITE;
+/*!40000 ALTER TABLE `videos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `videos` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2010-05-21 16:21:19

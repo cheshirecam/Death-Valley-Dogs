@@ -2,6 +2,8 @@
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
+ENV['GEM_PATH'] = '/home/deathval/ruby/gems/:/usr/lib/ruby/gems/1.8';
+ENV['GEM_HOME'] = '/home/deathval/ruby/gems/';
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
