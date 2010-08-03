@@ -38503,3 +38503,269 @@ Processing TripsController#index (for 75.61.104.209 at 2010-07-08 19:23:10) [GET
 Rendering template within layouts/trips
 Rendering trips/index
 Completed in 49ms (View: 47, DB: 1) | 200 OK [http://www.deathvalleydogs.com/trips]
+
+
+Processing LatestsController#index (for 150.169.15.133 at 2010-08-03 17:52:07) [GET]
+Rendering template within layouts/latests
+Rendering latests/index
+Completed in 257ms (View: 229, DB: 19) | 200 OK [http://www.deathvalleydogs.com/latests]
+
+
+Processing TripsController#index (for 150.169.15.133 at 2010-08-03 17:52:12) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+Completed in 150ms (View: 144, DB: 3) | 200 OK [http://www.deathvalleydogs.com/trips]
+
+
+Processing HikesController#index (for 150.169.15.133 at 2010-08-03 17:52:19) [GET]
+Rendering template within layouts/hikes
+Rendering hikes/index
+Completed in 158ms (View: 151, DB: 4) | 200 OK [http://www.deathvalleydogs.com/hikes]
+
+
+Processing HikesController#show (for 150.169.15.133 at 2010-08-03 17:53:17) [GET]
+  Parameters: {"id"=>"7"}
+Rendering template within layouts/hikes
+Rendering hikes/show
+Completed in 53ms (View: 24, DB: 28) | 200 OK [http://www.deathvalleydogs.com/hikes/7]
+
+
+Processing HikesController#get_kml to kml (for 72.14.192.65 at 2010-08-03 17:53:18) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:18) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 10ms (View: 0, DB: 3) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 10ms (View: 0, DB: 2) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 11ms (View: 0, DB: 3) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 10ms (View: 0, DB: 2) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 121ms (View: 119, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 112ms (View: 110, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing HikesController#get_kml to kml (for 74.125.75.19 at 2010-08-03 17:53:19) [GET]
+  Parameters: {"uuid"=>"7", "ignore_this_bit"=>"68"}
+Sending data 
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/hikes/get_kml/68/7.kml]
+
+
+Processing TripsController#index (for 150.169.15.133 at 2010-08-03 17:53:25) [GET]
+Rendering template within layouts/trips
+Rendering trips/index
+Completed in 48ms (View: 43, DB: 2) | 200 OK [http://www.deathvalleydogs.com/trips]
+
+
+Processing TripsController#show (for 150.169.15.133 at 2010-08-03 17:53:27) [GET]
+  Parameters: {"id"=>"12"}
+Rendering template within layouts/trips
+Rendering trips/show
+Completed in 53ms (View: 43, DB: 9) | 200 OK [http://www.deathvalleydogs.com/trips/12]
+
+
+Processing TripsController#get_kml to kml (for 72.14.192.65 at 2010-08-03 17:53:28) [GET]
+  Parameters: {"uuid"=>"12", "ignore_this_bit"=>"16"}
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://www.deathvalleydogs.com/trips/get_kml/16/12.kml]
+
+
+Processing TripStoriesController#show (for 150.169.15.133 at 2010-08-03 17:53:31) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/trip_stories
+Rendering trip_stories/show
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://www.deathvalleydogs.com/trip_stories/2]
