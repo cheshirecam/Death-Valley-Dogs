@@ -2,7 +2,7 @@ class HikeStory < ActiveRecord::Base
   belongs_to :hike
   belongs_to :dog
 
-  named_scope :latest, :order => 'updated_at DESC', :limit => 4
+  named_scope :latest, :order => 'updated_at DESC', :limit => 8
 
 # Paperclip
 has_attached_file :photo,
