@@ -31,6 +31,13 @@
 </tr>
 </table>
 </td></tr></table>
+<% if @trip.trip_stories.size > 0 then %>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @trip.trip_stories,
+  :obj_field => "trip"
+ } %>
+<% end %>
+
 <%= render :partial => "/shared/crud_links_edit_new_list_writeup", :locals => { 
     :obj => @trip
  } %>
@@ -38,24 +45,6 @@
 <INPUT TYPE="button" value="Open in Google Earth" onClick="location.href=getMapKml('trips', <%= @trip.id %>)">
 <div id="map_canvas"></div>
 
-
-<% if @trip.trip_stories.size > 0 then %>
-<h2><%= @trip.name %> <%= @trip.class.name %> Write-ups</h2>
-<%= render :partial => "/shared/writeup_list", :locals => { 
-  :obj_stories => @trip.trip_stories,
-  :obj_field => "trip"
- } %>
- 
-<% else %>
-<h2>No write-up exists for this trip yet.  
-  <% if current_user %>  
-
-  <%= link_to "Write one!", 
-  {:controller => :trip_stories, :action => "new", :trip_id => @trip.id}, 
-  {:title => "Add a write-up for this trip"} %>
-  </h2>
-  <% end %>
-<% end %>
 
 <script language="javascript" type="text/javascript">
   $("#map_canvas").load(initialize_map('trips', <%= @trip.id %>));

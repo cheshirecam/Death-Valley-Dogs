@@ -13,9 +13,17 @@
       <% end %>  
     </td>
     <td><%= link_to trip.name, trip %></td>
+    <td>
+      <% if trip.hikes.size > 0 then %>
+          <% trip.hikes.each do |hike| %>
+              <%= link_to hike.name + " hike", hike %><br>
+          <% end %>  
+      <% end %>  
+    </td>
     <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
         :obj => trip
-     } %></td>
+     } %>
+    </td>
   </tr>
 <% end %>
 </table>
