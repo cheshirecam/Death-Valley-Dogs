@@ -281,9 +281,9 @@
 
   .dogThumb {
     float: left;
-    border-top-left-radius: 15px; 
-    -moz-border-radius-topleft: 15px;
-    -webkit-border-radius-topleft: 15px; 
+    border-top-left-radius: 10px; 
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-radius-topleft: 10px; 
   }
 
   .dogPrint {
@@ -332,9 +332,9 @@
 
   .rigThumb {
     text-align: center;
-    border-top-left-radius: 15px; 
-    -moz-border-radius-topleft: 15px;
-    -webkit-border-radius-topleft: 15px; 
+    border-top-left-radius: 10px; 
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-radius-topleft: 10px; 
   }
 
   .rigCubeContainer {
