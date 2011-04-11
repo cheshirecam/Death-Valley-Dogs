@@ -106,6 +106,9 @@
     -moz-border-radius-topright: 5px;
     -webkit-border-radius-topleft: 5px; 
     -webkit-border-radius-topright: 5px; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+
     padding: 0 8px 0 8px;
 	}
 	
@@ -116,6 +119,8 @@
     -moz-border-radius-topright: 10px;
     -webkit-border-radius-topleft: 10px; 
     -webkit-border-radius-topright: 10px; 
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
     padding: 4px 8px 0 8px;
 
 	}0123456789a
@@ -133,6 +138,8 @@
     -moz-border-radius-topright: 10px;
     -webkit-border-radius-topleft: 10px; 
     -webkit-border-radius-topright: 10px; 
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
     padding: 4px 8px 0 8px;
 		
 	}
@@ -168,6 +175,8 @@
     -moz-border-radius-bottomright: 10px;
     -webkit-border-radius-bottomleft: 10px; 
     -webkit-border-radius-bottomright: 10px; 
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px; 
     padding: 10px 5px 10px 15px;
     margin-top: 0;
   }
@@ -179,6 +188,8 @@
     -moz-border-radius-bottomright: 10px;
     -webkit-border-radius-bottomleft: 10px; 
     -webkit-border-radius-bottomright: 10px; 
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px; 
     padding: 10px 5px 10px 15px;
     font-size: xx-large;
   }
@@ -254,7 +265,6 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     background: black; 
-    border-radius: 15px; 
     border: 5px solid maroon;
     width: 130px;
     float:left;
@@ -302,10 +312,10 @@
 
 /* Rig Cubes */
   .rigCube {
+    border-radius: 5px; 
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     background: black; 
-    border-radius: 15px; 
     border: 5px solid maroon;
     width: 130px;
     float:left;
@@ -344,31 +354,35 @@
 
 /* Tables */
 .maroonRoundedBorder {
+  border-radius: 15px; 
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px; 
-  border-radius: 15px; 
   border: 5px solid maroon;
 }
 
 .firstHorizontalColumnHeader{
+  border-top-left-radius: 8px; 
   -moz-border-radius-topleft: 8px;
   -webkit-border-radius-topleft: 8px;
   padding: 5px;
 }
 
 .lastHorizontalColumnHeader{
+  border-top-right-radius: 8px; 
   -moz-border-radius-topright: 8px;
   -webkit-border-radius-topright: 8px;
   padding: 5px;
 }
 
 .firstVerticalColumnHeader{
+  border-top-left-radius: 8px; 
   -moz-border-radius-topleft: 8px;
   -webkit-border-radius-topleft: 8px;
   padding: 5px;
 }
 
 .lastVerticalColumnHeader{
+  border-bottom-left-radius: 8px; 
   -moz-border-radius-bottomleft: 8px;
   -webkit-border-radius-bottomleft: 8px;
   padding: 5px;
