@@ -212,7 +212,8 @@
     -moz-border-radius-bottomright: 15px;
     -webkit-border-radius-bottonleft: 15px; 
     -webkit-border-radius-bottomright: 15px; 
-    border-radius: 15px; 
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px; 
     border: 5px solid maroon;
     padding: 12px;
     background: beige;
@@ -224,6 +225,8 @@
    }
   
   .roundedTitleArea {
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px; 
     -moz-border-radius-topleft: 15px;
     -moz-border-radius-topright: 15px;
     -webkit-border-radius-topleft: 15px; 
@@ -247,6 +250,7 @@
 
 /* Dog Cubes */
   .dogCube {
+    border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     background: black; 
