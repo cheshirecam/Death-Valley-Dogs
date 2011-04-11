@@ -111,6 +111,17 @@
 
     padding: 0 8px 0 8px;
 	}
+
+	.link_away a {
+		text-decoration: none;
+		color: #a80;
+		background: beige;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; 
+    border-radius: 5px; 
+
+    padding: 3px 8px 3px 8px;
+	}
 	
 	#header a:hover {
 		background: #fc0;
