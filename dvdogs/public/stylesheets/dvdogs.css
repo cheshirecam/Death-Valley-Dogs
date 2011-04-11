@@ -115,11 +115,10 @@
 	.link_away a {
 		text-decoration: none;
 		color: #a80;
-		background: beige;
+		background: #7e8b4e;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px; 
     border-radius: 5px; 
-
     padding: 0 8px 0 8px;
 	}
 	
@@ -134,6 +133,15 @@
     border-top-right-radius: 10px; 
     padding: 4px 8px 0 8px;
 
+	}0123456789a
+
+	.link_away a:hover {
+		background: #fc0;
+		color: #540;
+	    -moz-border-radius: 5px;
+	    -webkit-border-radius: 5px; 
+	    border-radius: 5px; 
+	    padding: 0 8px 0 8px;
 	}0123456789a
 	
 	#header .selected_tab {
