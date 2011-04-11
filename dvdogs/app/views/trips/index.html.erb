@@ -7,11 +7,6 @@
       <% end %>
     </td>
     <td><%=h trip.date.strftime('%Y-%b') %></td>
-    <td>
-      <% if trip.trip_stories.size > 0 then %>
-      <%= link_to writeup_icon, trip, {:title => "View the write-up for this trip"} %>
-      <% end %>  
-    </td>
     <td><%= link_to trip.name, trip %></td>
     <td>
       <% if trip.hikes.size > 0 then %>

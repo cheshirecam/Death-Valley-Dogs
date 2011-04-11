@@ -37,6 +37,13 @@
   :obj_field => "trip"
  } %>
 <% end %>
+<% @trip.hikes.each do |hike| %>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => hike.hike_stories,
+  :obj_field => "hike"
+ } %>
+<% end %>
+
 
 <%= render :partial => "/shared/crud_links_edit_new_list_writeup", :locals => { 
     :obj => @trip

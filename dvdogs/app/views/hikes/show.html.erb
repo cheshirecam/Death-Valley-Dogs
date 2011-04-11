@@ -26,8 +26,15 @@
   :obj_stories => @hike.hike_stories,
   :obj_field => "hike"
  } %>
-
 <% end %>
+
+<% if @hike.trip.trip_stories.size > 0 then %>
+<%= render :partial => "/shared/writeup_list", :locals => { 
+  :obj_stories => @hike.trip.trip_stories,
+  :obj_field => "trip"
+ } %>
+<% end %>
+
 <%= render :partial => "/shared/crud_links_edit_new_list_writeup", :locals => { 
     :obj => @hike,
  } %>
