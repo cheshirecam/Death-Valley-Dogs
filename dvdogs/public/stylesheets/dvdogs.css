@@ -261,9 +261,9 @@
 
 /* Dog Cubes */
   .dogCube {
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
     background: black; 
     border: 5px solid maroon;
     width: 130px;
@@ -312,9 +312,9 @@
 
 /* Rig Cubes */
   .rigCube {
-    border-radius: 5px; 
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    border-radius: 15px; 
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
     background: black; 
     border: 5px solid maroon;
     width: 130px;
