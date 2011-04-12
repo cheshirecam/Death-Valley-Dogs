@@ -28,10 +28,11 @@
         <%= link_to "#{obj_story.send(obj_field).name} #{obj_field} - #{obj_story.send(obj_field).date.strftime('%B %Y')}", obj_story %><br>
         by <%= link_to "#{obj_story.dog.name}", obj_story.dog %>
       </div>
-      <div class="roundedTextArea">
+      <div class="roundedTextArea"><div class="roundedTextAreaHeightFixer"></div>
       <% if obj_story.short_description then %>
         <%= obj_story.short_description %>
       <% end %>   
+		<div class="clear"></div>
       </div>   
     </td>
     <td>

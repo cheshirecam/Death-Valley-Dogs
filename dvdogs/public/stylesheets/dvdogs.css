@@ -182,38 +182,6 @@
     padding: 5px;	  
 	}
 
-	.tripListTable table {
-		border: 0px;
-		border-style: none;
-	}
-
-	.tripListItem_first {
-		background-color: beige;
-	    -moz-border-radius-topleft: 5px;
-	    -moz-border-radius-bottomleft: 5px;
-	    -webkit-border-radius-topleft: 5px; 
-	    -webkit-border-radius-bottomleft: 5px; 
-	    border-top-left-radius: 5px; 
-	    border-bottom-left-radius: 5px; 
-	    padding: 10px;	  
-	}
-
-	.tripListItem {
-		background-color: beige;
-	    padding: 10px;	  
-	}
-
-	.tripListItem_last {
-		background-color: beige;
-	    -moz-border-radius-topright: 5px;
-	    -moz-border-radius-bottomright: 5px;
-	    -webkit-border-radius-topright: 5px; 
-	    -webkit-border-radius-bottomright: 5px; 
-	    border-top-right-radius: 5px; 
-	    border-bottom-right-radius: 5px; 
-	    padding: 10px;	  
-	}
-	
 	.dateCircle {
 		background-color: black;
 	}
@@ -285,11 +253,24 @@
     background: beige;
     color: black;
     clear: both;
-    height: 50px;
     width: 400px;
     font-size: small;
    }
   
+  .roundedTextAreaHeightFixer {
+    height:50px;
+    float:right;
+    width:1px;
+  }
+
+  .hikeListForTripList {
+	width: 150px;
+  }
+
+  .storyListForTripList {
+	width: 200px;
+  }
+
   .roundedTitleArea {
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px; 
@@ -302,6 +283,13 @@
     color: beige;
     width: 418px;
   }
+
+  .clear { 
+	clear: both; 
+    height:1px;
+    overflow:hidden;
+  }
+
   
   .roundedTitleArea a:link { 
     color: beige; 
