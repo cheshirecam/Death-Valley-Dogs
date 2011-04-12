@@ -24,13 +24,13 @@
 		<td class="storyListForTripList">
 			<% if trip.trip_stories.size > 0 then %>
 				<% trip.trip_stories.each do |tstory| %>
-					<%= link_to tstory.dog.name + "'s trip writeup", tstory%><br>
+					<%= link_to tstory.dog.name + "'s trip writeup", tstory %><br>
 				<% end %>
 			<% end %>
 			<% trip.hikes.each do |hike| %>
 				<% if hike.hike_stories.size > 0 then %>
 					<% hike.hike_stories.each do |hstory| %>
-						<%= link_to hstory.dog.name + "'s hike writeup", hstory%><br>
+						<%= link_to hstory.dog.name + "'s " + hike.name + " writeup", hstory %><br>
 					<% end %>
 				<% end %>
 			<% end %>
