@@ -167,7 +167,7 @@
 		
 	#content {
     clear: both;
-		border-top: 5px solid maroon;
+	border-top: 5px solid maroon;
     background-image: url('../images/tile-topo-blk-trans.png');
     background-repeat: repeat;
     align: center;
@@ -182,6 +182,42 @@
     padding: 5px;	  
 	}
 
+	.tripListTable table {
+		border: 0px;
+		border-style: none;
+	}
+
+	.tripListItem_first {
+		background-color: #99A85F;
+	    -moz-border-radius-topleft: 5px;
+	    -moz-border-radius-bottomleft: 5px;
+	    -webkit-border-radius-topleft: 5px; 
+	    -webkit-border-radius-bottomleft: 5px; 
+	    border-top-left-radius: 5px; 
+	    border-bottom-left-radius: 5px; 
+	    padding: 10px;	  
+	}
+
+	.tripListItem {
+		background-color: #99A85F;
+	    padding: 10px;	  
+	}
+
+	.tripListItem_last {
+		background-color: #99A85F;
+	    -moz-border-radius-topright: 5px;
+	    -moz-border-radius-bottomright: 5px;
+	    -webkit-border-radius-topright: 5px; 
+	    -webkit-border-radius-bottomright: 5px; 
+	    border-top-right-radius: 5px; 
+	    border-bottom-right-radius: 5px; 
+	    padding: 10px;	  
+	}
+	
+	.dateCircle {
+		background-color: black;
+	}
+	
   #map_canvas {
     width:740px;
     height:400px;

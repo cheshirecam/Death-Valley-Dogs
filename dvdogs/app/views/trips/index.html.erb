@@ -1,21 +1,21 @@
 <table>
 <% @trips.each do |trip| %>
-  <tr>
-    <td>
+  <tr class = "tripListTable">
+    <td class = "tripListItem_first">
       <% if trip.photo.exists? then %>
         <%= link_to image_tag(trip.photo.url(:thumb)), trip %>
       <% end %>
     </td>
-    <td><%=h trip.date.strftime('%Y-%b') %></td>
-    <td><%= link_to trip.name, trip %></td>
-    <td>
+    <td class = "tripListItem"><%=h trip.date.strftime('%Y-%b') %></td>
+    <td class = "tripListItem"><%= link_to trip.name, trip %></td>
+    <td class = "tripListItem">
       <% if trip.hikes.size > 0 then %>
           <% trip.hikes.each do |hike| %>
               <%= link_to hike.name + " hike", hike %><br>
           <% end %>  
       <% end %>  
     </td>
-    <td><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
+    <td class = "tripListItem_last"><%= render :partial => "/shared/crud_links_edit_delete_small", :locals => {
         :obj => trip
      } %>
     </td>
