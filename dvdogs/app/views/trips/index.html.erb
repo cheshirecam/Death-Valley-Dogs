@@ -3,7 +3,7 @@
   <tr>
     <td>
       <% if trip.photo.exists? then %>
-        <%= link_to image_tag(trip.photo.url(:thumb)), trip %>
+        <%= link_to image_tag(trip.photo.url(:list_thumb), :size => "110x110"), trip %>
       <% end %>
     </td>
     <td>
