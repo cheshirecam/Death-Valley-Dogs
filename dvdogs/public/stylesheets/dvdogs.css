@@ -188,7 +188,7 @@
 	}
 
 	.tripListItem_first {
-		background-color: #99A85F;
+		background-color: beige;
 	    -moz-border-radius-topleft: 5px;
 	    -moz-border-radius-bottomleft: 5px;
 	    -webkit-border-radius-topleft: 5px; 
@@ -199,12 +199,12 @@
 	}
 
 	.tripListItem {
-		background-color: #99A85F;
+		background-color: beige;
 	    padding: 10px;	  
 	}
 
 	.tripListItem_last {
-		background-color: #99A85F;
+		background-color: beige;
 	    -moz-border-radius-topright: 5px;
 	    -moz-border-radius-bottomright: 5px;
 	    -webkit-border-radius-topright: 5px; 
