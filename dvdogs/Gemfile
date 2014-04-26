@@ -1,4 +1,4 @@
 gem "rails", "2.3.8"
 gem "mysql", "2.8.1"
-gem "authlogic"
+gem 'authlogic', "2.1.6"
 
